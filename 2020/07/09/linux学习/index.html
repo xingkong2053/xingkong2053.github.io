@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#333333">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keyword"  content="">
+    <meta name="description" content="@lipenghui">
+    <title>linux学习 - xxxxx</title>
+    <base href="/">
+    <link rel="preconnect" href="//cdn.bootcss.com">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-light.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-dark.min.css" rel="stylesheet" media="screen and (prefers-color-scheme: dark)">
+    <!-- UIkit CSS -->
+    <link href="https://cdn.bootcss.com/uikit/3.2.0/css/uikit.min.css" rel="stylesheet">
+    <!-- UIkit JS -->
+    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit.min.js" async></script>
+    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit-icons.min.js" async></script>
+    
+<link rel="stylesheet" href="/styles/cold-stone.css">
+
+    <noscript>
+      <p class="text-center">你的浏览器还没开启 Javascript 功能！</p>
+    </noscript>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    
+
+    <header class="header" uk-sticky="top: 100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+  <nav class="wrapper header-content">
+    <div class="nav-overlay uk-navbar-left">
+      <h1 class="title nav-list-item uk-logo" data-link="/">
+        
+        <a href="/" data-link="/">xinkong2053.gihub.io</a>
+        
+      </h1>
+
+      <ul class="nav-list">
+        
+        <li class="nav-list-item" data-link="/categories/">
+          <a class="nav-list-link" href="/categories">CATEGORIES</a>
+        </li>
+        
+        
+        <li class="nav-list-item" data-link="/about/">
+          <a class="nav-list-link" href="/about/">ABOUT</a>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+      <div class="uk-navbar-right translate-x">
+        <a class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
+      </div>
+    
+  </nav>
+</header>
+
+<div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
+  <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+    <button class="uk-modal-close-full" type="button" uk-close></button>
+    <form class="uk-search uk-search-large search-form" action="//google.com/search" method="get" accept-charset="UTF-8"
+      target="_blank">
+      <input class="uk-search-input search-form-input" type="search" name="q" placeholder="Search"
+        autofocus autocomplete="false">
+      <input type="hidden" name="sitesearch" value="https://xingkong2053.gihub.io">
+    </form>
+  </div>
+</div>
+
+
+    <main class="main wrapper"><article class="article slide-in-right uk-article">
+  <section class="article-header">
+    <h1 class="article-title uk-article-title">
+      linux学习
+    </h1>
+    <p class="article-meta uk-article-meta">
+      <span class="meta-info">
+        <span>
+          Last Update&#58;<time class="post-time"
+            datetime="2020-06-28">2020-06-28</time>
+        </span>
+        <span>Reading Time&#58; 1 min</span>
+        <span class="hide" id="busuanzi_container_page_pv">Readed&#58; <span
+            id="busuanzi_value_page_pv"></span></span>
+      </span>
+    </p>
+  </section>
+  <section class="article-content"><h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="实用指令"><a href="#实用指令" class="headerlink" title="实用指令"></a>实用指令</h2><h4 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h4><p><code>reboot</code>  重启</p>
+<p><code>pwd</code>  显示当前路径</p>
+<p><code>ls</code>  显示目录或文件</p>
+<p>​    <code>-a</code>  显示所有文件</p>
+<p>​    <code>-l</code> 以列表的方式显示信息</p>
+<p><code>cd ~</code>  回到自己的家目录</p>
+<p><code>uname -a</code>查看系统核心信息 p622 </p>
+<h4 id="用户指令"><a href="#用户指令" class="headerlink" title="用户指令"></a>用户指令</h4><p><code>su root</code> 普通用户切换到root用户</p>
+<p><code>ll</code> 显示当前文件夹下的所有文件</p>
+<p><code>useradd [username]</code> 创建一个新的用户</p>
+<p><code>useradd -d [file path] [username]</code> 创建一个新的用户并指定家目录</p>
+<p><code>passwd [username]</code> 为用户指定密码</p>
+<p><code>userdel [username]</code> 删除用户保留家目录 ，删除用户需root</p>
+<p><code>userdel -r [username]</code> 删除用户并删除家目录</p>
+<p><code>id [username]</code> 查询用户</p>
+<p><code>su - [username]</code> 切换用户</p>
+<p><code>exit</code> 回退到之前的用户</p>
+<p><code>whomi</code> 查看当前用户</p>
+<p><code>groupadd [groupname]</code> 创建用户组</p>
+<p><code>groupdel [groupname]</code> 删除用户组</p>
+<p><code>useradd -g [groupname] [username]</code> 在组内创建用户</p>
+<p><code>usermod -g [groupname] [username]</code> 将用户修改到组</p>
+<h4 id="其他指令"><a href="#其他指令" class="headerlink" title="其他指令"></a>其他指令</h4><p><code>init 012346</code> 指定运行级别</p>
+<p><code>man [option]</code> 帮助 </p>
+<p><code>cp source dest</code> 拷贝文件到指定的目录</p>
+<p>​    <code>-r</code> 递归复制整个文件夹</p>
+<p><code>\cp</code> 强制覆盖已经存在的文件</p>
+<p><code>mv</code>   <strong>移动</strong>或这重命名文件（路径相同）</p>
+<p><code>cat</code>  浏览文件（以只读的方式）</p>
+<h2 id="运行级别"><a href="#运行级别" class="headerlink" title="运行级别"></a>运行级别</h2><h4 id="运行级别说明"><a href="#运行级别说明" class="headerlink" title="运行级别说明"></a>运行级别说明</h4><blockquote>
+<p>0 ：关机</p>
+<p>1：单用户（找回丢失密码）</p>
+<p>2：多用状态没有网络服务</p>
+<p>3：多用户状态有网络服务</p>
+<p>4：系统未使用保留给用户</p>
+<p>5：图形界面</p>
+<p>6：系统重启</p>
+<p><code>etc/initlab</code> 系统运行级别配置文件</p>
+</blockquote>
+<h2 id="相关文件"><a href="#相关文件" class="headerlink" title="相关文件"></a>相关文件</h2><p><code>/etc/passwd</code> 用户配置文件（用户信息）</p>
+<p><code>/etc/group</code> 组配置文件（组信息）</p>
+<p><code>/etc/shadow</code> 口令配置文件（密码和登录信息，加密）</p>
+<p><code>tar -zxvf</code>解压文件<code>tar.gz</code></p>
+</section>
+</article>
+
+<section class="prev-next card slide-in-right">
+	
+		<a href="/2020/07/09/mysql常用命令/" class="link prev" title="mysql常用命令">
+			<span class="hover-underline-animation">&larr; mysql常用命令</span>
+		</a>
+	
+	
+		<a href="/2020/07/09/leetcode题目类型总结/" class="link next" title="leetcode题目类型总结">
+			<span class="hover-underline-animation">leetcode题目类型总结 &rarr;</span>
+		</a>
+	
+</section>
+
+
+<section class="article-toc">
+  <div class="card uk-margin-remove-bottom">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux"><span class="toc-text">linux</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#实用指令"><span class="toc-text">实用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本命令"><span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户指令"><span class="toc-text">用户指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他指令"><span class="toc-text">其他指令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行级别"><span class="toc-text">运行级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#运行级别说明"><span class="toc-text">运行级别说明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关文件"><span class="toc-text">相关文件</span></a></li></ol></li></ol>
+  </div>
+</section>
+
+<section class="article slide-in-right">
+  <div class="loader" id="loader">
+    <svg viewBox="0 0 50 50">
+      <circle class="ring" cx="25" cy="25" r="20"></circle>
+      <circle class="ball" cx="25" cy="5" r="3.5"></circle>
+    </svg>
+  </div>
+
+  <div class="comment" id="utteranc"></div>
+  <noscript>Please activate JavaScript for normal use of comments</noscript>
+</section>
+
+<a class="card back-to-top" id="backTop">&UpArrow;</a>
+</main>
+
+    
+
+    <script>
+	window.COLD_STONE = {
+		root: "/",
+		author: "李鹏辉" || '',
+		gaid: "xxxxxx" || '',
+		repo: "xxxx" || '',
+	}
+</script>
+
+
+
+
+	<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad()</script>
+
+
+<script src="/scripts/busuanzi.js" referrerpolicy="origin"></script>
+
+<script src="/scripts/cold-stone.js"></script>
+
+
+
+  <script src="//www.googletagmanager.com/gtag/js?id=xxxxxx"></script>
+
+  <script>
+	window.dataLayer = window.dataLayer || []
+	function gtag() {
+		dataLayer.push(arguments)
+	}
+	gtag('js', new Date())
+	gtag('config', window.COLD_STONE.gaid)
+  </script>
+
+
+  </body>
+</html>

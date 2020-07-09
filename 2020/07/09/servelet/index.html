@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#333333">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keyword"  content="">
+    <meta name="description" content="@lipenghui">
+    <title>servelet - xxxxx</title>
+    <base href="/">
+    <link rel="preconnect" href="//cdn.bootcss.com">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-light.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-dark.min.css" rel="stylesheet" media="screen and (prefers-color-scheme: dark)">
+    <!-- UIkit CSS -->
+    <link href="https://cdn.bootcss.com/uikit/3.2.0/css/uikit.min.css" rel="stylesheet">
+    <!-- UIkit JS -->
+    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit.min.js" async></script>
+    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit-icons.min.js" async></script>
+    
+<link rel="stylesheet" href="/styles/cold-stone.css">
+
+    <noscript>
+      <p class="text-center">你的浏览器还没开启 Javascript 功能！</p>
+    </noscript>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    
+
+    <header class="header" uk-sticky="top: 100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+  <nav class="wrapper header-content">
+    <div class="nav-overlay uk-navbar-left">
+      <h1 class="title nav-list-item uk-logo" data-link="/">
+        
+        <a href="/" data-link="/">xinkong2053.gihub.io</a>
+        
+      </h1>
+
+      <ul class="nav-list">
+        
+        <li class="nav-list-item" data-link="/categories/">
+          <a class="nav-list-link" href="/categories">CATEGORIES</a>
+        </li>
+        
+        
+        <li class="nav-list-item" data-link="/about/">
+          <a class="nav-list-link" href="/about/">ABOUT</a>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+      <div class="uk-navbar-right translate-x">
+        <a class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
+      </div>
+    
+  </nav>
+</header>
+
+<div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
+  <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+    <button class="uk-modal-close-full" type="button" uk-close></button>
+    <form class="uk-search uk-search-large search-form" action="//google.com/search" method="get" accept-charset="UTF-8"
+      target="_blank">
+      <input class="uk-search-input search-form-input" type="search" name="q" placeholder="Search"
+        autofocus autocomplete="false">
+      <input type="hidden" name="sitesearch" value="https://xingkong2053.gihub.io">
+    </form>
+  </div>
+</div>
+
+
+    <main class="main wrapper"><article class="article slide-in-right uk-article">
+  <section class="article-header">
+    <h1 class="article-title uk-article-title">
+      servelet
+    </h1>
+    <p class="article-meta uk-article-meta">
+      <span class="meta-info">
+        <span>
+          Last Update&#58;<time class="post-time"
+            datetime="2019-12-10">2019-12-10</time>
+        </span>
+        <span>Reading Time&#58; 5 min</span>
+        <span class="hide" id="busuanzi_container_page_pv">Readed&#58; <span
+            id="busuanzi_value_page_pv"></span></span>
+      </span>
+    </p>
+  </section>
+  <section class="article-content"><h1 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li><strong>请求</strong>：客户端根据用户地址信息将数据发送给服务器的过程</li>
+<li><strong>响应</strong>：服务器将请求的结果发送给浏览器的过程</li>
+</ul>
+<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><h3 id="http介绍"><a href="#http介绍" class="headerlink" title="http介绍"></a>http介绍</h3><p><img src="assets/1570336338489.png" alt="1570336338489"></p>
+<p><img src="assets/1570336532074.png" alt="1570336532074"></p>
+<h3 id="http交互流程"><a href="#http交互流程" class="headerlink" title="http交互流程"></a>http交互流程</h3><p><img src="assets/1570337461942.png" alt="1570337461942"></p>
+<h3 id="http请求格式"><a href="#http请求格式" class="headerlink" title="http请求格式"></a>http请求格式</h3><p><img src="assets/1570337623359.png" alt="1570337623359"></p>
+<h3 id="http请求方式"><a href="#http请求方式" class="headerlink" title="http请求方式"></a>http请求方式</h3><p><img src="assets/1570338356809.png" alt="1570338356809"></p>
+<p><img src="assets/1570338630929.png" alt="1570338630929"></p>
+<h3 id="http响应"><a href="#http响应" class="headerlink" title="http响应"></a>http响应</h3><p><img src="assets/1570338973514.png" alt="1570338973514"></p>
+<h3 id="http响应状态码"><a href="#http响应状态码" class="headerlink" title="http响应状态码"></a>http响应状态码</h3><p><img src="assets/1570339323003.png" alt="1570339323003"></p>
+<p><img src="assets/1570339343402.png" alt="1570339343402"></p>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>一个可以根据用户请求实时的调用执行对应的逻辑代码的一个<strong>容器</strong></li>
+<li>我们只需要将事先编好的逻辑处理代码根据规则放到服务器的指定位置，启动服务器，服务器会自动的根据接收到的<strong>请求</strong>自动的调用并<strong>执行对应的逻辑代码</strong>进行处理</li>
+</ul>
+<h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><h4 id="启动tomcat"><a href="#启动tomcat" class="headerlink" title="启动tomcat"></a>启动tomcat</h4><blockquote>
+<p>单击<code>tomcat/bin/startup.bat</code>文件</p>
+</blockquote>
+<p><img src="assets/1570347482980.png" alt="1570347482980"></p>
+<h2 id="servlet-1"><a href="#servlet-1" class="headerlink" title="servlet"></a>servlet</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>狭义的Servlet是指Java语言实现的一个接口</li>
+<li>广义的servlet是指实现了Servlet接口的类</li>
+<li>Servlet运行于支持Java的应用服务器中</li>
+<li>从原理上讲，servlet可以响应任何类型的请求，但是绝大多数的servlet只用来拓展基于HTTP协议的Web服务器</li>
+</ul>
+<h3 id="编写流程"><a href="#编写流程" class="headerlink" title="编写流程"></a>编写流程</h3><ol>
+<li>创建普通的java类并继承HttpServlet</li>
+<li>复写service方法</li>
+<li>在service方法中书写逻辑代码即可</li>
+<li>在<code>webRoot/WEB-INF/web.xml</code>文件中配置servlet</li>
+</ol>
+<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程"></a>运行流程</h3><p><img src="assets/1570350345544.png" alt="1570350345544"></p>
+<h3 id="访问流程"><a href="#访问流程" class="headerlink" title="访问流程"></a>访问流程</h3><p><img src="assets/1570362927533.png" alt="1570362927533"></p>
+<h3 id="HttpServlet类"><a href="#HttpServlet类" class="headerlink" title="HttpServlet类"></a>HttpServlet类</h3><p><img src="assets/1570533564334.png" alt="1570533564334"></p>
+<h3 id="Request对象"><a href="#Request对象" class="headerlink" title="Request对象"></a>Request对象</h3><h4 id="request对象的一些方法"><a href="#request对象的一些方法" class="headerlink" title="request对象的一些方法"></a>request对象的一些方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取请求头数据</span></span><br><span class="line"><span class="comment">//获取请求方式</span></span><br><span class="line">System.out.println(<span class="string">"Method: "</span>+req.getMethod());                            <span class="comment">//GET</span></span><br><span class="line"><span class="comment">//获取请求Url</span></span><br><span class="line">System.out.println(<span class="string">"URL: "</span>+req.getRequestURL());</span><br><span class="line">System.out.println(<span class="string">"URI: "</span>+req.getRequestURI());</span><br><span class="line"><span class="comment">//获取请求协议</span></span><br><span class="line">System.out.println(<span class="string">"Protocol: "</span>+req.getScheme());</span><br><span class="line"><span class="comment">//获取请求行键的枚举</span></span><br><span class="line">Enumeration&lt;String&gt; headerNames = req.getHeaderNames();</span><br><span class="line"><span class="keyword">while</span>(headerNames.hasMoreElements())&#123;</span><br><span class="line">    <span class="comment">//获得键名</span></span><br><span class="line">    String name = headerNames.nextElement();</span><br><span class="line">    <span class="comment">//通过键查找值</span></span><br><span class="line">    String value = req.getHeader(name);</span><br><span class="line">    System.out.println(name+<span class="string">"\t\t\t\t"</span>+value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取用户数据    get/post</span></span><br><span class="line">String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">String password = req.getParameter(<span class="string">"password"</span>);</span><br><span class="line">System.out.println(<span class="string">"username = "</span> + username);</span><br><span class="line">System.out.println(<span class="string">"password = "</span> + password);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取同键不同值的数据</span></span><br><span class="line">String[] favs = req.getParameterValues(<span class="string">"fav"</span>);</span><br><span class="line"><span class="comment">//先判断是否非空</span></span><br><span class="line"><span class="keyword">if</span>(favs!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span> (String fav : favs) &#123;</span><br><span class="line">        System.out.println(<span class="string">"fav = "</span> + fav);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取用户请求键的枚举集合</span></span><br><span class="line">Enumeration&lt;String&gt; names = req.getParameterNames();</span><br></pre></td></tr></table></figure>
+
+<h3 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//响应处理结果</span></span><br><span class="line"><span class="comment">//设置响应头</span></span><br><span class="line">resp.setHeader(<span class="string">"name"</span>,<span class="string">"lipenghui"</span>);</span><br><span class="line">resp.addHeader(<span class="string">"age"</span>,<span class="string">"18"</span>);</span><br><span class="line">resp.setHeader(<span class="string">"content-type"</span>,<span class="string">"text/html;charset=utf-8"</span>);   <span class="comment">//设置响应编码格式  text/html   text/xml    text/plain</span></span><br><span class="line"><span class="comment">//设置响应编码格式</span></span><br><span class="line">resp.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置响应状态码</span></span><br><span class="line"><span class="comment">/*resp.sendError(405,"Request is received,but the server throw it out");*/</span></span><br><span class="line"><span class="comment">//设置响应实体</span></span><br><span class="line">PrintWriter writer = resp.getWriter();</span><br><span class="line">writer.write(<span class="string">"&lt;h1&gt;日期：2019年10月8日&lt;/h1&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="assets/1570539358299.png" alt="1570539358299"></p>
+<h3 id="Servlet流程总结"><a href="#Servlet流程总结" class="headerlink" title="Servlet流程总结"></a>Servlet流程总结</h3><p><img src="assets/1570540463563.png" alt="1570540463563"></p>
+<p><img src="assets/1570540517896.png" alt="1570540517896"></p>
+<p><img src="assets/1570540604709.png" alt="1570540604709"></p>
+<h3 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3><p><img src="assets/1570541882198.png" alt="1570541882198"></p>
+<ul>
+<li><p>作用：使用多个servlet联动操作处理请求，这样避免代码冗余，让servlet的职责更加明确</p>
+</li>
+<li><p><code>req.getRequestDispatcher(&quot;/uri&quot;).forward(req.resp)</code></p>
+</li>
+</ul>
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><ul>
+<li>设置请求转发会造成表单数据重复提交</li>
+<li><code>resp.sendRedirect(&quot;/uri&quot;)</code></li>
+</ul>
+<p><img src="assets/1570621135569.png" alt="1570621135569"></p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><h3 id="Cookie概念"><a href="#Cookie概念" class="headerlink" title="Cookie概念"></a>Cookie概念</h3><ul>
+<li><p>作用：解决不同请求的数据共享问题</p>
+</li>
+<li><p>案例：网站3天免登录</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li><strong>浏览器端</strong>的数据存储技术</li>
+<li>存储的数据声明在服务器端</li>
+<li>临时存储：存储在浏览器的运行内存中，浏览器关闭即失效</li>
+<li>定时存储：设置了Cookie的有效期，存储在客户端的硬盘中，在有效期内符合路径要求的请求都附带该信息</li>
+<li>默认Cookie信息存储好之后，每次请求都会附带，除非设置有效路径</li>
+</ul>
+</li>
+</ul>
+<h3 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Cookie的创建和存储</span></span><br><span class="line">Cookie age = <span class="keyword">new</span> Cookie(<span class="string">"age"</span>, <span class="string">"18"</span>);</span><br><span class="line">age.setMaxAge(<span class="number">3</span>*<span class="number">24</span>*<span class="number">3600</span>);   <span class="comment">//设置Cookie有效期3*14*3600s</span></span><br><span class="line">age.setPath(<span class="string">"/cookie/abc"</span>); <span class="comment">//设置Cookie有效路径</span></span><br><span class="line">resp.addCookie(age);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取Cookie"><a href="#获取Cookie" class="headerlink" title="获取Cookie"></a>获取Cookie</h3><ul>
+<li>方法：<code>req.getCookies()</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Cookie[] cks = req.getCookies();</span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">if</span> (cks != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie ck : cks) &#123;</span><br><span class="line">        String name=ck.getName();</span><br><span class="line">        String value = ck.getValue();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><p>作用：解决同一用户不同请求的数据共享问题</p>
+</li>
+<li><p>原理：用户第一次访问服务器，服务器会创建一个session对象给此用户，并保证该session对象的JSESSIONID使用Cookie技术存储到浏览器中，保证用户的其他请求能够获取到同一个session对象，也保证了不同的请求能够获取到共享的数据。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>存储在服务器端</li>
+<li>服务器进行创建</li>
+<li>依赖Cookie技术</li>
+<li>一次会话</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><p><code>HttpSession hs=req.getSession();</code></p>
+<ul>
+<li>创建/获取Session对象 </li>
+<li>如果请求中有JSESSIONID，则返回其对应的session对象</li>
+<li>如果请求中没有JSESSIONID，则创建新的session对象，并近其JSESSIONID存储于Cookie中</li>
+</ul>
+</li>
+<li><p><code>hs.setMaxInactiveInterval(int seconds);</code></p>
+<ul>
+<li>默认为30分钟</li>
+<li>在指定的时间内session对象没有被使用则销毁，如果使用了则重新计时</li>
+</ul>
+</li>
+<li><p><code>hs.invalidate();</code></p>
+<ul>
+<li>设置session强制失效</li>
+<li>注意：JSESSIONID存储在了Cookie的临时存储空间中，<strong>浏览器关闭则失效</strong></li>
+</ul>
+</li>
+<li><p>存储和获取数据：</p>
+<ul>
+<li>存储：<code>hs.setAttribute(String name,Object value)</code></li>
+<li>获取：<code>Object hs.getAttribute(String name)</code></li>
+<li>注意：存储的动作和取出的动作发生在不同的请求中</li>
+</ul>
+</li>
+<li><p>使用时机：一般用户在登录web项目时一般会将用户的个人信息存储到Session中，供该用户的其他请求使用</p>
+</li>
+<li><p><strong>session失效处理</strong>：将用户请求中的JSESSIONID和获取到的SESSION对象的JSESSIONID进行对比，如果一致则session没有失效，如果不一致则证明session失效了。重定向到登录页面，让用户重新登录</p>
+</li>
+</ul>
+<h2 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h2><p><img src="assets/1570797380549.png" alt="1570797380549"></p>
+<p><img src="assets/1570797436199.png" alt="1570797436199"></p>
+<p><img src="assets/1570799309883.png" alt="1570799309883"></p>
+<p><img src="assets/1570799827398.png" alt="1570799827398"></p>
+<h2 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h2><p><img src="assets/1570866955792.png" alt="1570866955792"></p>
+<p><img src="assets/1570867057561.png" alt="1570867057561"></p>
+<h1 id="过滤器和监听器"><a href="#过滤器和监听器" class="headerlink" title="过滤器和监听器"></a>过滤器和监听器</h1><h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p><img src="assets/1570871335678.png" alt="1570871335678"></p>
+<h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>作用：对资源进行统一的管理（对资源预处理），保护servlet</li>
+</ul>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3></li>
+<li><p>浏览器发送请求到服务器，服务器接收到请求后，根据uri信息在web.xml中找到对应的过滤器执行doFilter方法，该方法对此次请求进行处理后如果符合要求则放行，放行后如果还有符合要求的过滤则继续进行过滤，找到执行对应的servlet进行请求处理。servlet对请求处理完毕后，也就是service方法结束了。还需继续返回响应的doFilter方法继续执行</p>
+</li>
+</ul>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><ul>
+<li>统一编码格式设置</li>
+<li>session管理</li>
+<li>权限管理</li>
+<li>资源管理（统一水印，和谐词汇）</li>
+</ul>
+</section>
+</article>
+
+<section class="prev-next card slide-in-right">
+	
+		<a href="/2020/07/09/VUEJS/" class="link prev" title="VUEJS">
+			<span class="hover-underline-animation">&larr; VUEJS</span>
+		</a>
+	
+	
+		<a href="/2020/07/09/redis命令/" class="link next" title="redis命令">
+			<span class="hover-underline-animation">redis命令 &rarr;</span>
+		</a>
+	
+</section>
+
+
+<section class="article-toc">
+  <div class="card uk-margin-remove-bottom">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#servlet"><span class="toc-text">servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-text">基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http"><span class="toc-text">http</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http介绍"><span class="toc-text">http介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http交互流程"><span class="toc-text">http交互流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http请求格式"><span class="toc-text">http请求格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http请求方式"><span class="toc-text">http请求方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http响应"><span class="toc-text">http响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http响应状态码"><span class="toc-text">http响应状态码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器"><span class="toc-text">服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tomcat"><span class="toc-text">tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#启动tomcat"><span class="toc-text">启动tomcat</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#servlet-1"><span class="toc-text">servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-1"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写流程"><span class="toc-text">编写流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行流程"><span class="toc-text">运行流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问流程"><span class="toc-text">访问流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpServlet类"><span class="toc-text">HttpServlet类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Request对象"><span class="toc-text">Request对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#request对象的一些方法"><span class="toc-text">request对象的一些方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Response对象"><span class="toc-text">Response对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet流程总结"><span class="toc-text">Servlet流程总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求转发"><span class="toc-text">请求转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重定向"><span class="toc-text">重定向</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie"><span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie概念"><span class="toc-text">Cookie概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Cookie"><span class="toc-text">设置Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取Cookie"><span class="toc-text">获取Cookie</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Session"><span class="toc-text">Session</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-2"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ServletContext"><span class="toc-text">ServletContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-xml"><span class="toc-text">web.xml</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#过滤器和监听器"><span class="toc-text">过滤器和监听器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-3"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-1"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行"><span class="toc-text">执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例"><span class="toc-text">案例</span></a></li></ol></li></ol></li></ol>
+  </div>
+</section>
+
+<section class="article slide-in-right">
+  <div class="loader" id="loader">
+    <svg viewBox="0 0 50 50">
+      <circle class="ring" cx="25" cy="25" r="20"></circle>
+      <circle class="ball" cx="25" cy="5" r="3.5"></circle>
+    </svg>
+  </div>
+
+  <div class="comment" id="utteranc"></div>
+  <noscript>Please activate JavaScript for normal use of comments</noscript>
+</section>
+
+<a class="card back-to-top" id="backTop">&UpArrow;</a>
+</main>
+
+    
+
+    <script>
+	window.COLD_STONE = {
+		root: "/",
+		author: "李鹏辉" || '',
+		gaid: "xxxxxx" || '',
+		repo: "xxxx" || '',
+	}
+</script>
+
+
+
+
+	<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad()</script>
+
+
+<script src="/scripts/busuanzi.js" referrerpolicy="origin"></script>
+
+<script src="/scripts/cold-stone.js"></script>
+
+
+
+  <script src="//www.googletagmanager.com/gtag/js?id=xxxxxx"></script>
+
+  <script>
+	window.dataLayer = window.dataLayer || []
+	function gtag() {
+		dataLayer.push(arguments)
+	}
+	gtag('js', new Date())
+	gtag('config', window.COLD_STONE.gaid)
+  </script>
+
+
+  </body>
+</html>

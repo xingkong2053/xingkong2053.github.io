@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#333333">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keyword"  content="">
+    <meta name="description" content="@lipenghui">
+    <title>Intelij idea创建javaweb工程 - xxxxx</title>
+    <base href="/">
+    <link rel="preconnect" href="//cdn.bootcss.com">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-light.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-dark.min.css" rel="stylesheet" media="screen and (prefers-color-scheme: dark)">
+    <!-- UIkit CSS -->
+    <link href="https://cdn.bootcss.com/uikit/3.2.0/css/uikit.min.css" rel="stylesheet">
+    <!-- UIkit JS -->
+    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit.min.js" async></script>
+    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit-icons.min.js" async></script>
+    
+<link rel="stylesheet" href="/styles/cold-stone.css">
+
+    <noscript>
+      <p class="text-center">你的浏览器还没开启 Javascript 功能！</p>
+    </noscript>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    
+
+    <header class="header" uk-sticky="top: 100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+  <nav class="wrapper header-content">
+    <div class="nav-overlay uk-navbar-left">
+      <h1 class="title nav-list-item uk-logo" data-link="/">
+        
+        <a href="/" data-link="/">xinkong2053.gihub.io</a>
+        
+      </h1>
+
+      <ul class="nav-list">
+        
+        <li class="nav-list-item" data-link="/categories/">
+          <a class="nav-list-link" href="/categories">CATEGORIES</a>
+        </li>
+        
+        
+        <li class="nav-list-item" data-link="/about/">
+          <a class="nav-list-link" href="/about/">ABOUT</a>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+      <div class="uk-navbar-right translate-x">
+        <a class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
+      </div>
+    
+  </nav>
+</header>
+
+<div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
+  <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+    <button class="uk-modal-close-full" type="button" uk-close></button>
+    <form class="uk-search uk-search-large search-form" action="//google.com/search" method="get" accept-charset="UTF-8"
+      target="_blank">
+      <input class="uk-search-input search-form-input" type="search" name="q" placeholder="Search"
+        autofocus autocomplete="false">
+      <input type="hidden" name="sitesearch" value="https://xingkong2053.gihub.io">
+    </form>
+  </div>
+</div>
+
+
+    <main class="main wrapper"><article class="article slide-in-right uk-article">
+  <section class="article-header">
+    <h1 class="article-title uk-article-title">
+      Intelij idea创建javaweb工程
+    </h1>
+    <p class="article-meta uk-article-meta">
+      <span class="meta-info">
+        <span>
+          Last Update&#58;<time class="post-time"
+            datetime="2019-10-07">2019-10-07</time>
+        </span>
+        <span>Reading Time&#58; 2 min</span>
+        <span class="hide" id="busuanzi_container_page_pv">Readed&#58; <span
+            id="busuanzi_value_page_pv"></span></span>
+      </span>
+    </p>
+  </section>
+  <section class="article-content"><h1 id="Intelij-idea创建Java-Web工程并测试Servlet"><a href="#Intelij-idea创建Java-Web工程并测试Servlet" class="headerlink" title="Intelij idea创建Java Web工程并测试Servlet"></a>Intelij idea创建Java Web工程并测试Servlet</h1><h2 id="创建并设置Java-web工程"><a href="#创建并设置Java-web工程" class="headerlink" title="创建并设置Java web工程"></a>创建并设置Java web工程</h2><h3 id="一些信息"><a href="#一些信息" class="headerlink" title="一些信息"></a>一些信息</h3><ul>
+<li>idea版本：2019.2.1</li>
+<li>jdk版本：1.8.0</li>
+<li>tomcat版本：9.0.24</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>创建web工程</p>
+<p>1.1  File–&gt;New–&gt;Project</p>
+<p><img src="assets/1570446068167.png" alt="1570446068167"></p>
+<p>1.2  勾选Web Application</p>
+<p><img src="assets/1570446181429.png" alt="1570446181429"></p>
+<p>1.3  填写名称</p>
+<p><img src="assets/1570446307360.png" alt="1570446307360"></p>
+</li>
+<li><p>Web工程设置</p>
+<p>2.1 在WEB-INF目录添加<code>classes</code> <code>lib</code> 两个文件夹</p>
+<p><img src="assets/1570446629009.png" alt="1570446629009"></p>
+<p>2.2 File–&gt;Project Structure，进入Project Structure窗口</p>
+<p><img src="assets/1570446740899.png" alt="1570446740899"></p>
+<p>2.3  选择modules–&gt;paths选项卡，勾选<code>Use module compile output path</code>，并将<code>Output path</code>和<code>Test output path</code>改为之前创建的classes目录</p>
+<p><img src="assets/1570447004346.png" alt="1570447004346"></p>
+<p>2.4  选择modules–&gt;Dependencies，点击右侧<code>+</code>号，选择<code>JARs or derectories</code>，选择创建的lib目录</p>
+<p><img src="assets/1570447239933.png" alt="1570447239933"></p>
+<p><img src="assets/1570447278329.png" alt="1570447278329"></p>
+<p><img src="assets/1570447298449.png" alt="1570447298449"></p>
+<p>2.5 配置打包方式：点击Artifacts选项卡，勾选<code>Include in project build</code>和<code>Show content of elements</code>其他保持默认</p>
+<p><img src="assets/1570447666611.png" alt="1570447666611"></p>
+</li>
+<li><p>tomcat配置</p>
+<p>3.1 在窗口的右上角点击<code>Add Configration...</code>，点击<code>+</code>号，选择tomcat–&gt;local，添加tomcat容器</p>
+<p><img src="assets/1570448049111.png" alt="1570448049111"></p>
+<p><img src="assets/1570448118140.png" alt="1570448118140"></p>
+<p><img src="assets/1570448315059.png" alt="1570448315059"></p>
+<p>3.2 选择<code>Deployment</code> 选项卡，选择<code>+</code>号，选择<code>Artifact...</code>，并修改<code>Application context</code></p>
+<p><img src="assets/1570448582544.png" alt="1570448582544"></p>
+<p><img src="assets/1570448766983.png" alt="1570448766983"></p>
+</li>
+</ol>
+<h2 id="编写Servlet类进行测试"><a href="#编写Servlet类进行测试" class="headerlink" title="编写Servlet类进行测试"></a>编写Servlet类进行测试</h2><ol>
+<li>在<code>src</code>文件夹下创建类<code>demo01</code></li>
+</ol>
+<p><img src="assets/1570449110860.png" alt="1570449110860"></p>
+<ol start="2">
+<li><p>将该类继承<code>HttpServlet</code>类并复写其中的<code>service</code>方法，代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.testservlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        resp.getWriter().write(<span class="string">"hello world"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在WEB-INF下的<code>web.xml</code>文件中添加如下内容</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.penghui.testservlet.demo01<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>点击窗口右上角的启动按钮启动tomcat服务器，可以看到<code>WEB-INF/classes</code>文件夹下有编译后的文件产生</p>
+<pre><code>![1570449818819](assets/1570449818819.png)</code></pre></li>
+<li><p>打开浏览器并输入<code>http://localhost:8080/webapp/hello</code></p>
+</li>
+</ol>
+<p><img src="assets/1570449981786.png" alt="1570449981786"></p>
+</section>
+</article>
+
+<section class="prev-next card slide-in-right">
+	
+		<a href="/2020/07/09/javaNet/" class="link prev" title="javaNet">
+			<span class="hover-underline-animation">&larr; javaNet</span>
+		</a>
+	
+	
+		<a class="link-disabled link next">Not More &rarr;</a>
+	
+</section>
+
+
+<section class="article-toc">
+  <div class="card uk-margin-remove-bottom">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Intelij-idea创建Java-Web工程并测试Servlet"><span class="toc-text">Intelij idea创建Java Web工程并测试Servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建并设置Java-web工程"><span class="toc-text">创建并设置Java web工程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一些信息"><span class="toc-text">一些信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写Servlet类进行测试"><span class="toc-text">编写Servlet类进行测试</span></a></li></ol></li></ol>
+  </div>
+</section>
+
+<section class="article slide-in-right">
+  <div class="loader" id="loader">
+    <svg viewBox="0 0 50 50">
+      <circle class="ring" cx="25" cy="25" r="20"></circle>
+      <circle class="ball" cx="25" cy="5" r="3.5"></circle>
+    </svg>
+  </div>
+
+  <div class="comment" id="utteranc"></div>
+  <noscript>Please activate JavaScript for normal use of comments</noscript>
+</section>
+
+<a class="card back-to-top" id="backTop">&UpArrow;</a>
+</main>
+
+    
+
+    <script>
+	window.COLD_STONE = {
+		root: "/",
+		author: "李鹏辉" || '',
+		gaid: "xxxxxx" || '',
+		repo: "xxxx" || '',
+	}
+</script>
+
+
+
+
+	<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad()</script>
+
+
+<script src="/scripts/busuanzi.js" referrerpolicy="origin"></script>
+
+<script src="/scripts/cold-stone.js"></script>
+
+
+
+  <script src="//www.googletagmanager.com/gtag/js?id=xxxxxx"></script>
+
+  <script>
+	window.dataLayer = window.dataLayer || []
+	function gtag() {
+		dataLayer.push(arguments)
+	}
+	gtag('js', new Date())
+	gtag('config', window.COLD_STONE.gaid)
+  </script>
+
+
+  </body>
+</html>

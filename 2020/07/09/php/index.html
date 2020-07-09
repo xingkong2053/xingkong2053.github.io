@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#333333">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keyword"  content="">
+    <meta name="description" content="@lipenghui">
+    <title>php - xxxxx</title>
+    <base href="/">
+    <link rel="preconnect" href="//cdn.bootcss.com">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-light.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-dark.min.css" rel="stylesheet" media="screen and (prefers-color-scheme: dark)">
+    <!-- UIkit CSS -->
+    <link href="https://cdn.bootcss.com/uikit/3.2.0/css/uikit.min.css" rel="stylesheet">
+    <!-- UIkit JS -->
+    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit.min.js" async></script>
+    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit-icons.min.js" async></script>
+    
+<link rel="stylesheet" href="/styles/cold-stone.css">
+
+    <noscript>
+      <p class="text-center">你的浏览器还没开启 Javascript 功能！</p>
+    </noscript>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    
+
+    <header class="header" uk-sticky="top: 100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+  <nav class="wrapper header-content">
+    <div class="nav-overlay uk-navbar-left">
+      <h1 class="title nav-list-item uk-logo" data-link="/">
+        
+        <a href="/" data-link="/">xinkong2053.gihub.io</a>
+        
+      </h1>
+
+      <ul class="nav-list">
+        
+        <li class="nav-list-item" data-link="/categories/">
+          <a class="nav-list-link" href="/categories">CATEGORIES</a>
+        </li>
+        
+        
+        <li class="nav-list-item" data-link="/about/">
+          <a class="nav-list-link" href="/about/">ABOUT</a>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+      <div class="uk-navbar-right translate-x">
+        <a class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
+      </div>
+    
+  </nav>
+</header>
+
+<div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
+  <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+    <button class="uk-modal-close-full" type="button" uk-close></button>
+    <form class="uk-search uk-search-large search-form" action="//google.com/search" method="get" accept-charset="UTF-8"
+      target="_blank">
+      <input class="uk-search-input search-form-input" type="search" name="q" placeholder="Search"
+        autofocus autocomplete="false">
+      <input type="hidden" name="sitesearch" value="https://xingkong2053.gihub.io">
+    </form>
+  </div>
+</div>
+
+
+    <main class="main wrapper"><article class="article slide-in-right uk-article">
+  <section class="article-header">
+    <h1 class="article-title uk-article-title">
+      php
+    </h1>
+    <p class="article-meta uk-article-meta">
+      <span class="meta-info">
+        <span>
+          Last Update&#58;<time class="post-time"
+            datetime="2020-07-02">2020-07-02</time>
+        </span>
+        <span>Reading Time&#58; 1 min</span>
+        <span class="hide" id="busuanzi_container_page_pv">Readed&#58; <span
+            id="busuanzi_value_page_pv"></span></span>
+      </span>
+    </p>
+  </section>
+  <section class="article-content"><h1 id="php"><a href="#php" class="headerlink" title="php"></a>php</h1><h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常量的定义</span></span><br><span class="line"><span class="comment">//方式1</span></span><br><span class="line">define(<span class="string">'PI'</span>,<span class="number">3.14</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式2</span></span><br><span class="line"><span class="keyword">const</span> PI <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//两种定义方式的访问权限不同</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//常量的使用</span></span><br><span class="line"><span class="keyword">echo</span> PI;</span><br><span class="line"><span class="keyword">echo</span> constant(<span class="string">'PI'</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="系统常量"><a href="#系统常量" class="headerlink" title="系统常量"></a>系统常量</h2><table>
+<thead>
+<tr>
+<th>常量名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PHP_VERSION</td>
+<td>PHP版本</td>
+</tr>
+<tr>
+<td>PHP_INT_SIZE</td>
+<td>PHP整形大小</td>
+</tr>
+<tr>
+<td>PHP_INT_MAX</td>
+<td>整形的最大值</td>
+</tr>
+<tr>
+<td><code>__DIR__</code></td>
+<td>当前被执行的脚本的绝对路径</td>
+</tr>
+<tr>
+<td><code>__FILE__</code></td>
+<td>当前被执行的脚本的绝对路径 （带自己的名字）</td>
+</tr>
+<tr>
+<td><code>__LINE__</code></td>
+<td>当前所属的行数</td>
+</tr>
+<tr>
+<td><code>__NAMESPACE__</code></td>
+<td>当前所属的命名空间</td>
+</tr>
+<tr>
+<td><code>__CLASS__</code></td>
+<td>当前所属的类</td>
+</tr>
+</tbody></table>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
+<li><p>强制转换</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$a=<span class="string">'0.01'</span>;</span><br><span class="line">	$b=(float)$a;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>字符串转换规则</p>
+<ul>
+<li>以字母开头的字符串永远为0</li>
+</ul>
+</li>
+<li><p>以数字开头的字符串，取到碰到的字符串为止</p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$a=<span class="string">'abc0.1.1'</span>;</span><br><span class="line">$b=<span class="string">'0.1.1abc'</span>;</span><br><span class="line"><span class="comment">//自动转换</span></span><br><span class="line"><span class="keyword">echo</span> $a+$b	<span class="comment">//0.1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Gettype(var1)</code> 获取类型，得到类型名字符串</p>
+</li>
+<li><p><code>Settype(var1,type)</code> 设定原数据的数据类型，返回ture/false</p>
+</li>
+</ul>
+<h2 id="错误抑制符"><a href="#错误抑制符" class="headerlink" title="错误抑制符"></a>错误抑制符</h2><p><code>@(expresion)</code>中的式子就算出错也不会报错，例如<code>@(echo 10%0)</code></p>
+</section>
+</article>
+
+<section class="prev-next card slide-in-right">
+	
+		<a href="/2020/07/09/redis命令/" class="link prev" title="redis命令">
+			<span class="hover-underline-animation">&larr; redis命令</span>
+		</a>
+	
+	
+		<a href="/2020/07/09/nodejs学习笔记/" class="link next" title="nodejs学习笔记">
+			<span class="hover-underline-animation">nodejs学习笔记 &rarr;</span>
+		</a>
+	
+</section>
+
+
+<section class="article-toc">
+  <div class="card uk-margin-remove-bottom">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#php"><span class="toc-text">php</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常量"><span class="toc-text">常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统常量"><span class="toc-text">系统常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类型转换"><span class="toc-text">类型转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误抑制符"><span class="toc-text">错误抑制符</span></a></li></ol></li></ol>
+  </div>
+</section>
+
+<section class="article slide-in-right">
+  <div class="loader" id="loader">
+    <svg viewBox="0 0 50 50">
+      <circle class="ring" cx="25" cy="25" r="20"></circle>
+      <circle class="ball" cx="25" cy="5" r="3.5"></circle>
+    </svg>
+  </div>
+
+  <div class="comment" id="utteranc"></div>
+  <noscript>Please activate JavaScript for normal use of comments</noscript>
+</section>
+
+<a class="card back-to-top" id="backTop">&UpArrow;</a>
+</main>
+
+    
+
+    <script>
+	window.COLD_STONE = {
+		root: "/",
+		author: "李鹏辉" || '',
+		gaid: "xxxxxx" || '',
+		repo: "xxxx" || '',
+	}
+</script>
+
+
+
+
+	<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad()</script>
+
+
+<script src="/scripts/busuanzi.js" referrerpolicy="origin"></script>
+
+<script src="/scripts/cold-stone.js"></script>
+
+
+
+  <script src="//www.googletagmanager.com/gtag/js?id=xxxxxx"></script>
+
+  <script>
+	window.dataLayer = window.dataLayer || []
+	function gtag() {
+		dataLayer.push(arguments)
+	}
+	gtag('js', new Date())
+	gtag('config', window.COLD_STONE.gaid)
+  </script>
+
+
+  </body>
+</html>
