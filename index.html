@@ -1,509 +1,1906 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="referrer" content="no-referrer">
-    <meta name="theme-color" content="#333333">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="keyword"  content="">
-    <meta name="description" content="@lipenghui">
-    <title>xxxxx</title>
-    <base href="/">
-    <link rel="preconnect" href="//cdn.bootcss.com">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="shortcut icon" href="/icons/icon-72x72.png">
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
-    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-light.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-dark.min.css" rel="stylesheet" media="screen and (prefers-color-scheme: dark)">
-    <!-- UIkit CSS -->
-    <link href="https://cdn.bootcss.com/uikit/3.2.0/css/uikit.min.css" rel="stylesheet">
-    <!-- UIkit JS -->
-    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit.min.js" async></script>
-    <script src="https://cdn.bootcss.com/uikit/3.2.0/js/uikit-icons.min.js" async></script>
-    
-<link rel="stylesheet" href="/styles/cold-stone.css">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#aaaa">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/site-icon/svg/MrYao02.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#aaaa">
 
-    <noscript>
-      <p class="text-center">你的浏览器还没开启 Javascript 功能！</p>
-    </noscript>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<link rel="stylesheet" href="/css/main.css">
 
-  <body>
-    
-      <canvas class="prelude" id="prelude"></canvas>
 
-    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
-    <header class="header" uk-sticky="top: 100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
-  <nav class="wrapper header-content">
-    <div class="nav-overlay uk-navbar-left">
-      <h1 class="title nav-list-item uk-logo" data-link="/">
-        
-        <a href="/" data-link="/">xinkong2053.gihub.io</a>
-        
-      </h1>
 
-      <ul class="nav-list">
-        
-        <li class="nav-list-item" data-link="/categories/">
-          <a class="nav-list-link" href="/categories">CATEGORIES</a>
-        </li>
-        
-        
-        <li class="nav-list-item" data-link="/about/">
-          <a class="nav-list-link" href="/about/">ABOUT</a>
-        </li>
-        
-      </ul>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: ""
+    });
+  daovoice('update');
+  </script>
+
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xingkong2053.gihub.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+  <meta name="description" content="@lipenghui">
+<meta property="og:type" content="website">
+<meta property="og:title" content="xinkong2053.gihub.io">
+<meta property="og:url" content="https://xingkong2053.gihub.io/index.html">
+<meta property="og:site_name" content="xinkong2053.gihub.io">
+<meta property="og:description" content="@lipenghui">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="李鹏辉">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://xingkong2053.gihub.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false
+  };
+</script>
+
+  <title>xinkong2053.gihub.io</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
+  </div>
 
-    
-      <div class="uk-navbar-right">
-        <a class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
-      </div>
-    
-  </nav>
-</header>
+  <div class="site-meta">
 
-<div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
-  <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
-    <button class="uk-modal-close-full" type="button" uk-close></button>
-    <form class="uk-search uk-search-large search-form" action="//google.com/search" method="get" accept-charset="UTF-8"
-      target="_blank">
-      <input class="uk-search-input search-form-input" type="search" name="q" placeholder="Search"
-        autofocus autocomplete="false">
-      <input type="hidden" name="sitesearch" value="https://xingkong2053.gihub.io">
-    </form>
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xinkong2053.gihub.io</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
-    <main class="main wrapper">
-<section class="index-content">
-    <div class="index-post-list">
-        <ul class="index-list list-unstyled animate-list"
-            uk-scrollspy="target: > li; cls: uk-animation-slide-top-small;">
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/在远程服务器中安装并使用elasticsearch/">
-                        在远程服务器中安装并使用elasticsearch
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 344</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/解决虚拟机启动黑屏问题/">
-                        解决虚拟机启动黑屏问题
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 37</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/二叉查找树的实现/">
-                        二叉查找树的实现
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 2.5k</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/VUEJS/">
-                        VUEJS
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 46</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/servelet/">
-                        servelet
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 1.5k</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/redis命令/">
-                        redis命令
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 103</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/php/">
-                        php
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 259</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/nodejs学习笔记/">
-                        nodejs学习笔记
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 1.4k</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/mysql常用命令/">
-                        mysql常用命令
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 1.8k</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-            
-            <li class="animate-list__item card card-hover">
-                <h2 class="animate-list__title">
-                    <a class="index-post-link" href="/2020/07/09/linux学习/">
-                        linux学习
-                    </a>
-                </h2>
-                <p></p>
-                <p class="animate-list__desc">
-                    <span class="post-info">
-                        <span>Post&#58;</span>
-                        <time class="post-time"
-                            datetime="2020-07-09">2020-07-09</time>&nbsp;
-                        <span>Word Count&#58; 430</span>&nbsp;
-                        
-                        <span>Tags&#58; </span>
-                        <span class="meta-tags">
-                            
-                        </span>
-                        
-                    </span>
-                </p>
-            </li>
-                    </ul>
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-        
-        <ul class="list-unstyled pager">
-            <li class="left">
-                
-                <a class="link-disabled">&larr; previous</a>
-                
-            </li>
-            <li class="right">
-                
-                <a href="/page/2/">next &rarr;</a>
-                
-            </li>
-        </ul>
-        
-    </div>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
-    <aside class="index-aside">
-        <div class="card aside-tags">
-            <ul class="tags list-unstyled" uk-sortable="handle: .tag-item">
-                
-            </ul>
-        </div>
+  </li>
+        <li class="menu-item menu-item-tags">
 
-        <div class="card">
-            <ul class="archive-tag-list"><li class="archive-tag-list-item"><a class="archive-tag-list-link" href="/archives/2020/07/">2020-07</a><span class="archive-tag-list-count">15</span></li></ul>
-        </div>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
-        <div class="card">
-            <p class="subtitle hide" id="busuanzi_container_site_uv">
-                Blog Visit Count&#58; <span id="busuanzi_value_site_uv"></span>
-            </p>
-            <p class="subtitle">Blog Word Count&#58; 9.7k</p>
-        </div>
-    </aside>
-</section>
-</main>
+  </li>
+        <li class="menu-item menu-item-categories">
 
-    
-      <footer class="footer">
-  <svg class="wave" id="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path fill="#fff" fill-opacity="1"
-      d="M0,96L24,117.3C48,139,96,181,144,197.3C192,213,240,203,288,213.3C336,224,384,256,432,240C480,224,528,160,576,133.3C624,107,672,117,720,106.7C768,96,816,64,864,85.3C912,107,960,181,1008,202.7C1056,224,1104,192,1152,181.3C1200,171,1248,181,1296,154.7C1344,128,1392,64,1416,32L1440,0L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z">
-    </path>
-  </svg>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
-  <div class="footer-content wrapper">
-    <div class="footer-toggle">
-      <button class="menu-button dark-btn" data-theme="dark" aria-label="Switch to dark mode"
-        title="Switch to dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="feather feather-moon undefined">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
+  </li>
+        <li class="menu-item menu-item-notes">
 
-      <button class="menu-button light-btn" data-theme="light" aria-label="Switch to light mode"
-        title="Switch to light mode"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="feather feather-sun undefined">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-      </button>
-    </div>
+    <a href="/notes/" rel="section"><i class="fa fa-fw fa-book"></i>notes</a>
 
-    <p>Copyright &copy; 2019 &nbsp;</p>
-    <a class="theme-link" rel="noopener" href="https://github.com/xrr2016/hexo-theme-cold-stone" target="_blank">
-      Theme Cold Stone
-    </a>
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
   </div>
-</footer>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
-    <script>
-	window.COLD_STONE = {
-		root: "/",
-		author: "李鹏辉" || '',
-		gaid: "xxxxxx" || '',
-		repo: "xxxx" || '',
-	}
+  <a href="https://github.com/yaojusheng/hexo-theme-next" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/" class="post-title-link" itemprop="url">在远程服务器中安装并使用elasticsearch</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:51:28" itemprop="dateCreated datePublished" datetime="2020-07-09T20:51:28+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="在远程服务器中安装并使用ElasticSearch"><a href="#在远程服务器中安装并使用ElasticSearch" class="headerlink" title="在远程服务器中安装并使用ElasticSearch"></a>在远程服务器中安装并使用ElasticSearch</h1><p><strong>本人的系统是CentOS 7.6，Java jdk环境是1.8，运行于腾讯云上。这里写一下安装运行过程</strong></p>
+<h2 id="下载elasticsearch"><a href="#下载elasticsearch" class="headerlink" title="下载elasticsearch"></a>下载elasticsearch</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.0-linux-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p><code>最新版本链接：</code><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html</a></p>
+<h2 id="将其解压到-usr-local文件夹中"><a href="#将其解压到-usr-local文件夹中" class="headerlink" title="将其解压到/usr/local文件夹中"></a>将其解压到/usr/local文件夹中</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -vxf elasticsearch-7.8.0-linux-x86_64.tar.gz -C /usr/local</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改该文件中的config-elasticsearch-yml文件"><a href="#修改该文件中的config-elasticsearch-yml文件" class="headerlink" title="修改该文件中的config/elasticsearch.yml文件"></a>修改该文件中的config/elasticsearch.yml文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在文件夹下执行</span></span><br><span class="line">vim config/elasticsearch.yml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加如下字段</span></span><br><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span></span><br><span class="line"><span class="attr">http.port:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="使用普通的用户开启elasticsearch服务"><a href="#使用普通的用户开启elasticsearch服务" class="headerlink" title="使用普通的用户开启elasticsearch服务"></a>使用普通的用户开启elasticsearch服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 注意使用root账户开启服务会失败</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">添加账户(如果有普通的账户则不需要添加) es</span></span><br><span class="line">useradd es</span><br><span class="line">passwd es</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">添加权限</span></span><br><span class="line">chown -R es /usr/local/elasticsearch-7.8.0-linux-x86_64</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">使用es账户</span></span><br><span class="line">su es</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">进入bin文件夹</span></span><br><span class="line">cd /usr/local/elasticsearch-7.8.0-linux-x86_64/bin</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">开启服务</span></span><br><span class="line">./elasticsearch</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看es的基本信息"><a href="#查看es的基本信息" class="headerlink" title="查看es的基本信息"></a>查看es的基本信息</h2><ul>
+<li><p>命令行输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://127.0.0.1:9200</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或者是在浏览器上输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;&#123;&#123;主机ip地址&#125;&#125;:9200</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>显示下面json字符串则显示启动成功</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span> : <span class="string">"node-1"</span>,</span><br><span class="line">  <span class="attr">"cluster_name"</span> : <span class="string">"elasticsearch"</span>,</span><br><span class="line">  <span class="attr">"cluster_uuid"</span> : <span class="string">"iwyfejvHSziaaCAz9h-TLg"</span>,</span><br><span class="line">  <span class="attr">"version"</span> : &#123;</span><br><span class="line">    <span class="attr">"number"</span> : <span class="string">"7.8.0"</span>,</span><br><span class="line">    <span class="attr">"build_flavor"</span> : <span class="string">"default"</span>,</span><br><span class="line">    <span class="attr">"build_type"</span> : <span class="string">"tar"</span>,</span><br><span class="line">    <span class="attr">"build_hash"</span> : <span class="string">"757314695644ea9a1dc2fecd26d1a43856725e65"</span>,</span><br><span class="line">    <span class="attr">"build_date"</span> : <span class="string">"2020-06-14T19:35:50.234439Z"</span>,</span><br><span class="line">    <span class="attr">"build_snapshot"</span> : <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"lucene_version"</span> : <span class="string">"8.5.1"</span>,</span><br><span class="line">    <span class="attr">"minimum_wire_compatibility_version"</span> : <span class="string">"6.8.0"</span>,</span><br><span class="line">    <span class="attr">"minimum_index_compatibility_version"</span> : <span class="string">"6.0.0-beta1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"tagline"</span> : <span class="string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/%E8%A7%A3%E5%86%B3%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/%E8%A7%A3%E5%86%B3%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">解决虚拟机启动黑屏问题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="解决虚拟机启动黑屏，无法进入系统问题"><a href="#解决虚拟机启动黑屏，无法进入系统问题" class="headerlink" title="解决虚拟机启动黑屏，无法进入系统问题"></a>解决虚拟机启动黑屏，无法进入系统问题</h1><p>以管理员身份运行命令行，并输入<code>netsh winsock reset</code>，并重启</p>
+<p><img src="https://img-blog.csdnimg.cn/20181221171729327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjM0MjQ1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="post-title-link" itemprop="url">二叉查找树的实现</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="二叉查找树的实现"><a href="#二叉查找树的实现" class="headerlink" title="二叉查找树的实现"></a>二叉查找树的实现</h1><blockquote>
+<p>术语：</p>
+<p>二叉树（Binary Tree）是一种特殊的树，树中的每一个节点最多有两个节点，这两个这两个节点一个叫做左孩子，一个叫做右孩子</p>
+<p>二叉查找树（Binary Search Tree）是一颗二叉树，对于树上的每一个节点<code>x</code>，它的左子树上所有后代节点的值总是小于<code>x</code>的值，它的右子树上所有后代的值总是大于<code>x</code>的值</p>
+</blockquote>
+<h2 id="1-基本实现："><a href="#1-基本实现：" class="headerlink" title="1. 基本实现："></a>1. 基本实现：</h2><p>一般的BST都是以键值对的形式记录数据，本文为了简单起见，以字符串作为键的类型，以<code>Value</code>作为值的类型（Value为泛型类型，其类型在创建该树的时候指定）。感兴趣的可以看《算法（第四版）》</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Chapter3Search.ST2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BST</span>&lt;<span class="title">Value</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Node root;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String key;</span><br><span class="line">        <span class="keyword">private</span> Value value;</span><br><span class="line">        <span class="keyword">private</span> Node left;</span><br><span class="line">        <span class="keyword">private</span> Node right;</span><br><span class="line"></span><br><span class="line">        Node(String key,Value value)&#123;<span class="keyword">this</span>.key=key;<span class="keyword">this</span>.value=value;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">/*关于二叉查找树的一些方法，具体实现见下文*/</span></span><br><span class="line">    <span class="comment">//添加节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String key,Value value)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据键来获取值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Value <span class="title">get</span><span class="params">(String key)</span></span>&#123;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取键最小的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">min</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="keyword">null</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取键最大的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">max</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="keyword">null</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String key)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//对二叉树进行中序遍历</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Iterable&lt;String&gt; <span class="title">inorderTraverse</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="keyword">null</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-根据键查找值："><a href="#2-根据键查找值：" class="headerlink" title="2. 根据键查找值："></a>2. 根据键查找值：</h2><p>根据键查找记录。如果树包含该键则查找命中，返回键对应的值；如果不包含则查找未命中，返回null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据键来获取值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Value <span class="title">get</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> get(root,key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Value <span class="title">get</span><span class="params">(Node x,String key)</span></span>&#123;</span><br><span class="line">    <span class="comment">//在以x节点为根节点的树中查找key</span></span><br><span class="line">    <span class="comment">//如果能找到，则返回键对应的值，如果找不到则返回null</span></span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;                	<span class="comment">//如果当前节点为null，则直接返回null</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cmp=key.compareTo(x.key);           	<span class="comment">//比较当前节点和待找节点的key</span></span><br><span class="line">    <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>) 		<span class="keyword">return</span> get(x.right,key);    <span class="comment">//在当前节点的右子树中继续查找</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>) 	<span class="keyword">return</span> get(x.left,key);  	<span class="comment">//在当前节点的左子树中继续查找</span></span><br><span class="line">    <span class="keyword">else</span> 			<span class="keyword">return</span> x.value;             <span class="comment">//两者的key相等，则查找命中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-插入键值对："><a href="#3-插入键值对：" class="headerlink" title="3. 插入键值对："></a>3. 插入键值对：</h2><p>给出一个键值对，如果树中没有该键，则新建一个节点并将该节点挂到查找末尾的空链接上；如果树中有该键，则更新对应的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入新节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String key,Value value)</span></span>&#123;</span><br><span class="line">    root=add(root,key,value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">add</span><span class="params">(Node x,String key,Value value)</span></span>&#123;</span><br><span class="line">    <span class="comment">//在以x节点为根节点的树中插入节点</span></span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">new</span> Node(key,value);     	<span class="comment">//x为空，表示已经到达树的叶子节点</span></span><br><span class="line">    												<span class="comment">//则直接新键节点并挂在空链接上</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cmp=key.compareTo(x.key);               	<span class="comment">//比较将要插入的节点和节点x的key</span></span><br><span class="line">    <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>)       x.right=add(x.right,key,value); <span class="comment">//在x的右子树中插入节点</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>)  x.left=add(x.left,key,value);   <span class="comment">//在x的左子树中插入节点</span></span><br><span class="line">    <span class="keyword">else</span>            x.value=value;              	<span class="comment">//树已经有key对应的节点，则直接更新其值</span></span><br><span class="line">    <span class="keyword">return</span> x;                                   	<span class="comment">//返回节点x的引用;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-获取键最小的那个节点："><a href="#4-获取键最小的那个节点：" class="headerlink" title="4. 获取键最小的那个节点："></a>4. 获取键最小的那个节点：</h2><p>如果根节点的左链接为空，则树中最小节点即为根节点</p>
+<p>如果根节点的左链接不为空，则根节点的左子树中的最小节点即为全树的最小节点</p>
+<p>因此我们可以根据递归来找到最小节点</p>
+<p><em>获取最大节点的算法于此类似，区别就是递归节点的右子树</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取键最小的那个节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Node <span class="title">min</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> min(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">min</span><span class="params">(Node x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">return</span> min(x.left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-删除键最小的那个节点："><a href="#5-删除键最小的那个节点：" class="headerlink" title="5. 删除键最小的那个节点："></a>5. 删除键最小的那个节点：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除键最小的那个节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteMin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    root=deleteMin(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">deleteMin</span><span class="params">(Node x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) x=x.right;		<span class="comment">//如果x的左子节点为空，则说明x即为将要删除的最小节点</span></span><br><span class="line">    								<span class="comment">//此时将x引用（x父节点的左链接）赋予x的右子节点</span></span><br><span class="line">    								<span class="comment">//原来的节点因为没有指向它的引用而被垃圾回收</span></span><br><span class="line">    <span class="keyword">else</span> x.left=deleteMin(x.left);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-删除任意节点："><a href="#6-删除任意节点：" class="headerlink" title="6. 删除任意节点："></a>6. 删除任意节点：</h2><p>根据键删除二叉树的节点的算法比较复杂，基本步骤如下：</p>
+<ol>
+<li>找到要删除的节点，使用临时变量t指向该节点</li>
+<li>找到节点t右子树中的最小节点，使用临时变量x指向该节点</li>
+<li>使用deleteMin方法删除t右子树中的最小节点并恢复右子树</li>
+<li>x的左链接指向t的左子树，x的右链接指向t的右子树</li>
+<li>将x与t的父节点建立连接</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">    root=delete(root,key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">delete</span><span class="params">(Node x,String key)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;                    <span class="comment">//未找到键值为key的节点</span></span><br><span class="line">    <span class="keyword">int</span> cmp=key.compareTo(x.key);</span><br><span class="line">    <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>) x.right=delete(x.right,key);      <span class="comment">//从x的左节点删除节点</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>) x.left=delete(x.left,key);   <span class="comment">//从x的右节点删除节点</span></span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x.right==<span class="keyword">null</span>) <span class="keyword">return</span> x.left;        </span><br><span class="line">        <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) <span class="keyword">return</span> x.right;</span><br><span class="line">        Node t=x;</span><br><span class="line">        x=min(t.right);</span><br><span class="line">        x.right=deleteMin(t.right);				<span class="comment">//删除t的右子树中的最小节点并恢复右子树</span></span><br><span class="line">        x.left=t.left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-对二叉查找树进行中序遍历"><a href="#7-对二叉查找树进行中序遍历" class="headerlink" title="7. 对二叉查找树进行中序遍历"></a>7. 对二叉查找树进行中序遍历</h2><p>对二叉查找树的中序遍历会得到一个根据键有序节点的集合</p>
+<p>使用递归的方式进行遍历的代码并不复杂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对二叉树进行中序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Node&gt; <span class="title">inorderTraverse</span><span class="params">()</span></span>&#123;</span><br><span class="line">    List&lt;Node&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    inorderTraverse(root,list);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inorderTraverse</span><span class="params">(Node x,List&lt;Node&gt; list)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    inorderTraverse(x.left,list);</span><br><span class="line">    list.add(x);</span><br><span class="line">    inorderTraverse(x.right,list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-在控制台中打印该二叉查找树"><a href="#8-在控制台中打印该二叉查找树" class="headerlink" title="8. 在控制台中打印该二叉查找树"></a>8. 在控制台中打印该二叉查找树</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"***************************************"</span>);</span><br><span class="line">    print(root,<span class="number">0</span>);</span><br><span class="line">    System.out.println(<span class="string">"***************************************"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Node x,<span class="keyword">int</span> floor)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> ;</span><br><span class="line">    print(x.left,floor+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; floor; i++) &#123;</span><br><span class="line">        System.out.print(<span class="string">"----"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(x.key+<span class="string">" "</span>+x.value);</span><br><span class="line">    print(x.right,floor+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-测试用例"><a href="#9-测试用例" class="headerlink" title="9. 测试用例"></a>9. 测试用例</h2><p>例子中的键为String类型而值为Integer类型。测试用例接受在控制台以<code>$add string</code>的形式添加数据，string为key，对应的值为字符串添加的顺序，<code>$del string</code>为删除，<code>$show</code> 为打印，<code>$exit</code>为推出</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    BST&lt;Integer&gt; sibst = <span class="keyword">new</span> BST&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    String str;</span><br><span class="line">    <span class="keyword">boolean</span> flag=<span class="keyword">true</span>;</span><br><span class="line">    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    String[] words;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">        str=in.nextLine();</span><br><span class="line">        <span class="keyword">if</span>(str.equals(<span class="string">""</span>)) <span class="keyword">continue</span>;</span><br><span class="line">        words = str.split(<span class="string">" "</span>);</span><br><span class="line">        <span class="keyword">switch</span> (words[<span class="number">0</span>])&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"$exit"</span>: &#123;</span><br><span class="line">                flag=<span class="keyword">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"$add"</span>:&#123;</span><br><span class="line">                sibst.add(words[<span class="number">1</span>],i++);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"$del"</span>:&#123;</span><br><span class="line">                sibst.delete(words[<span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"$show"</span>:&#123;</span><br><span class="line">                sibst.print();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">"错误命令"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-完整的文件"><a href="#10-完整的文件" class="headerlink" title="10. 完整的文件"></a>10. 完整的文件</h2><p><code>BST.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BST</span>&lt;<span class="title">Value</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Node root;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String key;</span><br><span class="line">        <span class="keyword">private</span> Value value;</span><br><span class="line">        <span class="keyword">private</span> Node left;</span><br><span class="line">        <span class="keyword">private</span> Node right;</span><br><span class="line"></span><br><span class="line">        Node(String key,Value value)&#123;</span><br><span class="line">            <span class="keyword">this</span>.key=key;</span><br><span class="line">            <span class="keyword">this</span>.value=value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String key,Value value)</span></span>&#123;</span><br><span class="line">        root=add(root,key,value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">add</span><span class="params">(Node x,String key,Value value)</span></span>&#123;</span><br><span class="line">        <span class="comment">//在以x节点为根节点的树中插入节点</span></span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">new</span> Node(key,value);         <span class="comment">//x为空，表示已经到达树的叶子节点</span></span><br><span class="line">                                                        <span class="comment">//则直接新键节点并挂在空链接上</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> cmp=key.compareTo(x.key);                   <span class="comment">//比较将要插入的节点和节点x的key</span></span><br><span class="line">        <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>)       x.right=add(x.right,key,value); <span class="comment">//在x的右子树中插入节点</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>)  x.left=add(x.left,key,value);   <span class="comment">//在x的左子树中插入节点</span></span><br><span class="line">        <span class="keyword">else</span>            x.value=value;                  <span class="comment">//树已经有key对应的节点，则直接更新其值</span></span><br><span class="line">        <span class="keyword">return</span> x;                                       <span class="comment">//更新节点x;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据键来获取值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Value <span class="title">get</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> get(root,key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Value <span class="title">get</span><span class="params">(Node x,String key)</span></span>&#123;</span><br><span class="line">        <span class="comment">//在以x节点为根节点的树中查找key</span></span><br><span class="line">        <span class="comment">//如果能找到，则返回键对应的值，如果找不到则返回null</span></span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;                <span class="comment">//如果当前节点为null，则直接返回null</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> cmp=key.compareTo(x.key);           <span class="comment">//比较当前节点和待找节点的key</span></span><br><span class="line">        <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>) <span class="keyword">return</span> get(x.right,key);      <span class="comment">//在当前节点的右子树中继续查找</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>) <span class="keyword">return</span> get(x.left,key);  <span class="comment">//在当前节点的右子树中继续查找</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> x.value;                    <span class="comment">//两者的key相等，则查找命中</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取键最小的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">min</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> min(root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">min</span><span class="params">(Node x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">return</span> min(x.left);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除键最小的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteMin</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        root=deleteMin(root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">deleteMin</span><span class="params">(Node x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) x=x.right;</span><br><span class="line">        <span class="keyword">else</span> x.left=deleteMin(x.left);</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取键最大的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">max</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">        root=delete(root,key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">delete</span><span class="params">(Node x,String key)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;                    <span class="comment">//未找到键值为key的节点</span></span><br><span class="line">        <span class="keyword">int</span> cmp=key.compareTo(x.key);</span><br><span class="line">        <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>) x.right=delete(x.right,key);      <span class="comment">//从x的左节点删除节点</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>) x.left=delete(x.left,key);   <span class="comment">//从x的右节点删除节点</span></span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(x.right==<span class="keyword">null</span>) <span class="keyword">return</span> x.left;</span><br><span class="line">            <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) <span class="keyword">return</span> x.right;</span><br><span class="line">            Node t=x;</span><br><span class="line">            x=min(t.right);</span><br><span class="line">            x.right=deleteMin(t.right);</span><br><span class="line">            x.left=t.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//对二叉树进行中序遍历</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Node&gt; <span class="title">inorderTraverse</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        List&lt;Node&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        inorderTraverse(root,list);</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inorderTraverse</span><span class="params">(Node x,List&lt;Node&gt; list)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        inorderTraverse(x.left,list);</span><br><span class="line">        list.add(x);</span><br><span class="line">        inorderTraverse(x.right,list);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"***************************************"</span>);</span><br><span class="line">        print(root,<span class="number">0</span>);</span><br><span class="line">        System.out.println(<span class="string">"***************************************"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Node x,<span class="keyword">int</span> floor)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> ;</span><br><span class="line">        print(x.left,floor+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; floor; i++) &#123;</span><br><span class="line">            System.out.print(<span class="string">"----"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(x.key+<span class="string">" "</span>+x.value);</span><br><span class="line"></span><br><span class="line">        print(x.right,floor+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        BST&lt;Integer&gt; sibst = <span class="keyword">new</span> BST&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        String str;</span><br><span class="line">        <span class="keyword">boolean</span> flag=<span class="keyword">true</span>;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String[] words;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">            str=in.nextLine();</span><br><span class="line">            <span class="keyword">if</span>(str.equals(<span class="string">""</span>)) <span class="keyword">continue</span>;</span><br><span class="line">            words = str.split(<span class="string">" "</span>);</span><br><span class="line">            <span class="keyword">switch</span> (words[<span class="number">0</span>])&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">"$exit"</span>: &#123;</span><br><span class="line">                    flag=<span class="keyword">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">"$add"</span>:&#123;</span><br><span class="line">                    sibst.add(words[<span class="number">1</span>],i++);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">"$del"</span>:&#123;</span><br><span class="line">                    sibst.delete(words[<span class="number">1</span>]);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">"$show"</span>:&#123;</span><br><span class="line">                    sibst.print();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">default</span>:&#123;</span><br><span class="line">                    System.out.println(<span class="string">"错误命令"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/VUEJS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/VUEJS/" class="post-title-link" itemprop="url">VUEJS</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="VUEJS"><a href="#VUEJS" class="headerlink" title="VUEJS"></a>VUEJS</h1><h2 id="MVVM模式"><a href="#MVVM模式" class="headerlink" title="MVVM模式"></a>MVVM模式</h2><h3 id="MVVM拆分解释为："><a href="#MVVM拆分解释为：" class="headerlink" title="MVVM拆分解释为："></a>MVVM拆分解释为：</h3><ul>
+<li>Model:负责数据存储</li>
+<li>View:负责页面展示</li>
+<li>View Model:负责业务逻辑处理，对数据进行加工后交给视图展示</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/servelet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/servelet/" class="post-title-link" itemprop="url">servelet</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li><strong>请求</strong>：客户端根据用户地址信息将数据发送给服务器的过程</li>
+<li><strong>响应</strong>：服务器将请求的结果发送给浏览器的过程</li>
+</ul>
+<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><h3 id="http介绍"><a href="#http介绍" class="headerlink" title="http介绍"></a>http介绍</h3><p><img src="assets/1570336338489.png" alt="1570336338489"></p>
+<p><img src="assets/1570336532074.png" alt="1570336532074"></p>
+<h3 id="http交互流程"><a href="#http交互流程" class="headerlink" title="http交互流程"></a>http交互流程</h3><p><img src="assets/1570337461942.png" alt="1570337461942"></p>
+<h3 id="http请求格式"><a href="#http请求格式" class="headerlink" title="http请求格式"></a>http请求格式</h3><p><img src="assets/1570337623359.png" alt="1570337623359"></p>
+<h3 id="http请求方式"><a href="#http请求方式" class="headerlink" title="http请求方式"></a>http请求方式</h3><p><img src="assets/1570338356809.png" alt="1570338356809"></p>
+<p><img src="assets/1570338630929.png" alt="1570338630929"></p>
+<h3 id="http响应"><a href="#http响应" class="headerlink" title="http响应"></a>http响应</h3><p><img src="assets/1570338973514.png" alt="1570338973514"></p>
+<h3 id="http响应状态码"><a href="#http响应状态码" class="headerlink" title="http响应状态码"></a>http响应状态码</h3><p><img src="assets/1570339323003.png" alt="1570339323003"></p>
+<p><img src="assets/1570339343402.png" alt="1570339343402"></p>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>一个可以根据用户请求实时的调用执行对应的逻辑代码的一个<strong>容器</strong></li>
+<li>我们只需要将事先编好的逻辑处理代码根据规则放到服务器的指定位置，启动服务器，服务器会自动的根据接收到的<strong>请求</strong>自动的调用并<strong>执行对应的逻辑代码</strong>进行处理</li>
+</ul>
+<h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><h4 id="启动tomcat"><a href="#启动tomcat" class="headerlink" title="启动tomcat"></a>启动tomcat</h4><blockquote>
+<p>单击<code>tomcat/bin/startup.bat</code>文件</p>
+</blockquote>
+<p><img src="assets/1570347482980.png" alt="1570347482980"></p>
+<h2 id="servlet-1"><a href="#servlet-1" class="headerlink" title="servlet"></a>servlet</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>狭义的Servlet是指Java语言实现的一个接口</li>
+<li>广义的servlet是指实现了Servlet接口的类</li>
+<li>Servlet运行于支持Java的应用服务器中</li>
+<li>从原理上讲，servlet可以响应任何类型的请求，但是绝大多数的servlet只用来拓展基于HTTP协议的Web服务器</li>
+</ul>
+<h3 id="编写流程"><a href="#编写流程" class="headerlink" title="编写流程"></a>编写流程</h3><ol>
+<li>创建普通的java类并继承HttpServlet</li>
+<li>复写service方法</li>
+<li>在service方法中书写逻辑代码即可</li>
+<li>在<code>webRoot/WEB-INF/web.xml</code>文件中配置servlet</li>
+</ol>
+<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程"></a>运行流程</h3><p><img src="assets/1570350345544.png" alt="1570350345544"></p>
+<h3 id="访问流程"><a href="#访问流程" class="headerlink" title="访问流程"></a>访问流程</h3><p><img src="assets/1570362927533.png" alt="1570362927533"></p>
+<h3 id="HttpServlet类"><a href="#HttpServlet类" class="headerlink" title="HttpServlet类"></a>HttpServlet类</h3><p><img src="assets/1570533564334.png" alt="1570533564334"></p>
+<h3 id="Request对象"><a href="#Request对象" class="headerlink" title="Request对象"></a>Request对象</h3><h4 id="request对象的一些方法"><a href="#request对象的一些方法" class="headerlink" title="request对象的一些方法"></a>request对象的一些方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取请求头数据</span></span><br><span class="line"><span class="comment">//获取请求方式</span></span><br><span class="line">System.out.println(<span class="string">"Method: "</span>+req.getMethod());                            <span class="comment">//GET</span></span><br><span class="line"><span class="comment">//获取请求Url</span></span><br><span class="line">System.out.println(<span class="string">"URL: "</span>+req.getRequestURL());</span><br><span class="line">System.out.println(<span class="string">"URI: "</span>+req.getRequestURI());</span><br><span class="line"><span class="comment">//获取请求协议</span></span><br><span class="line">System.out.println(<span class="string">"Protocol: "</span>+req.getScheme());</span><br><span class="line"><span class="comment">//获取请求行键的枚举</span></span><br><span class="line">Enumeration&lt;String&gt; headerNames = req.getHeaderNames();</span><br><span class="line"><span class="keyword">while</span>(headerNames.hasMoreElements())&#123;</span><br><span class="line">    <span class="comment">//获得键名</span></span><br><span class="line">    String name = headerNames.nextElement();</span><br><span class="line">    <span class="comment">//通过键查找值</span></span><br><span class="line">    String value = req.getHeader(name);</span><br><span class="line">    System.out.println(name+<span class="string">"\t\t\t\t"</span>+value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取用户数据    get/post</span></span><br><span class="line">String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">String password = req.getParameter(<span class="string">"password"</span>);</span><br><span class="line">System.out.println(<span class="string">"username = "</span> + username);</span><br><span class="line">System.out.println(<span class="string">"password = "</span> + password);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取同键不同值的数据</span></span><br><span class="line">String[] favs = req.getParameterValues(<span class="string">"fav"</span>);</span><br><span class="line"><span class="comment">//先判断是否非空</span></span><br><span class="line"><span class="keyword">if</span>(favs!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span> (String fav : favs) &#123;</span><br><span class="line">        System.out.println(<span class="string">"fav = "</span> + fav);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取用户请求键的枚举集合</span></span><br><span class="line">Enumeration&lt;String&gt; names = req.getParameterNames();</span><br></pre></td></tr></table></figure>
+
+<h3 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//响应处理结果</span></span><br><span class="line"><span class="comment">//设置响应头</span></span><br><span class="line">resp.setHeader(<span class="string">"name"</span>,<span class="string">"lipenghui"</span>);</span><br><span class="line">resp.addHeader(<span class="string">"age"</span>,<span class="string">"18"</span>);</span><br><span class="line">resp.setHeader(<span class="string">"content-type"</span>,<span class="string">"text/html;charset=utf-8"</span>);   <span class="comment">//设置响应编码格式  text/html   text/xml    text/plain</span></span><br><span class="line"><span class="comment">//设置响应编码格式</span></span><br><span class="line">resp.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置响应状态码</span></span><br><span class="line"><span class="comment">/*resp.sendError(405,"Request is received,but the server throw it out");*/</span></span><br><span class="line"><span class="comment">//设置响应实体</span></span><br><span class="line">PrintWriter writer = resp.getWriter();</span><br><span class="line">writer.write(<span class="string">"&lt;h1&gt;日期：2019年10月8日&lt;/h1&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="assets/1570539358299.png" alt="1570539358299"></p>
+<h3 id="Servlet流程总结"><a href="#Servlet流程总结" class="headerlink" title="Servlet流程总结"></a>Servlet流程总结</h3><p><img src="assets/1570540463563.png" alt="1570540463563"></p>
+<p><img src="assets/1570540517896.png" alt="1570540517896"></p>
+<p><img src="assets/1570540604709.png" alt="1570540604709"></p>
+<h3 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3><p><img src="assets/1570541882198.png" alt="1570541882198"></p>
+<ul>
+<li><p>作用：使用多个servlet联动操作处理请求，这样避免代码冗余，让servlet的职责更加明确</p>
+</li>
+<li><p><code>req.getRequestDispatcher(&quot;/uri&quot;).forward(req.resp)</code></p>
+</li>
+</ul>
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><ul>
+<li>设置请求转发会造成表单数据重复提交</li>
+<li><code>resp.sendRedirect(&quot;/uri&quot;)</code></li>
+</ul>
+<p><img src="assets/1570621135569.png" alt="1570621135569"></p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><h3 id="Cookie概念"><a href="#Cookie概念" class="headerlink" title="Cookie概念"></a>Cookie概念</h3><ul>
+<li><p>作用：解决不同请求的数据共享问题</p>
+</li>
+<li><p>案例：网站3天免登录</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li><strong>浏览器端</strong>的数据存储技术</li>
+<li>存储的数据声明在服务器端</li>
+<li>临时存储：存储在浏览器的运行内存中，浏览器关闭即失效</li>
+<li>定时存储：设置了Cookie的有效期，存储在客户端的硬盘中，在有效期内符合路径要求的请求都附带该信息</li>
+<li>默认Cookie信息存储好之后，每次请求都会附带，除非设置有效路径</li>
+</ul>
+</li>
+</ul>
+<h3 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Cookie的创建和存储</span></span><br><span class="line">Cookie age = <span class="keyword">new</span> Cookie(<span class="string">"age"</span>, <span class="string">"18"</span>);</span><br><span class="line">age.setMaxAge(<span class="number">3</span>*<span class="number">24</span>*<span class="number">3600</span>);   <span class="comment">//设置Cookie有效期3*14*3600s</span></span><br><span class="line">age.setPath(<span class="string">"/cookie/abc"</span>); <span class="comment">//设置Cookie有效路径</span></span><br><span class="line">resp.addCookie(age);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取Cookie"><a href="#获取Cookie" class="headerlink" title="获取Cookie"></a>获取Cookie</h3><ul>
+<li>方法：<code>req.getCookies()</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Cookie[] cks = req.getCookies();</span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">if</span> (cks != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie ck : cks) &#123;</span><br><span class="line">        String name=ck.getName();</span><br><span class="line">        String value = ck.getValue();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><p>作用：解决同一用户不同请求的数据共享问题</p>
+</li>
+<li><p>原理：用户第一次访问服务器，服务器会创建一个session对象给此用户，并保证该session对象的JSESSIONID使用Cookie技术存储到浏览器中，保证用户的其他请求能够获取到同一个session对象，也保证了不同的请求能够获取到共享的数据。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>存储在服务器端</li>
+<li>服务器进行创建</li>
+<li>依赖Cookie技术</li>
+<li>一次会话</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><p><code>HttpSession hs=req.getSession();</code></p>
+<ul>
+<li>创建/获取Session对象 </li>
+<li>如果请求中有JSESSIONID，则返回其对应的session对象</li>
+<li>如果请求中没有JSESSIONID，则创建新的session对象，并近其JSESSIONID存储于Cookie中</li>
+</ul>
+</li>
+<li><p><code>hs.setMaxInactiveInterval(int seconds);</code></p>
+<ul>
+<li>默认为30分钟</li>
+<li>在指定的时间内session对象没有被使用则销毁，如果使用了则重新计时</li>
+</ul>
+</li>
+<li><p><code>hs.invalidate();</code></p>
+<ul>
+<li>设置session强制失效</li>
+<li>注意：JSESSIONID存储在了Cookie的临时存储空间中，<strong>浏览器关闭则失效</strong></li>
+</ul>
+</li>
+<li><p>存储和获取数据：</p>
+<ul>
+<li>存储：<code>hs.setAttribute(String name,Object value)</code></li>
+<li>获取：<code>Object hs.getAttribute(String name)</code></li>
+<li>注意：存储的动作和取出的动作发生在不同的请求中</li>
+</ul>
+</li>
+<li><p>使用时机：一般用户在登录web项目时一般会将用户的个人信息存储到Session中，供该用户的其他请求使用</p>
+</li>
+<li><p><strong>session失效处理</strong>：将用户请求中的JSESSIONID和获取到的SESSION对象的JSESSIONID进行对比，如果一致则session没有失效，如果不一致则证明session失效了。重定向到登录页面，让用户重新登录</p>
+</li>
+</ul>
+<h2 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h2><p><img src="assets/1570797380549.png" alt="1570797380549"></p>
+<p><img src="assets/1570797436199.png" alt="1570797436199"></p>
+<p><img src="assets/1570799309883.png" alt="1570799309883"></p>
+<p><img src="assets/1570799827398.png" alt="1570799827398"></p>
+<h2 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h2><p><img src="assets/1570866955792.png" alt="1570866955792"></p>
+<p><img src="assets/1570867057561.png" alt="1570867057561"></p>
+<h1 id="过滤器和监听器"><a href="#过滤器和监听器" class="headerlink" title="过滤器和监听器"></a>过滤器和监听器</h1><h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p><img src="assets/1570871335678.png" alt="1570871335678"></p>
+<h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>作用：对资源进行统一的管理（对资源预处理），保护servlet</li>
+</ul>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3></li>
+<li><p>浏览器发送请求到服务器，服务器接收到请求后，根据uri信息在web.xml中找到对应的过滤器执行doFilter方法，该方法对此次请求进行处理后如果符合要求则放行，放行后如果还有符合要求的过滤则继续进行过滤，找到执行对应的servlet进行请求处理。servlet对请求处理完毕后，也就是service方法结束了。还需继续返回响应的doFilter方法继续执行</p>
+</li>
+</ul>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><ul>
+<li>统一编码格式设置</li>
+<li>session管理</li>
+<li>权限管理</li>
+<li>资源管理（统一水印，和谐词汇）</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/redis%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/redis%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">redis命令</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th>描述</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>从docker中使用redis数据库</td>
+<td><code>docker exec -it redis /bin/bash</code></td>
+</tr>
+<tr>
+<td>进入redis命令行</td>
+<td><code># redis-cli</code></td>
+</tr>
+<tr>
+<td>退出redis命令行</td>
+<td><code>exit</code></td>
+</tr>
+<tr>
+<td>添加键值对</td>
+<td><code>set k1 hello</code></td>
+</tr>
+<tr>
+<td>根据键获取值</td>
+<td><code>get k1</code></td>
+</tr>
+<tr>
+<td>向一个字符串中追加</td>
+<td><code>append k1 world</code></td>
+</tr>
+<tr>
+<td>获得全部配置信息</td>
+<td><code>config get *</code></td>
+</tr>
+<tr>
+<td>更改配置信息（不用重启）</td>
+<td><code>config set maxmemory 2mb</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>redis持久化：</p>
+<p><code>rdb:redis database</code> </p>
+<p><code>aof:append only file</code></p>
+<p>redis默认备份策略</p>
+<p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Credis%E5%91%BD%E4%BB%A4.assets%5C1576825022726.png" alt="1576825022726"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/php/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/php/" class="post-title-link" itemprop="url">php</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="php"><a href="#php" class="headerlink" title="php"></a>php</h1><h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常量的定义</span></span><br><span class="line"><span class="comment">//方式1</span></span><br><span class="line">define(<span class="string">'PI'</span>,<span class="number">3.14</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式2</span></span><br><span class="line"><span class="keyword">const</span> PI <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//两种定义方式的访问权限不同</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//常量的使用</span></span><br><span class="line"><span class="keyword">echo</span> PI;</span><br><span class="line"><span class="keyword">echo</span> constant(<span class="string">'PI'</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="系统常量"><a href="#系统常量" class="headerlink" title="系统常量"></a>系统常量</h2><table>
+<thead>
+<tr>
+<th>常量名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PHP_VERSION</td>
+<td>PHP版本</td>
+</tr>
+<tr>
+<td>PHP_INT_SIZE</td>
+<td>PHP整形大小</td>
+</tr>
+<tr>
+<td>PHP_INT_MAX</td>
+<td>整形的最大值</td>
+</tr>
+<tr>
+<td><code>__DIR__</code></td>
+<td>当前被执行的脚本的绝对路径</td>
+</tr>
+<tr>
+<td><code>__FILE__</code></td>
+<td>当前被执行的脚本的绝对路径 （带自己的名字）</td>
+</tr>
+<tr>
+<td><code>__LINE__</code></td>
+<td>当前所属的行数</td>
+</tr>
+<tr>
+<td><code>__NAMESPACE__</code></td>
+<td>当前所属的命名空间</td>
+</tr>
+<tr>
+<td><code>__CLASS__</code></td>
+<td>当前所属的类</td>
+</tr>
+</tbody></table>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
+<li><p>强制转换</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$a=<span class="string">'0.01'</span>;</span><br><span class="line">	$b=(float)$a;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>字符串转换规则</p>
+<ul>
+<li>以字母开头的字符串永远为0</li>
+</ul>
+</li>
+<li><p>以数字开头的字符串，取到碰到的字符串为止</p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$a=<span class="string">'abc0.1.1'</span>;</span><br><span class="line">$b=<span class="string">'0.1.1abc'</span>;</span><br><span class="line"><span class="comment">//自动转换</span></span><br><span class="line"><span class="keyword">echo</span> $a+$b	<span class="comment">//0.1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Gettype(var1)</code> 获取类型，得到类型名字符串</p>
+</li>
+<li><p><code>Settype(var1,type)</code> 设定原数据的数据类型，返回ture/false</p>
+</li>
+</ul>
+<h2 id="错误抑制符"><a href="#错误抑制符" class="headerlink" title="错误抑制符"></a>错误抑制符</h2><p><code>@(expresion)</code>中的式子就算出错也不会报错，例如<code>@(echo 10%0)</code></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">nodejs学习笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Nodejs学习笔记"><a href="#Nodejs学习笔记" class="headerlink" title="Nodejs学习笔记"></a>Nodejs学习笔记</h1><h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><ul>
+<li>进程负责为程序的运行提供必备的环境</li>
+<li>进程相当于工厂中的车间</li>
+</ul>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul>
+<li>线程是计算机中最小的计算单位，线程负责执行进程中的程序</li>
+<li>线程就相当于工厂中的工人</li>
+</ul>
+<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><ul>
+<li>JS是单线程的</li>
+<li>Node的服务器是<strong>单线程</strong>的<ul>
+<li>Node处理请求时是单线程，但是在后台拥有一个I/O线程池</li>
+</ul>
+</li>
+</ul>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><ul>
+<li>传统的服务器都是多线程的<ul>
+<li>每进来一个请求，就创建一个线程去处理请求</li>
+</ul>
+</li>
+</ul>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><h3 id="ECMAScript标准的缺陷"><a href="#ECMAScript标准的缺陷" class="headerlink" title="ECMAScript标准的缺陷"></a>ECMAScript标准的缺陷</h3><ul>
+<li>没有模块系统</li>
+<li>标准库较少</li>
+<li>没有标准接口</li>
+<li>缺乏管理系统</li>
+</ul>
+<h3 id="CommonJS规范"><a href="#CommonJS规范" class="headerlink" title="CommonJS规范"></a>CommonJS规范</h3><ul>
+<li>规范的提出，只要是为了弥补当前的Javascript没有标准的缺陷</li>
+<li>规范为JS指定了一个美好的愿景，希望JS能够在任何地方运行</li>
+<li>CommonJS对模块的定义十分简单<ul>
+<li>模块引用</li>
+<li>模块定义</li>
+<li>模块标识</li>
+</ul>
+</li>
+</ul>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><ul>
+<li><p>在Node中一个JS文件就是一个模块</p>
+</li>
+<li><p>通过<code>require()</code>函数来引入外部的模块</p>
+<ul>
+<li><p><code>require()</code>可以传递一个文件的路径作为参数，node将会自动的根据该路径来引入外部模块</p>
+</li>
+<li><p>这里的路径，如果使用相对路径，必须以<code>.</code>或<code>..</code>开头</p>
+</li>
+<li><p>使用<code>require()</code> 引入模块以后，该函数会返回一个<strong>对象</strong>，这个对象代表的是引入的模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hello=<span class="built_in">require</span>(<span class="string">'./helloNode.js'</span>);</span><br><span class="line"><span class="keyword">var</span> hello2=<span class="built_in">require</span>(<span class="string">'./helloNode'</span>);		<span class="comment">//与第一行等价</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>在Node中，每一个JS文件中的JS代码都是独立运行在一个函数中而不是全局作用域，所以一个模块中的变量和函数在其他模块中无法访问</li>
+</ul>
+<ul>
+<li><p>我们可以使用<code>exports</code>来向外部暴露变量和方法</p>
+<ul>
+<li>只需要将需要暴露给外部的变量或方法设置为<code>exports</code> 的属性即可</li>
+</ul>
+</li>
+<li><p>我们使用<code>require()</code>引入外部模块时，使用的是<strong>模块标识</strong>，我们可以通过模块表示来找到指定的模块</p>
+<ul>
+<li><p>模块分成两大类</p>
+<ul>
+<li><p>核心模块</p>
+<ul>
+<li><p>由Node引擎提供的模块文件</p>
+</li>
+<li><p>核心模块的标识就是<strong>模块的名字</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);		<span class="comment">//引用核心模块</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>文件模块</p>
+<ul>
+<li>由用户自己创建的模块</li>
+</ul>
+</li>
+<li><p>文件模块标识就是<strong>文件的路径</strong>（绝对路径，相对路径）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在node中有一个全局对象<code>global</code>，它的作用和网页中的<code>window</code>类似</p>
+<ul>
+<li>在全局中创建的变量都会作为<code>global</code>的属性保存</li>
+<li>在全局中创建的函数都会作为<code>global</code>的方法保存</li>
+</ul>
+</li>
+<li><p>在node在执行模块中的代码时，它会首先在代码的<strong>外层</strong>添加如下代码。所以可以说明node中的<strong>模块</strong>(JS文件)就是一个<strong>函数</strong>，在模块中定义的变量都是<strong>局部变量</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">exports, require, module, __filename, __dirname</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="CommonJS包规范"><a href="#CommonJS包规范" class="headerlink" title="CommonJS包规范"></a>CommonJS包规范</h3><ul>
+<li><p>包实际上就是一个<strong>压缩文件</strong>，解压后还原为目录。符合规范的目录，应该包含如下文件    </p>
+<table>
+<thead>
+<tr>
+<th>package.json</th>
+<th>描述文件（必须）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>bin</strong></td>
+<td><strong>可执行的二进制文件</strong></td>
+</tr>
+<tr>
+<td><strong>lib</strong></td>
+<td><strong>JS代码</strong></td>
+</tr>
+<tr>
+<td><strong>doc</strong></td>
+<td><strong>文档</strong></td>
+</tr>
+<tr>
+<td><strong>test</strong></td>
+<td><strong>单元测试</strong></td>
+</tr>
+</tbody></table>
+<ul>
+<li>包描述文件用于表达非代码相关的信息，它是一个JSON格式的文件<code>package.json</code>，位于包的根目录下，是包的重要组成部分</li>
+</ul>
+</li>
+</ul>
+<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><h3 id="NPM介绍"><a href="#NPM介绍" class="headerlink" title="NPM介绍"></a>NPM介绍</h3><ul>
+<li><p>NPM命令</p>
+<table>
+<thead>
+<tr>
+<th>npm-v</th>
+<th>查看版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>npm</td>
+<td>帮助说明</td>
+</tr>
+<tr>
+<td>npm search packageName</td>
+<td>搜索模块包</td>
+</tr>
+<tr>
+<td>npm install packageName</td>
+<td>在当前目录下安装包</td>
+</tr>
+<tr>
+<td>npm inatall packageName -g</td>
+<td>全局模式安装包</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="Node-js文件系统"><a href="#Node-js文件系统" class="headerlink" title="Node.js文件系统"></a>Node.js文件系统</h2><h3 id="Buffer-缓冲区"><a href="#Buffer-缓冲区" class="headerlink" title="Buffer 缓冲区"></a>Buffer 缓冲区</h3><ul>
+<li>Buffer的结构和数组很像，操作的方法也和数组类似</li>
+<li>数组中不能存储二进制文件，而Buffer就是专门用来存储二进制数据</li>
+<li>使用Buffer不需要引入模块，直接使用即可</li>
+<li>在Buffer中存储的都是<strong>二进制数据</strong>，已十六进制显示</li>
+<li>Buffer的大小一旦确定，这不能修改，Buffer实际上是底层内存的直接操作</li>
+<li>调用<code>buf.toString()</code>可以将buffer中的二进制数据转换成字符串</li>
+</ul>
+<h3 id="File-System-文件系统"><a href="#File-System-文件系统" class="headerlink" title="File  System 文件系统"></a>File  System 文件系统</h3><ul>
+<li><p>简单来说就是通过Node来操作系统中的文件</p>
+</li>
+<li><p>使用文件系统，需要先引入fs模块</p>
+</li>
+<li><p>fs模块中所有的操作都有两种可供选择<strong>同步</strong>和<strong>异步</strong></p>
+<ul>
+<li><strong>同步</strong>文件系统会阻塞程序的执行，也就是除非操作完毕，否则不会像下执行代码</li>
+<li><strong>异步</strong>文件系统不会阻塞程序的执行，而是在操作完成时，通过回调函数将结果返回</li>
+</ul>
+</li>
+<li><p><strong>同步文件写入的步骤</strong></p>
+<ul>
+<li><p>打开文件<code>fs.openSync(path[, flags, mode])</code></p>
+<ul>
+<li><p><code>path</code> 要打开文件的路径</p>
+</li>
+<li><p><code>flags</code> 打开文件要做的操作类型<code>r/w</code></p>
+</li>
+<li><p><code>mode</code> 设置文件的操作权限，一般不传</p>
+</li>
+<li><blockquote>
+<p>返回值：该方法会返回一个文件的描述符作为结果，我们可以通过该描述符来对文件进行各种操作</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>向文件中写内容<code>fs.writeSync(fd, string[, position[, encoding]])</code></p>
+<ul>
+<li><code>fd</code> 文件的描述符，需要传递的要写入的文件的描述符</li>
+<li><code>string</code> 要写入的内容</li>
+<li><code>position</code> 写入的起始位置</li>
+<li><code>encoding</code> 写入的编码，默认<code>UTF-8</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>异步文件的写入</strong></p>
+<ul>
+<li>异步写入性能比同步写入好</li>
+<li>异步的方法无返回值，结果都是通过回调函数返回的参数</li>
+<li>回调函数有两个参数：<code>err</code> 错误对象，如果没有错误这位null ，<code>fd</code> 文件的描述符</li>
+</ul>
+</li>
+<li><p>文件的打开状态<br> <img src="assets/1561211220766.png" alt="1561211220766"></p>
+</li>
+<li><p><strong>流式文件的写入</strong></p>
+<ul>
+<li>同步、异步、简单文件的写入都不适合大文件的写入，性能较差，容易导致内存溢出</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">mysql常用命令</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h1><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>net start mysql</code></td>
+<td>启动mysql</td>
+</tr>
+<tr>
+<td><code>net stop mysql</code></td>
+<td>关闭mysql</td>
+</tr>
+<tr>
+<td><code>mysql -u root -p</code></td>
+<td>登录mysql</td>
+</tr>
+<tr>
+<td><code>show databases;</code></td>
+<td>查看数据库</td>
+</tr>
+<tr>
+<td><code>use &lt;dbname&gt;;</code></td>
+<td>进入某个库</td>
+</tr>
+<tr>
+<td><code>show tables from &lt;dbname&gt;;</code></td>
+<td>查看其他库的所有表</td>
+</tr>
+<tr>
+<td><code>show tables;</code></td>
+<td>查看数据表</td>
+</tr>
+<tr>
+<td><code>desc &lt;tablename&gt;;</code></td>
+<td>查看表结构</td>
+</tr>
+<tr>
+<td><code>select * from &lt;tablename&gt;</code></td>
+<td>查看数据</td>
+</tr>
+<tr>
+<td><code>insert into &lt;tablename&gt; (id,name) values(1,&#39;lipenghui&#39;);</code></td>
+<td>向表中<strong>插入</strong>数据</td>
+</tr>
+<tr>
+<td><code>updata &lt;tablename&gt; set name=&#39;penghui&#39; where id=1;</code></td>
+<td><strong>修改</strong>数据</td>
+</tr>
+<tr>
+<td><code>delete &lt;tablename&gt; where id=1;</code></td>
+<td><strong>删除</strong>数据</td>
+</tr>
+<tr>
+<td><code>select version();</code></td>
+<td>查看版本</td>
+</tr>
+<tr>
+<td><code>exit;</code></td>
+<td>退出mysql</td>
+</tr>
+<tr>
+<td><code>create user &#39;username&#39;@&#39;host&#39;identified by &#39;123456&#39;;</code></td>
+<td>创建用户</td>
+</tr>
+<tr>
+<td><code>grant select insert... on dbname to username@&#39;host%&#39;;</code></td>
+<td>授权</td>
+</tr>
+<tr>
+<td><code>SET PASSWORD FOR &#39;username&#39;@&#39;host&#39; = PASSWORD(&#39;newpassword&#39;);</code></td>
+<td>修改其他用户密码</td>
+</tr>
+<tr>
+<td><code>SET PASSWORD = PASSWORD(&quot;newpassword&quot;);</code></td>
+<td>修改自己的密码</td>
+</tr>
+<tr>
+<td><code>show columns from users;</code>同<code>desc users;</code></td>
+<td>显示数据表的简要信息</td>
+</tr>
+<tr>
+<td><code>show table status from dbname \G;</code></td>
+<td>sql数据库系统性能及统计信息</td>
+</tr>
+</tbody></table>
+<h4 id="创建一个表"><a href="#创建一个表" class="headerlink" title="创建一个表"></a>创建一个表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">creat table tablename(</span><br><span class="line">	rowname rowtype,</span><br><span class="line">    rowname rowtype</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="mysql数据库操作"><a href="#mysql数据库操作" class="headerlink" title="mysql数据库操作"></a>mysql数据库操作</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#判断是否存在数据库wpj1105,有的话先删除</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> <span class="keyword">if</span> <span class="keyword">exists</span> wpj1105;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#创建数据库</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> wpj1105;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#删除数据库</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> wpj1105;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#使用该数据库</span></span><br><span class="line"><span class="keyword">use</span> wpj1105;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#显示数据库中的表</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#先判断表是否存在,存在先删除</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">exists</span> student;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#创建表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int</span> auto_increment primary <span class="keyword">key</span>,</span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">50</span>),</span><br><span class="line">sex <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line"><span class="built_in">date</span> <span class="built_in">varchar</span>(<span class="number">50</span>),</span><br><span class="line"><span class="keyword">content</span> <span class="built_in">varchar</span>(<span class="number">100</span>)</span><br><span class="line">)<span class="keyword">default</span> <span class="keyword">charset</span>=utf8;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#删除表</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> student;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查看表的结构</span></span><br><span class="line"><span class="keyword">describe</span> student;  <span class="comment">#可以简写为desc student;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#插入数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student (<span class="keyword">id</span>,userName,sex,birth,...) <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'aa'</span>,<span class="string">'男'</span>,<span class="string">'1988-10-2'</span>,<span class="string">'......'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student (<span class="keyword">id</span>,userName,sex,birth,...) <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'bb'</span>,<span class="string">'女'</span>,<span class="string">'1889-03-6'</span>,<span class="string">'......'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student (<span class="keyword">id</span>,userName,sex,birth,...)  <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'cc'</span>,<span class="string">'男'</span>,<span class="string">'1889-08-8'</span>,<span class="string">'......'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student (<span class="keyword">id</span>,userName,sex,birth,...)  <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'dd'</span>,<span class="string">'女'</span>,<span class="string">'1889-12-8'</span>,<span class="string">'......'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student (<span class="keyword">id</span>,userName,sex,birth,...) <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'ee'</span>,<span class="string">'女'</span>,<span class="string">'1889-09-6'</span>,<span class="string">'......'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student (<span class="keyword">id</span>,userName,sex,birth,...) <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'ff'</span>,<span class="string">'null'</span>,<span class="string">'1889-09-6'</span>,<span class="string">'......'</span>);</span><br><span class="line"><span class="comment">#查询表中的数据</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> student;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#修改某一条数据</span></span><br><span class="line"><span class="keyword">update</span> student <span class="keyword">set</span> sex=<span class="string">'男'</span> <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">4</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#删除数据</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">5</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment"># and 且</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student <span class="keyword">where</span> <span class="built_in">date</span>&gt;<span class="string">'1988-1-2'</span> <span class="keyword">and</span> <span class="built_in">date</span>&lt;<span class="string">'1988-12-1'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment"># or 或</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student <span class="keyword">where</span> <span class="built_in">date</span>&lt;<span class="string">'1988-11-2'</span> <span class="keyword">or</span> <span class="built_in">date</span>&gt;<span class="string">'1988-12-1'</span>;</span><br><span class="line">  </span><br><span class="line"><span class="comment">#between</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student <span class="keyword">where</span> <span class="built_in">date</span> <span class="keyword">between</span> <span class="string">'1988-1-2'</span> <span class="keyword">and</span> <span class="string">'1988-12-1'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#in 查询制定集合内的数据</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student <span class="keyword">where</span> <span class="keyword">id</span> <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">#排序 asc 升序  desc 降序</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">id</span> <span class="keyword">asc</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#分组查询 #聚合函数</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(<span class="keyword">id</span>),<span class="keyword">name</span>,sex <span class="keyword">from</span> student <span class="keyword">group</span> <span class="keyword">by</span> sex;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">min</span>(<span class="built_in">date</span>) <span class="keyword">from</span> student;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(<span class="keyword">id</span>) <span class="keyword">as</span> <span class="string">'求平均'</span> <span class="keyword">from</span> student;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student;   <span class="comment">#统计表中总数</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(sex) <span class="keyword">from</span> student;   <span class="comment">#统计表中性别总数  若有一条数据中sex为空的话,就不予以统计~</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(<span class="keyword">id</span>) <span class="keyword">from</span> student;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查询第i条以后到第j条的数据(不包括第i条)</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student <span class="keyword">limit</span> <span class="number">2</span>,<span class="number">5</span>;  <span class="comment">#显示第3条到第5条数据</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#巩固练习</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> c(</span><br><span class="line"> <span class="keyword">id</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line"> <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line"> sex <span class="built_in">varchar</span>(<span class="number">50</span>) ,  <span class="comment">#DEFAULT '男' ,</span></span><br><span class="line"> age <span class="built_in">int</span> <span class="keyword">unsigned</span>, <span class="comment">#不能为负值(如为负值 则默认为0)</span></span><br><span class="line"> sno <span class="built_in">int</span> <span class="keyword">unique</span>    <span class="comment">#不可重复</span></span><br><span class="line">);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> c;</span><br><span class="line">desc c;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> c (<span class="keyword">id</span>,<span class="keyword">name</span>,sex,age,sno) <span class="keyword">values</span> (<span class="literal">null</span>,<span class="string">'涛哥'</span>,<span class="string">'男'</span>,<span class="number">68</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> c (<span class="keyword">id</span>,<span class="keyword">name</span>,sex,age,sno) <span class="keyword">values</span> (<span class="literal">null</span>,<span class="string">'aa'</span>,<span class="string">'男'</span>,<span class="number">68</span>,<span class="number">2</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> c (<span class="keyword">id</span>,<span class="keyword">name</span>,sex,age,sno) <span class="keyword">values</span> (<span class="literal">null</span>,<span class="string">'平平'</span>,<span class="string">'男'</span>,<span class="number">35</span>,<span class="number">3</span>);</span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> c;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#修改数据</span></span><br><span class="line"><span class="keyword">update</span> c <span class="keyword">set</span> age=<span class="number">66</span> <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">update</span> c <span class="keyword">set</span> <span class="keyword">name</span>=<span class="string">'花花'</span>,age=<span class="number">21</span>,sex=<span class="string">'女'</span> <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">2</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> c <span class="keyword">where</span> age=<span class="number">21</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#常用查询语句</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>,age ,<span class="keyword">id</span> <span class="keyword">from</span> c</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> c <span class="keyword">where</span> age&gt;<span class="number">40</span> <span class="keyword">and</span> age&lt;<span class="number">60</span>;  <span class="comment">#and</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> c <span class="keyword">where</span> age&lt;<span class="number">40</span> <span class="keyword">or</span> age&lt;<span class="number">60</span>;  <span class="comment">#or</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> c <span class="keyword">where</span> age <span class="keyword">between</span> <span class="number">40</span> <span class="keyword">and</span> <span class="number">60</span> <span class="comment">#between</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> c <span class="keyword">where</span> age <span class="keyword">in</span> (<span class="number">30</span>,<span class="number">48</span>,<span class="number">68</span>,<span class="number">99</span>);     <span class="comment">#in 查询指定集合内的数据</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> c <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>;      <span class="comment">#order by （asc升序 des降序）</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#分组查询</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>,<span class="keyword">max</span>(age) <span class="keyword">from</span> c <span class="keyword">group</span> <span class="keyword">by</span> sex;  <span class="comment">#按性别分组查年龄最大值</span></span><br><span class="line"><span class="comment">#聚合函数</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">min</span>(age) <span class="keyword">from</span> c;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(age) <span class="keyword">as</span> <span class="string">'平均年龄 '</span> <span class="keyword">from</span> c;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> c;  <span class="comment">#统计表中数据总数</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(age) <span class="keyword">from</span> c;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#修改表的名字</span></span><br><span class="line"><span class="comment">#格式:alter table tbl_name rename to new_name</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> c <span class="keyword">rename</span> <span class="keyword">to</span> a;</span><br><span class="line">  </span><br><span class="line"><span class="comment">#表结构修改</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">test</span></span><br><span class="line">(</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment primary <span class="keyword">key</span>, <span class="comment">#设定主键</span></span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">'NoName'</span>, <span class="comment">#设定默认值</span></span><br><span class="line">department_id <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">position_id <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line"><span class="keyword">unique</span> (department_id,position_id) <span class="comment">#设定唯一值</span></span><br><span class="line">);</span><br><span class="line"> </span><br><span class="line"><span class="comment">#修改表的名字</span></span><br><span class="line"><span class="comment">#格式:alter table tbl_name rename to new_name</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">test</span> <span class="keyword">rename</span> <span class="keyword">to</span> test_rename;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#向表中增加一个字段(列)</span></span><br><span class="line"><span class="comment">#格式:alter table tablename add columnname type;/alter table tablename add(columnname type);</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">test</span> <span class="keyword">add</span>  columnname <span class="built_in">varchar</span>(<span class="number">20</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">#修改表中某个字段的名字</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tablename <span class="keyword">change</span> columnname newcolumnname <span class="keyword">type</span>;  <span class="comment">#修改一个表的字段名</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">test</span> <span class="keyword">change</span> <span class="keyword">name</span> uname <span class="built_in">varchar</span>(<span class="number">50</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">test</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#表position 增加列test</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">position</span> <span class="keyword">add</span>(<span class="keyword">test</span> <span class="built_in">char</span>(<span class="number">10</span>));</span><br><span class="line"><span class="comment">#表position 修改列test</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">position</span> <span class="keyword">modify</span> <span class="keyword">test</span> <span class="built_in">char</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>;</span><br><span class="line"><span class="comment">#表position 修改列test 默认值</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">position</span> <span class="keyword">alter</span> <span class="keyword">test</span> <span class="keyword">set</span> <span class="keyword">default</span> <span class="string">'system'</span>;</span><br><span class="line"><span class="comment">#表position 去掉test 默认值</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">position</span> <span class="keyword">alter</span> <span class="keyword">test</span> <span class="keyword">drop</span> <span class="keyword">default</span>;</span><br><span class="line"><span class="comment">#表position 去掉列test</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">position</span> <span class="keyword">drop</span> <span class="keyword">column</span> <span class="keyword">test</span>;</span><br><span class="line"><span class="comment">#表depart_pos 删除主键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> depart_pos <span class="keyword">drop</span> primary <span class="keyword">key</span>;</span><br><span class="line"><span class="comment">#表depart_pos 增加主键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> depart_pos <span class="keyword">add</span> primary <span class="keyword">key</span> PK_depart_pos</span><br><span class="line">(department_id,position_id);</span><br><span class="line"> </span><br><span class="line"><span class="comment">#用文本方式将数据装入数据库表中（例如D:/mysql.txt）</span></span><br><span class="line"><span class="keyword">load</span> <span class="keyword">data</span> <span class="keyword">local</span> <span class="keyword">infile</span> <span class="string">"D:/mysql.txt"</span> <span class="keyword">into</span> <span class="keyword">table</span> MYTABLE;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#导入.sql文件命令（例如D:/mysql.sql）</span></span><br><span class="line">source d:/mysql.sql;  <span class="comment">#或者  /. d:/mysql.sql;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="mysql数据类型"><a href="#mysql数据类型" class="headerlink" title="mysql数据类型"></a>mysql数据类型</h2><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576151564891.png" alt="1576151564891"></p>
+<h4 id="mqsql查询"><a href="#mqsql查询" class="headerlink" title="mqsql查询"></a>mqsql查询</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576919668226.png" alt="1576919668226"></p>
+<h4 id="号的作用"><a href="#号的作用" class="headerlink" title="+号的作用"></a>+号的作用</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576921253251.png" alt="1576921253251"></p>
+<h4 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576929634053.png" alt="1576929634053"></p>
+<h4 id="日期格式select-str-to-date-1-3-19-39-d-c-Y-39"><a href="#日期格式select-str-to-date-1-3-19-39-d-c-Y-39" class="headerlink" title="日期格式select str_to_date(1-3-19,&#39;%d-%c-%Y&#39;)"></a>日期格式<code>select str_to_date(1-3-19,&#39;%d-%c-%Y&#39;)</code></h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576932534101.png" alt="1576932534101"></p>
+<h4 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576933981309.png" alt="1576933981309"></p>
+<h4 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576982420536.png" alt="1576982420536"></p>
+<h4 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576985004883.png" alt="1576985004883"></p>
+<h4 id="事务的ACID属性"><a href="#事务的ACID属性" class="headerlink" title="事务的ACID属性"></a>事务的ACID属性</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1576998725095.png" alt="1576998725095"></p>
+<h4 id="分组筛选"><a href="#分组筛选" class="headerlink" title="分组筛选"></a>分组筛选</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1577001868213.png" alt="1577001868213"></p>
+<h4 id="多表连接"><a href="#多表连接" class="headerlink" title="多表连接"></a>多表连接</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1577005108586.png" alt="1577005108586"></p>
+<h4 id="sql99连接语法"><a href="#sql99连接语法" class="headerlink" title="sql99连接语法"></a>sql99连接语法</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1577005967683.png" alt="1577005967683"></p>
+<h4 id="非等值连接"><a href="#非等值连接" class="headerlink" title="非等值连接"></a>非等值连接</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1580202497265.png" alt="1580202497265"></p>
+<h4 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1580202645909.png" alt="1580202645909"></p>
+<h4 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h4><ul>
+<li>应用场景：用于查询一个表中有，另一个表中没有的记录</li>
+<li>特点：<ul>
+<li>外连接的查询结果为主表中的所有记录<ul>
+<li>如果从表中有和它匹配的，则显示匹配的值</li>
+<li>如果从表中没有和它匹配的，则显示null</li>
+<li>外连接的查询结果=内连接结果+主表中有而从表中没有的记录</li>
+</ul>
+</li>
+<li><strong>左外连接</strong>，left join左边是主表，<strong>右外连接</strong>，right join右边是主表</li>
+<li>左外和右外交换两个表的顺序，可以实现同样的效果</li>
+<li><strong>全外连接</strong>=内连接的结果+表1中有但表2中没有的+表2中有但表1中没有的</li>
+</ul>
+</li>
+<li>交叉连接 cross join 相当于笛卡尔乘积</li>
+</ul>
+<h4 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h4><ul>
+<li>出现在其他语句中的select语句，称为子查询或者内查询</li>
+<li>外部的查询语句，称为主查询或外查询</li>
+<li>分类：<ul>
+<li><strong>按子查询出现的位置：</strong></li>
+<li>select后面 ：<code>标量子查询</code></li>
+<li>from后面：<code>表子查询</code></li>
+<li>where或having后面：<code>标量子查询</code>，<code>列子查询</code>，<code>行子查询</code></li>
+<li>exists后面：<code>表子查询</code></li>
+<li><strong>按结果集的行列数不同：</strong></li>
+<li>标量子查询：结果集只有一行一列</li>
+<li>列子查询：结果集有多行一列</li>
+<li>行子查询：结果集有一行多列</li>
+<li>表子查询：结果集一般为多行多列</li>
+</ul>
+</li>
+</ul>
+<h4 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1580216233421.png" alt="1580216233421"></p>
+<h4 id="联合查询特点"><a href="#联合查询特点" class="headerlink" title="联合查询特点"></a>联合查询特点</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1580220841731.png" alt="1580220841731"></p>
+<h4 id="表的约束"><a href="#表的约束" class="headerlink" title="表的约束"></a>表的约束</h4><p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1580271024481.png" alt="1580271024481"></p>
+<p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1580271444148.png" alt="1580271444148"></p>
+<p><img src="C:%5CUsers%5Cpenghui%5CDocuments%5CMarkdown%5Cmysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.assets%5C1580271468018.png" alt="1580271468018"></p>
+<h1 id="mysql用户管理"><a href="#mysql用户管理" class="headerlink" title="mysql用户管理"></a>mysql用户管理</h1><ul>
+<li><p>创建用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'admin1'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'abc123'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加权限</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>,<span class="keyword">insert</span>,<span class="keyword">update</span>,<span class="keyword">delete</span>,<span class="keyword">create</span></span><br><span class="line"><span class="keyword">on</span> gugu_server.*</span><br><span class="line"><span class="keyword">to</span> <span class="string">'admin1'</span>@<span class="string">'%'</span>;</span><br><span class="line"><span class="comment"># %表示允许在除本机之外的任何一台机器远程登录</span></span><br><span class="line"><span class="comment"># localhost表示该账户只能在本机登录</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/linux%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/linux%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">linux学习</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-09 20:50:36" itemprop="dateCreated datePublished" datetime="2020-07-09T20:50:36+08:00">2020-07-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="实用指令"><a href="#实用指令" class="headerlink" title="实用指令"></a>实用指令</h2><h4 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h4><p><code>reboot</code>  重启</p>
+<p><code>pwd</code>  显示当前路径</p>
+<p><code>ls</code>  显示目录或文件</p>
+<p>​    <code>-a</code>  显示所有文件</p>
+<p>​    <code>-l</code> 以列表的方式显示信息</p>
+<p><code>cd ~</code>  回到自己的家目录</p>
+<p><code>uname -a</code>查看系统核心信息 p622 </p>
+<h4 id="用户指令"><a href="#用户指令" class="headerlink" title="用户指令"></a>用户指令</h4><p><code>su root</code> 普通用户切换到root用户</p>
+<p><code>ll</code> 显示当前文件夹下的所有文件</p>
+<p><code>useradd [username]</code> 创建一个新的用户</p>
+<p><code>useradd -d [file path] [username]</code> 创建一个新的用户并指定家目录</p>
+<p><code>passwd [username]</code> 为用户指定密码</p>
+<p><code>userdel [username]</code> 删除用户保留家目录 ，删除用户需root</p>
+<p><code>userdel -r [username]</code> 删除用户并删除家目录</p>
+<p><code>id [username]</code> 查询用户</p>
+<p><code>su - [username]</code> 切换用户</p>
+<p><code>exit</code> 回退到之前的用户</p>
+<p><code>whomi</code> 查看当前用户</p>
+<p><code>groupadd [groupname]</code> 创建用户组</p>
+<p><code>groupdel [groupname]</code> 删除用户组</p>
+<p><code>useradd -g [groupname] [username]</code> 在组内创建用户</p>
+<p><code>usermod -g [groupname] [username]</code> 将用户修改到组</p>
+<h4 id="其他指令"><a href="#其他指令" class="headerlink" title="其他指令"></a>其他指令</h4><p><code>init 012346</code> 指定运行级别</p>
+<p><code>man [option]</code> 帮助 </p>
+<p><code>cp source dest</code> 拷贝文件到指定的目录</p>
+<p>​    <code>-r</code> 递归复制整个文件夹</p>
+<p><code>\cp</code> 强制覆盖已经存在的文件</p>
+<p><code>mv</code>   <strong>移动</strong>或这重命名文件（路径相同）</p>
+<p><code>cat</code>  浏览文件（以只读的方式）</p>
+<h2 id="运行级别"><a href="#运行级别" class="headerlink" title="运行级别"></a>运行级别</h2><h4 id="运行级别说明"><a href="#运行级别说明" class="headerlink" title="运行级别说明"></a>运行级别说明</h4><blockquote>
+<p>0 ：关机</p>
+<p>1：单用户（找回丢失密码）</p>
+<p>2：多用状态没有网络服务</p>
+<p>3：多用户状态有网络服务</p>
+<p>4：系统未使用保留给用户</p>
+<p>5：图形界面</p>
+<p>6：系统重启</p>
+<p><code>etc/initlab</code> 系统运行级别配置文件</p>
+</blockquote>
+<h2 id="相关文件"><a href="#相关文件" class="headerlink" title="相关文件"></a>相关文件</h2><p><code>/etc/passwd</code> 用户配置文件（用户信息）</p>
+<p><code>/etc/group</code> 组配置文件（组信息）</p>
+<p><code>/etc/shadow</code> 口令配置文件（密码和登录信息，加密）</p>
+<p><code>tar -zxvf</code>解压文件<code>tar.gz</code></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-	<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
-	
-<script src="/scripts/leon.js"></script>
+  <aside class="sidebar">
+    
+    <div class="my-tag-cloud">
+      
+    </div>
 
-	<script>
-		var leon
-		var canvas = document.getElementById('prelude')
+    <div class="sidebar-inner">
 
-		var ANIMATE_TIME = 2 // seconds
-		var THREE_MINUTE = 3 * 60 * 1000
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-		var sw = window.innerWidth
-		var sh = window.innerHeight
-		var ctx = canvas.getContext('2d')
-		var pixelRatio = window.devicePixelRatio
-		var animatedTime = localStorage.getItem('animatedTime')
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-		function init() {
-			canvas.width = sw * pixelRatio
-			canvas.height = sh * pixelRatio
-			ctx.scale(pixelRatio, pixelRatio)
-
-			leon = new LeonSans({
-				text: window.COLD_STONE.author || 'Cold Stone',
-				color: ['#000'],
-				size: 80,
-				weight: 200
-			})
-
-			draw()
-		}
-
-		function draw() {
-			ctx.clearRect(0, 0, sw, sh)
-			const x = (sw - leon.rect.w) / 2
-			const y = (sh - leon.rect.h) / 2
-			leon.position(x, y)
-			leon.draw(ctx)
-
-			requestAnimationFrame(draw)
-		}
-
-		function animate() {
-			const total = leon.drawing.length
-
-			for (let i = 0; i < total; i++) {
-				TweenMax.fromTo(
-				leon.drawing[i],
-				ANIMATE_TIME,
-				{ value: 0 },
-				{
-					delay: i * 0.05,
-					value: 1,
-					ease: Power4.easeOut
-				}
-				)
-			}
-
-		    const timeout = setTimeout(function() {
-				clearTimeout(timeout)
-				document.body.removeChild(canvas)
-				localStorage.setItem('animatedTime', Date.now())
-			}, ANIMATE_TIME * 1000)
-		}
-
-		if (!animatedTime || Date.now() > parseInt(animatedTime) + THREE_MINUTE) {
-			init()
-			animate()
-		} else {
-			document.body.removeChild(canvas)
-		}
-	</script>
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李鹏辉"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">李鹏辉</p>
+  <div class="site-description" itemprop="description">@lipenghui</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YaoJusheng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YaoJusheng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/YaoJusheng" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;YaoJusheng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-alt"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_41599858" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_41599858" rel="noopener" target="_blank"><i class="fa fa-fw fa-mortar-board"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jusheng_yao@outlook.com" title="E-Mail → mailto:jusheng_yao@outlook.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.google.com/" title="最受欢迎的搜索引擎，国内使用可用代理或安装助手"  target="_blank">
+              <img src="/images/ico/google_favicon.ico" class="links-item-img">&emsp;
+            Google搜索
+          </a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://cn.bing.com/" title="必应搜索，一款好用的搜索引擎"  target="_blank">
+              <img src="/images/ico/biying_favicon.ico" class="links-item-img">&emsp;
+            Bing搜索
+          </a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://translate.google.cn/" title="谷歌翻译"  target="_blank">
+              <img src="/images/ico/fanyi_favicon.ico" class="links-item-img">&emsp;
+            Translate
+          </a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="技术视频网站"  target="_blank">
+              <img src="/images/ico/bili_favicon.ico" class="links-item-img">&emsp;
+            bilibili
+          </a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.zhihu.com/" title="知识、技术交流平台"  target="_blank">
+              <img src="/images/ico/zhihu_favicon.ico" class="links-item-img">&emsp;
+            知乎
+          </a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://tool.lu/" title="全面多样化的开发、站长类工具"  target="_blank">
+              <img src="/images/ico/onlinetool.ico" class="links-item-img">&emsp;
+            在线工具
+          </a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://fontstore.baidu.com/static/editor/index.html" title="可制作图形文字，减少字体体积"  target="_blank">
+              <img src="/images/ico/font_favicon.ico" class="links-item-img">&emsp;
+            百度字体编辑器
+          </a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.draw.io/" title="一款在线绘制流程图的网页工具"  target="_blank">
+              <img src="/images/ico/draw_favicon.ico" class="links-item-img">&emsp;
+            绘图draw
+          </a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://naotu.baidu.com/home" title="一款可替代XMind的在线思维导图工具"  target="_blank">
+              <img src="/images/ico/naotu_favicon.ico" class="links-item-img">&emsp;
+            百度脑图
+          </a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-<script src="/scripts/busuanzi.js" referrerpolicy="origin"></script>
+      </div>
+    </main>
 
-<script src="/scripts/cold-stone.js"></script>
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李鹏辉</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme — <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.2
+  </div>
+
+  <br>
+  
+  <div class="powered-by" style='color: gray'>
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+      本站总访客数:&nbsp;<span id="busuanzi_value_site_uv" style='color: silver'></span>&nbsp;人&nbsp;| 
+    </span>
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_container_site_pv">
+        &nbsp;本站总访问量:&nbsp;<span id="busuanzi_value_site_pv" style='color: silver'></span>&nbsp;次
+    </span>
+  </div>
+
+  <br>
+  
+  <div>
+    <span id="timeDate" class="color: lightblue;"></span>  
+    <span id="times" class="color: lightgreen;"></span>
+  </div>
 
 
 
-  <script src="//www.googletagmanager.com/gtag/js?id=xxxxxx"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("02/12/2020 18:00:00"); 
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+  setInterval("createtime()",250);
+</script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='0,0,255' opacity='0.8' zIndex='-2' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
   <script>
-	window.dataLayer = window.dataLayer || []
-	function gtag() {
-		dataLayer.push(arguments)
-	}
-	gtag('js', new Date())
-	gtag('config', window.COLD_STONE.gaid)
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
   </script>
 
 
-  </body>
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  
+  
+    <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+
+</body>
 </html>
