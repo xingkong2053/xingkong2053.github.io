@@ -538,40 +538,40 @@
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li><p>创建web工程</p>
 <p>1.1  File–&gt;New–&gt;Project</p>
-<p><img src="assets/1570446068167.png" alt="1570446068167"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001711.png" alt=""></p>
 <p>1.2  勾选Web Application</p>
-<p><img src="assets/1570446181429.png" alt="1570446181429"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001820.png" alt=""></p>
 <p>1.3  填写名称</p>
-<p><img src="assets/1570446307360.png" alt="1570446307360"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001841.png" alt=""></p>
 </li>
 <li><p>Web工程设置</p>
 <p>2.1 在WEB-INF目录添加<code>classes</code> <code>lib</code> 两个文件夹</p>
-<p><img src="assets/1570446629009.png" alt="1570446629009"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001853.png" alt=""></p>
 <p>2.2 File–&gt;Project Structure，进入Project Structure窗口</p>
-<p><img src="assets/1570446740899.png" alt="1570446740899"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001901.png" alt=""></p>
 <p>2.3  选择modules–&gt;paths选项卡，勾选<code>Use module compile output path</code>，并将<code>Output path</code>和<code>Test output path</code>改为之前创建的classes目录</p>
-<p><img src="assets/1570447004346.png" alt="1570447004346"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001910.png" alt=""></p>
 <p>2.4  选择modules–&gt;Dependencies，点击右侧<code>+</code>号，选择<code>JARs or derectories</code>，选择创建的lib目录</p>
-<p><img src="assets/1570447239933.png" alt="1570447239933"></p>
-<p><img src="assets/1570447278329.png" alt="1570447278329"></p>
-<p><img src="assets/1570447298449.png" alt="1570447298449"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001918.png" alt=""></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001925.png" alt=""></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001933.png" alt=""></p>
 <p>2.5 配置打包方式：点击Artifacts选项卡，勾选<code>Include in project build</code>和<code>Show content of elements</code>其他保持默认</p>
-<p><img src="assets/1570447666611.png" alt="1570447666611"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001941.png" alt=""></p>
 </li>
 <li><p>tomcat配置</p>
 <p>3.1 在窗口的右上角点击<code>Add Configration...</code>，点击<code>+</code>号，选择tomcat–&gt;local，添加tomcat容器</p>
-<p><img src="assets/1570448049111.png" alt="1570448049111"></p>
-<p><img src="assets/1570448118140.png" alt="1570448118140"></p>
-<p><img src="assets/1570448315059.png" alt="1570448315059"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001948.png" alt=""></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002005.png" alt=""></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002017.png" alt=""></p>
 <p>3.2 选择<code>Deployment</code> 选项卡，选择<code>+</code>号，选择<code>Artifact...</code>，并修改<code>Application context</code></p>
-<p><img src="assets/1570448582544.png" alt="1570448582544"></p>
-<p><img src="assets/1570448766983.png" alt="1570448766983"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002025.png" alt=""></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002154.png" alt=""></p>
 </li>
 </ol>
 <h2 id="编写Servlet类进行测试"><a href="#编写Servlet类进行测试" class="headerlink" title="编写Servlet类进行测试"></a>编写Servlet类进行测试</h2><ol>
 <li>在<code>src</code>文件夹下创建类<code>demo01</code></li>
 </ol>
-<p><img src="assets/1570449110860.png" alt="1570449110860"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002213.png" alt=""></p>
 <ol start="2">
 <li><p>将该类继承<code>HttpServlet</code>类并复写其中的<code>service</code>方法，代码如下</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.testservlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        resp.getWriter().write(<span class="string">"hello world"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -580,11 +580,11 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.penghui.testservlet.demo01<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>点击窗口右上角的启动按钮启动tomcat服务器，可以看到<code>WEB-INF/classes</code>文件夹下有编译后的文件产生</p>
-<pre><code>![1570449818819](assets/1570449818819.png)</code></pre></li>
+<pre><code>![](https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002227.png)</code></pre></li>
 <li><p>打开浏览器并输入<code>http://localhost:8080/webapp/hello</code></p>
 </li>
 </ol>
-<p><img src="assets/1570449981786.png" alt="1570449981786"></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002234.png" alt=""></p>
 
       
     </div>
