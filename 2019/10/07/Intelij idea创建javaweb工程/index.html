@@ -25,23 +25,40 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"xingkong2053.gihub.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-  <meta name="description" content="在远程服务器中安装并使用ElasticSearch本人的系统是CentOS 7.6，Java jdk环境是1.8，运行于腾讯云上。这里写一下安装运行过程 下载elasticsearch1curl -L -O https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;downloads&#x2F;elasticsearch&#x2F;elasticsearch-7.8.0-linux-x86_64.tar.gz  最新">
+  <meta name="description" content="Intelij idea创建Java Web工程并测试Servlet创建并设置Java web工程一些信息 idea版本：2019.2.1 jdk版本：1.8.0 tomcat版本：9.0.24  步骤 创建web工程 1.1  File–&gt;New–&gt;Project  1.2  勾选Web Application  1.3  填写名称   Web工程设置 2.1 在WEB-INF目录添">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在远程服务器中安装并使用ElasticSearch">
-<meta property="og:url" content="https://xingkong2053.gihub.io/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/index.html">
+<meta property="og:title" content="Intelij idea创建Java Web工程并测试Servlet">
+<meta property="og:url" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/index.html">
 <meta property="og:site_name" content="xinkong2053.gihub.io">
-<meta property="og:description" content="在远程服务器中安装并使用ElasticSearch本人的系统是CentOS 7.6，Java jdk环境是1.8，运行于腾讯云上。这里写一下安装运行过程 下载elasticsearch1curl -L -O https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;downloads&#x2F;elasticsearch&#x2F;elasticsearch-7.8.0-linux-x86_64.tar.gz  最新">
-<meta property="article:published_time" content="2020-07-09T12:51:28.911Z">
-<meta property="article:modified_time" content="2020-07-09T16:03:36.712Z">
+<meta property="og:description" content="Intelij idea创建Java Web工程并测试Servlet创建并设置Java web工程一些信息 idea版本：2019.2.1 jdk版本：1.8.0 tomcat版本：9.0.24  步骤 创建web工程 1.1  File–&gt;New–&gt;Project  1.2  勾选Web Application  1.3  填写名称   Web工程设置 2.1 在WEB-INF目录添">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570446068167.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570446181429.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570446307360.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570446629009.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570446740899.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570447004346.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570447239933.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570447278329.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570447298449.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570447666611.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570448049111.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570448118140.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570448315059.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570448582544.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570448766983.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570449110860.png">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570449981786.png">
+<meta property="article:published_time" content="2019-10-07T12:26:00.000Z">
+<meta property="article:modified_time" content="2020-07-09T16:09:42.517Z">
 <meta property="article:author" content="李鹏辉">
+<meta property="article:tag" content="intelij idea">
+<meta property="article:tag" content="java">
 <meta property="article:tag" content="教程">
-<meta property="article:tag" content="elasticsearch">
-<meta property="article:tag" content="服务器">
-<meta property="article:tag" content="centos">
-<meta property="article:tag" content="linux">
+<meta property="article:tag" content="servlet">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/assets/1570446068167.png">
 
-<link rel="canonical" href="https://xingkong2053.gihub.io/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/">
+<link rel="canonical" href="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/">
 
 
 <script id="page-configurations">
@@ -53,7 +70,7 @@
   };
 </script>
 
-  <title>在远程服务器中安装并使用ElasticSearch | xinkong2053.gihub.io</title>
+  <title>Intelij idea创建Java Web工程并测试Servlet | xinkong2053.gihub.io</title>
   
 
 
@@ -195,7 +212,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -208,7 +225,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          在远程服务器中安装并使用ElasticSearch
+          Intelij idea创建Java Web工程并测试Servlet
         </h1>
 
         <div class="post-meta">
@@ -218,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-07-09 20:51:28" itemprop="dateCreated datePublished" datetime="2020-07-09T20:51:28+08:00">2020-07-09</time>
+              <time title="创建时间：2019-10-07 20:26:00" itemprop="dateCreated datePublished" datetime="2019-10-07T20:26:00+08:00">2019-10-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -226,7 +243,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/servlet/" itemprop="url" rel="index"><span itemprop="name">servlet</span></a>
                 </span>
             </span>
 
@@ -248,38 +269,61 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="在远程服务器中安装并使用ElasticSearch"><a href="#在远程服务器中安装并使用ElasticSearch" class="headerlink" title="在远程服务器中安装并使用ElasticSearch"></a>在远程服务器中安装并使用ElasticSearch</h1><p><strong>本人的系统是CentOS 7.6，Java jdk环境是1.8，运行于腾讯云上。这里写一下安装运行过程</strong></p>
-<h2 id="下载elasticsearch"><a href="#下载elasticsearch" class="headerlink" title="下载elasticsearch"></a>下载elasticsearch</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.0-linux-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
-
-<p><code>最新版本链接：</code><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html</a></p>
-<h2 id="将其解压到-usr-local文件夹中"><a href="#将其解压到-usr-local文件夹中" class="headerlink" title="将其解压到/usr/local文件夹中"></a>将其解压到/usr/local文件夹中</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -vxf elasticsearch-7.8.0-linux-x86_64.tar.gz -C /usr/local</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改该文件中的config-elasticsearch-yml文件"><a href="#修改该文件中的config-elasticsearch-yml文件" class="headerlink" title="修改该文件中的config/elasticsearch.yml文件"></a>修改该文件中的config/elasticsearch.yml文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在文件夹下执行</span></span><br><span class="line">vim config/elasticsearch.yml</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加如下字段</span></span><br><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span></span><br><span class="line"><span class="attr">http.port:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="使用普通的用户开启elasticsearch服务"><a href="#使用普通的用户开启elasticsearch服务" class="headerlink" title="使用普通的用户开启elasticsearch服务"></a>使用普通的用户开启elasticsearch服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 注意使用root账户开启服务会失败</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">添加账户(如果有普通的账户则不需要添加) es</span></span><br><span class="line">useradd es</span><br><span class="line">passwd es</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">添加权限</span></span><br><span class="line">chown -R es /usr/local/elasticsearch-7.8.0-linux-x86_64</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">使用es账户</span></span><br><span class="line">su es</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">进入bin文件夹</span></span><br><span class="line">cd /usr/local/elasticsearch-7.8.0-linux-x86_64/bin</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">开启服务</span></span><br><span class="line">./elasticsearch</span><br></pre></td></tr></table></figure>
-
-<h2 id="查看es的基本信息"><a href="#查看es的基本信息" class="headerlink" title="查看es的基本信息"></a>查看es的基本信息</h2><ul>
-<li><p>命令行输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://127.0.0.1:9200</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>或者是在浏览器上输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;&#123;&#123;主机ip地址&#125;&#125;:9200</span><br></pre></td></tr></table></figure>
-
-</li>
+        <h1 id="Intelij-idea创建Java-Web工程并测试Servlet"><a href="#Intelij-idea创建Java-Web工程并测试Servlet" class="headerlink" title="Intelij idea创建Java Web工程并测试Servlet"></a>Intelij idea创建Java Web工程并测试Servlet</h1><h2 id="创建并设置Java-web工程"><a href="#创建并设置Java-web工程" class="headerlink" title="创建并设置Java web工程"></a>创建并设置Java web工程</h2><h3 id="一些信息"><a href="#一些信息" class="headerlink" title="一些信息"></a>一些信息</h3><ul>
+<li>idea版本：2019.2.1</li>
+<li>jdk版本：1.8.0</li>
+<li>tomcat版本：9.0.24</li>
 </ul>
-<p>显示下面json字符串则显示启动成功</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span> : <span class="string">"node-1"</span>,</span><br><span class="line">  <span class="attr">"cluster_name"</span> : <span class="string">"elasticsearch"</span>,</span><br><span class="line">  <span class="attr">"cluster_uuid"</span> : <span class="string">"iwyfejvHSziaaCAz9h-TLg"</span>,</span><br><span class="line">  <span class="attr">"version"</span> : &#123;</span><br><span class="line">    <span class="attr">"number"</span> : <span class="string">"7.8.0"</span>,</span><br><span class="line">    <span class="attr">"build_flavor"</span> : <span class="string">"default"</span>,</span><br><span class="line">    <span class="attr">"build_type"</span> : <span class="string">"tar"</span>,</span><br><span class="line">    <span class="attr">"build_hash"</span> : <span class="string">"757314695644ea9a1dc2fecd26d1a43856725e65"</span>,</span><br><span class="line">    <span class="attr">"build_date"</span> : <span class="string">"2020-06-14T19:35:50.234439Z"</span>,</span><br><span class="line">    <span class="attr">"build_snapshot"</span> : <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"lucene_version"</span> : <span class="string">"8.5.1"</span>,</span><br><span class="line">    <span class="attr">"minimum_wire_compatibility_version"</span> : <span class="string">"6.8.0"</span>,</span><br><span class="line">    <span class="attr">"minimum_index_compatibility_version"</span> : <span class="string">"6.0.0-beta1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"tagline"</span> : <span class="string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>创建web工程</p>
+<p>1.1  File–&gt;New–&gt;Project</p>
+<p><img src="assets/1570446068167.png" alt="1570446068167"></p>
+<p>1.2  勾选Web Application</p>
+<p><img src="assets/1570446181429.png" alt="1570446181429"></p>
+<p>1.3  填写名称</p>
+<p><img src="assets/1570446307360.png" alt="1570446307360"></p>
+</li>
+<li><p>Web工程设置</p>
+<p>2.1 在WEB-INF目录添加<code>classes</code> <code>lib</code> 两个文件夹</p>
+<p><img src="assets/1570446629009.png" alt="1570446629009"></p>
+<p>2.2 File–&gt;Project Structure，进入Project Structure窗口</p>
+<p><img src="assets/1570446740899.png" alt="1570446740899"></p>
+<p>2.3  选择modules–&gt;paths选项卡，勾选<code>Use module compile output path</code>，并将<code>Output path</code>和<code>Test output path</code>改为之前创建的classes目录</p>
+<p><img src="assets/1570447004346.png" alt="1570447004346"></p>
+<p>2.4  选择modules–&gt;Dependencies，点击右侧<code>+</code>号，选择<code>JARs or derectories</code>，选择创建的lib目录</p>
+<p><img src="assets/1570447239933.png" alt="1570447239933"></p>
+<p><img src="assets/1570447278329.png" alt="1570447278329"></p>
+<p><img src="assets/1570447298449.png" alt="1570447298449"></p>
+<p>2.5 配置打包方式：点击Artifacts选项卡，勾选<code>Include in project build</code>和<code>Show content of elements</code>其他保持默认</p>
+<p><img src="assets/1570447666611.png" alt="1570447666611"></p>
+</li>
+<li><p>tomcat配置</p>
+<p>3.1 在窗口的右上角点击<code>Add Configration...</code>，点击<code>+</code>号，选择tomcat–&gt;local，添加tomcat容器</p>
+<p><img src="assets/1570448049111.png" alt="1570448049111"></p>
+<p><img src="assets/1570448118140.png" alt="1570448118140"></p>
+<p><img src="assets/1570448315059.png" alt="1570448315059"></p>
+<p>3.2 选择<code>Deployment</code> 选项卡，选择<code>+</code>号，选择<code>Artifact...</code>，并修改<code>Application context</code></p>
+<p><img src="assets/1570448582544.png" alt="1570448582544"></p>
+<p><img src="assets/1570448766983.png" alt="1570448766983"></p>
+</li>
+</ol>
+<h2 id="编写Servlet类进行测试"><a href="#编写Servlet类进行测试" class="headerlink" title="编写Servlet类进行测试"></a>编写Servlet类进行测试</h2><ol>
+<li>在<code>src</code>文件夹下创建类<code>demo01</code></li>
+</ol>
+<p><img src="assets/1570449110860.png" alt="1570449110860"></p>
+<ol start="2">
+<li><p>将该类继承<code>HttpServlet</code>类并复写其中的<code>service</code>方法，代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.testservlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        resp.getWriter().write(<span class="string">"hello world"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在WEB-INF下的<code>web.xml</code>文件中添加如下内容</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.penghui.testservlet.demo01<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>点击窗口右上角的启动按钮启动tomcat服务器，可以看到<code>WEB-INF/classes</code>文件夹下有编译后的文件产生</p>
+<pre><code>![1570449818819](assets/1570449818819.png)</code></pre></li>
+<li><p>打开浏览器并输入<code>http://localhost:8080/webapp/hello</code></p>
+</li>
+</ol>
+<p><img src="assets/1570449981786.png" alt="1570449981786"></p>
 
     </div>
 
@@ -325,13 +369,13 @@
   
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/">在远程服务器中安装并使用ElasticSearch</a></p>
+  <p><span>本文标题:</span><a href="/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/">Intelij idea创建Java Web工程并测试Servlet</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李鹏辉 的个人博客">李鹏辉</a></p>
-  <p><span>发布时间:</span>2020年07月09日 - 20:51</p>
-  <p><span>最后更新:</span>2020年07月10日 - 00:03</p>
-  <p><span>原始链接:</span><a href="/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/" title="在远程服务器中安装并使用ElasticSearch">https://xingkong2053.gihub.io/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/</a>
+  <p><span>发布时间:</span>2019年10月07日 - 20:26</p>
+  <p><span>最后更新:</span>2020年07月10日 - 00:09</p>
+  <p><span>原始链接:</span><a href="/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/" title="Intelij idea创建Java Web工程并测试Servlet">https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/</a>
     <span class="copy-path"  title="点击复制文章链接">
-      <i class="fa fa-clipboard" data-clipboard-text="https://xingkong2053.gihub.io/2020/07/09/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/"  aria-label="复制成功！"></i>
+      <i class="fa fa-clipboard" data-clipboard-text="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/"  aria-label="复制成功！"></i>
     </span>
   </p>
   <p>
@@ -380,11 +424,10 @@
       <footer class="post-footer">
           
           <div class="post-tags">
+              <a href="/tags/intelij-idea/" rel="tag"><i class="fa fa-tag"></i> intelij idea</a>
+              <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
               <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
-              <a href="/tags/elasticsearch/" rel="tag"><i class="fa fa-tag"></i> elasticsearch</a>
-              <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 服务器</a>
-              <a href="/tags/centos/" rel="tag"><i class="fa fa-tag"></i> centos</a>
-              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/servlet/" rel="tag"><i class="fa fa-tag"></i> servlet</a>
           </div>
 
         
@@ -393,10 +436,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/09/%E8%A7%A3%E5%86%B3%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/" rel="prev" title="解决虚拟机启动黑屏，无法进入系统问题">
-      <i class="fa fa-chevron-left"></i> 解决虚拟机启动黑屏，无法进入系统问题
+    <a href="/2019/10/03/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="prev" title="java基础学习">
+      <i class="fa fa-chevron-left"></i> java基础学习
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/13/b-search-tree/" rel="next" title="二叉查找树的实现">
+      二叉查找树的实现 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -472,7 +518,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在远程服务器中安装并使用ElasticSearch"><span class="nav-text">在远程服务器中安装并使用ElasticSearch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载elasticsearch"><span class="nav-text">下载elasticsearch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将其解压到-usr-local文件夹中"><span class="nav-text">将其解压到&#x2F;usr&#x2F;local文件夹中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改该文件中的config-elasticsearch-yml文件"><span class="nav-text">修改该文件中的config&#x2F;elasticsearch.yml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用普通的用户开启elasticsearch服务"><span class="nav-text">使用普通的用户开启elasticsearch服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看es的基本信息"><span class="nav-text">查看es的基本信息</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Intelij-idea创建Java-Web工程并测试Servlet"><span class="nav-text">Intelij idea创建Java Web工程并测试Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建并设置Java-web工程"><span class="nav-text">创建并设置Java web工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些信息"><span class="nav-text">一些信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写Servlet类进行测试"><span class="nav-text">编写Servlet类进行测试</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
