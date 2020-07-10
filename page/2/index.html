@@ -188,427 +188,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/06/27/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="李鹏辉">
-      <meta itemprop="description" content="@lipenghui">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xinkong2053.gihub.io">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/27/%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8elasticsearch/" class="post-title-link" itemprop="url">在远程服务器中安装并使用ElasticSearch</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-27 16:44:00" itemprop="dateCreated datePublished" datetime="2020-06-27T16:44:00+08:00">2020-06-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="在远程服务器中安装并使用ElasticSearch"><a href="#在远程服务器中安装并使用ElasticSearch" class="headerlink" title="在远程服务器中安装并使用ElasticSearch"></a>在远程服务器中安装并使用ElasticSearch</h1><p><strong>本人的系统是CentOS 7.6，Java jdk环境是1.8，运行于腾讯云上。这里写一下安装运行过程</strong></p>
-<h2 id="下载elasticsearch"><a href="#下载elasticsearch" class="headerlink" title="下载elasticsearch"></a>下载elasticsearch</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.0-linux-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
-
-<p><code>最新版本链接：</code><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html</a></p>
-<h2 id="将其解压到-usr-local文件夹中"><a href="#将其解压到-usr-local文件夹中" class="headerlink" title="将其解压到/usr/local文件夹中"></a>将其解压到/usr/local文件夹中</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -vxf elasticsearch-7.8.0-linux-x86_64.tar.gz -C /usr/local</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改该文件中的config-elasticsearch-yml文件"><a href="#修改该文件中的config-elasticsearch-yml文件" class="headerlink" title="修改该文件中的config/elasticsearch.yml文件"></a>修改该文件中的config/elasticsearch.yml文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在文件夹下执行</span></span><br><span class="line">vim config/elasticsearch.yml</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加如下字段</span></span><br><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span></span><br><span class="line"><span class="attr">http.port:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="使用普通的用户开启elasticsearch服务"><a href="#使用普通的用户开启elasticsearch服务" class="headerlink" title="使用普通的用户开启elasticsearch服务"></a>使用普通的用户开启elasticsearch服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 注意使用root账户开启服务会失败</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">添加账户(如果有普通的账户则不需要添加) es</span></span><br><span class="line">useradd es</span><br><span class="line">passwd es</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">添加权限</span></span><br><span class="line">chown -R es /usr/local/elasticsearch-7.8.0-linux-x86_64</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">使用es账户</span></span><br><span class="line">su es</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">进入bin文件夹</span></span><br><span class="line">cd /usr/local/elasticsearch-7.8.0-linux-x86_64/bin</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">开启服务</span></span><br><span class="line">./elasticsearch</span><br></pre></td></tr></table></figure>
-
-<h2 id="查看es的基本信息"><a href="#查看es的基本信息" class="headerlink" title="查看es的基本信息"></a>查看es的基本信息</h2><ul>
-<li><p>命令行输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://127.0.0.1:9200</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>或者是在浏览器上输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;&#123;&#123;主机ip地址&#125;&#125;:9200</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>显示下面json字符串则显示启动成功</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span> : <span class="string">"node-1"</span>,</span><br><span class="line">  <span class="attr">"cluster_name"</span> : <span class="string">"elasticsearch"</span>,</span><br><span class="line">  <span class="attr">"cluster_uuid"</span> : <span class="string">"iwyfejvHSziaaCAz9h-TLg"</span>,</span><br><span class="line">  <span class="attr">"version"</span> : &#123;</span><br><span class="line">    <span class="attr">"number"</span> : <span class="string">"7.8.0"</span>,</span><br><span class="line">    <span class="attr">"build_flavor"</span> : <span class="string">"default"</span>,</span><br><span class="line">    <span class="attr">"build_type"</span> : <span class="string">"tar"</span>,</span><br><span class="line">    <span class="attr">"build_hash"</span> : <span class="string">"757314695644ea9a1dc2fecd26d1a43856725e65"</span>,</span><br><span class="line">    <span class="attr">"build_date"</span> : <span class="string">"2020-06-14T19:35:50.234439Z"</span>,</span><br><span class="line">    <span class="attr">"build_snapshot"</span> : <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"lucene_version"</span> : <span class="string">"8.5.1"</span>,</span><br><span class="line">    <span class="attr">"minimum_wire_compatibility_version"</span> : <span class="string">"6.8.0"</span>,</span><br><span class="line">    <span class="attr">"minimum_index_compatibility_version"</span> : <span class="string">"6.0.0-beta1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"tagline"</span> : <span class="string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-
-    
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/05/16/%E8%A7%A3%E5%86%B3%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="李鹏辉">
-      <meta itemprop="description" content="@lipenghui">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xinkong2053.gihub.io">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/16/%E8%A7%A3%E5%86%B3%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">解决虚拟机启动黑屏，无法进入系统问题</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-16 14:33:00" itemprop="dateCreated datePublished" datetime="2020-05-16T14:33:00+08:00">2020-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" itemprop="url" rel="index"><span itemprop="name">解决方案</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="解决虚拟机启动黑屏，无法进入系统问题"><a href="#解决虚拟机启动黑屏，无法进入系统问题" class="headerlink" title="解决虚拟机启动黑屏，无法进入系统问题"></a>解决虚拟机启动黑屏，无法进入系统问题</h1><p>以管理员身份运行命令行，并输入<code>netsh winsock reset</code>，并重启</p>
-<p><img src="https://img-blog.csdnimg.cn/20181221171729327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjM0MjQ1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/12/13/b-search-tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="李鹏辉">
-      <meta itemprop="description" content="@lipenghui">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xinkong2053.gihub.io">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/13/b-search-tree/" class="post-title-link" itemprop="url">二叉查找树的实现</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-13 18:55:00" itemprop="dateCreated datePublished" datetime="2019-12-13T18:55:00+08:00">2019-12-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="二叉查找树的实现"><a href="#二叉查找树的实现" class="headerlink" title="二叉查找树的实现"></a>二叉查找树的实现</h1><blockquote>
-<p>术语：</p>
-<p>二叉树（Binary Tree）是一种特殊的树，树中的每一个节点最多有两个节点，这两个这两个节点一个叫做左孩子，一个叫做右孩子</p>
-<p>二叉查找树（Binary Search Tree）是一颗二叉树，对于树上的每一个节点<code>x</code>，它的左子树上所有后代节点的值总是小于<code>x</code>的值，它的右子树上所有后代的值总是大于<code>x</code>的值</p>
-</blockquote>
-<h2 id="1-基本实现："><a href="#1-基本实现：" class="headerlink" title="1. 基本实现："></a>1. 基本实现：</h2><p>一般的BST都是以键值对的形式记录数据，本文为了简单起见，以字符串作为键的类型，以<code>Value</code>作为值的类型（Value为泛型类型，其类型在创建该树的时候指定）。感兴趣的可以看《算法（第四版）》</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Chapter3Search.ST2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BST</span>&lt;<span class="title">Value</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Node root;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String key;</span><br><span class="line">        <span class="keyword">private</span> Value value;</span><br><span class="line">        <span class="keyword">private</span> Node left;</span><br><span class="line">        <span class="keyword">private</span> Node right;</span><br><span class="line"></span><br><span class="line">        Node(String key,Value value)&#123;<span class="keyword">this</span>.key=key;<span class="keyword">this</span>.value=value;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">/*关于二叉查找树的一些方法，具体实现见下文*/</span></span><br><span class="line">    <span class="comment">//添加节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String key,Value value)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据键来获取值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Value <span class="title">get</span><span class="params">(String key)</span></span>&#123;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取键最小的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">min</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="keyword">null</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取键最大的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">max</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="keyword">null</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String key)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//对二叉树进行中序遍历</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Iterable&lt;String&gt; <span class="title">inorderTraverse</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="keyword">null</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-根据键查找值："><a href="#2-根据键查找值：" class="headerlink" title="2. 根据键查找值："></a>2. 根据键查找值：</h2><p>根据键查找记录。如果树包含该键则查找命中，返回键对应的值；如果不包含则查找未命中，返回null</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据键来获取值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Value <span class="title">get</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> get(root,key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Value <span class="title">get</span><span class="params">(Node x,String key)</span></span>&#123;</span><br><span class="line">    <span class="comment">//在以x节点为根节点的树中查找key</span></span><br><span class="line">    <span class="comment">//如果能找到，则返回键对应的值，如果找不到则返回null</span></span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;                	<span class="comment">//如果当前节点为null，则直接返回null</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cmp=key.compareTo(x.key);           	<span class="comment">//比较当前节点和待找节点的key</span></span><br><span class="line">    <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>) 		<span class="keyword">return</span> get(x.right,key);    <span class="comment">//在当前节点的右子树中继续查找</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>) 	<span class="keyword">return</span> get(x.left,key);  	<span class="comment">//在当前节点的左子树中继续查找</span></span><br><span class="line">    <span class="keyword">else</span> 			<span class="keyword">return</span> x.value;             <span class="comment">//两者的key相等，则查找命中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-插入键值对："><a href="#3-插入键值对：" class="headerlink" title="3. 插入键值对："></a>3. 插入键值对：</h2><p>给出一个键值对，如果树中没有该键，则新建一个节点并将该节点挂到查找末尾的空链接上；如果树中有该键，则更新对应的值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入新节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String key,Value value)</span></span>&#123;</span><br><span class="line">    root=add(root,key,value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">add</span><span class="params">(Node x,String key,Value value)</span></span>&#123;</span><br><span class="line">    <span class="comment">//在以x节点为根节点的树中插入节点</span></span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">new</span> Node(key,value);     	<span class="comment">//x为空，表示已经到达树的叶子节点</span></span><br><span class="line">    												<span class="comment">//则直接新键节点并挂在空链接上</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cmp=key.compareTo(x.key);               	<span class="comment">//比较将要插入的节点和节点x的key</span></span><br><span class="line">    <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>)       x.right=add(x.right,key,value); <span class="comment">//在x的右子树中插入节点</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>)  x.left=add(x.left,key,value);   <span class="comment">//在x的左子树中插入节点</span></span><br><span class="line">    <span class="keyword">else</span>            x.value=value;              	<span class="comment">//树已经有key对应的节点，则直接更新其值</span></span><br><span class="line">    <span class="keyword">return</span> x;                                   	<span class="comment">//返回节点x的引用;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-获取键最小的那个节点："><a href="#4-获取键最小的那个节点：" class="headerlink" title="4. 获取键最小的那个节点："></a>4. 获取键最小的那个节点：</h2><p>如果根节点的左链接为空，则树中最小节点即为根节点</p>
-<p>如果根节点的左链接不为空，则根节点的左子树中的最小节点即为全树的最小节点</p>
-<p>因此我们可以根据递归来找到最小节点</p>
-<p><em>获取最大节点的算法于此类似，区别就是递归节点的右子树</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取键最小的那个节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Node <span class="title">min</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> min(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">min</span><span class="params">(Node x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">return</span> min(x.left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-删除键最小的那个节点："><a href="#5-删除键最小的那个节点：" class="headerlink" title="5. 删除键最小的那个节点："></a>5. 删除键最小的那个节点：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除键最小的那个节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteMin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    root=deleteMin(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">deleteMin</span><span class="params">(Node x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) x=x.right;		<span class="comment">//如果x的左子节点为空，则说明x即为将要删除的最小节点</span></span><br><span class="line">    								<span class="comment">//此时将x引用（x父节点的左链接）赋予x的右子节点</span></span><br><span class="line">    								<span class="comment">//原来的节点因为没有指向它的引用而被垃圾回收</span></span><br><span class="line">    <span class="keyword">else</span> x.left=deleteMin(x.left);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-删除任意节点："><a href="#6-删除任意节点：" class="headerlink" title="6. 删除任意节点："></a>6. 删除任意节点：</h2><p>根据键删除二叉树的节点的算法比较复杂，基本步骤如下：</p>
-<ol>
-<li>找到要删除的节点，使用临时变量t指向该节点</li>
-<li>找到节点t右子树中的最小节点，使用临时变量x指向该节点</li>
-<li>使用deleteMin方法删除t右子树中的最小节点并恢复右子树</li>
-<li>x的左链接指向t的左子树，x的右链接指向t的右子树</li>
-<li>将x与t的父节点建立连接</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">    root=delete(root,key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">delete</span><span class="params">(Node x,String key)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;                    <span class="comment">//未找到键值为key的节点</span></span><br><span class="line">    <span class="keyword">int</span> cmp=key.compareTo(x.key);</span><br><span class="line">    <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>) x.right=delete(x.right,key);      <span class="comment">//从x的左节点删除节点</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>) x.left=delete(x.left,key);   <span class="comment">//从x的右节点删除节点</span></span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x.right==<span class="keyword">null</span>) <span class="keyword">return</span> x.left;        </span><br><span class="line">        <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) <span class="keyword">return</span> x.right;</span><br><span class="line">        Node t=x;</span><br><span class="line">        x=min(t.right);</span><br><span class="line">        x.right=deleteMin(t.right);				<span class="comment">//删除t的右子树中的最小节点并恢复右子树</span></span><br><span class="line">        x.left=t.left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-对二叉查找树进行中序遍历"><a href="#7-对二叉查找树进行中序遍历" class="headerlink" title="7. 对二叉查找树进行中序遍历"></a>7. 对二叉查找树进行中序遍历</h2><p>对二叉查找树的中序遍历会得到一个根据键有序节点的集合</p>
-<p>使用递归的方式进行遍历的代码并不复杂</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对二叉树进行中序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Node&gt; <span class="title">inorderTraverse</span><span class="params">()</span></span>&#123;</span><br><span class="line">    List&lt;Node&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    inorderTraverse(root,list);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inorderTraverse</span><span class="params">(Node x,List&lt;Node&gt; list)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    inorderTraverse(x.left,list);</span><br><span class="line">    list.add(x);</span><br><span class="line">    inorderTraverse(x.right,list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="8-在控制台中打印该二叉查找树"><a href="#8-在控制台中打印该二叉查找树" class="headerlink" title="8. 在控制台中打印该二叉查找树"></a>8. 在控制台中打印该二叉查找树</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"***************************************"</span>);</span><br><span class="line">    print(root,<span class="number">0</span>);</span><br><span class="line">    System.out.println(<span class="string">"***************************************"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Node x,<span class="keyword">int</span> floor)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> ;</span><br><span class="line">    print(x.left,floor+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; floor; i++) &#123;</span><br><span class="line">        System.out.print(<span class="string">"----"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(x.key+<span class="string">" "</span>+x.value);</span><br><span class="line">    print(x.right,floor+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="9-测试用例"><a href="#9-测试用例" class="headerlink" title="9. 测试用例"></a>9. 测试用例</h2><p>例子中的键为String类型而值为Integer类型。测试用例接受在控制台以<code>$add string</code>的形式添加数据，string为key，对应的值为字符串添加的顺序，<code>$del string</code>为删除，<code>$show</code> 为打印，<code>$exit</code>为推出</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    BST&lt;Integer&gt; sibst = <span class="keyword">new</span> BST&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    String str;</span><br><span class="line">    <span class="keyword">boolean</span> flag=<span class="keyword">true</span>;</span><br><span class="line">    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    String[] words;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">        str=in.nextLine();</span><br><span class="line">        <span class="keyword">if</span>(str.equals(<span class="string">""</span>)) <span class="keyword">continue</span>;</span><br><span class="line">        words = str.split(<span class="string">" "</span>);</span><br><span class="line">        <span class="keyword">switch</span> (words[<span class="number">0</span>])&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"$exit"</span>: &#123;</span><br><span class="line">                flag=<span class="keyword">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"$add"</span>:&#123;</span><br><span class="line">                sibst.add(words[<span class="number">1</span>],i++);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"$del"</span>:&#123;</span><br><span class="line">                sibst.delete(words[<span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"$show"</span>:&#123;</span><br><span class="line">                sibst.print();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">"错误命令"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="10-完整的文件"><a href="#10-完整的文件" class="headerlink" title="10. 完整的文件"></a>10. 完整的文件</h2><p><code>BST.java</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BST</span>&lt;<span class="title">Value</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Node root;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String key;</span><br><span class="line">        <span class="keyword">private</span> Value value;</span><br><span class="line">        <span class="keyword">private</span> Node left;</span><br><span class="line">        <span class="keyword">private</span> Node right;</span><br><span class="line"></span><br><span class="line">        Node(String key,Value value)&#123;</span><br><span class="line">            <span class="keyword">this</span>.key=key;</span><br><span class="line">            <span class="keyword">this</span>.value=value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String key,Value value)</span></span>&#123;</span><br><span class="line">        root=add(root,key,value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">add</span><span class="params">(Node x,String key,Value value)</span></span>&#123;</span><br><span class="line">        <span class="comment">//在以x节点为根节点的树中插入节点</span></span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">new</span> Node(key,value);         <span class="comment">//x为空，表示已经到达树的叶子节点</span></span><br><span class="line">                                                        <span class="comment">//则直接新键节点并挂在空链接上</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> cmp=key.compareTo(x.key);                   <span class="comment">//比较将要插入的节点和节点x的key</span></span><br><span class="line">        <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>)       x.right=add(x.right,key,value); <span class="comment">//在x的右子树中插入节点</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>)  x.left=add(x.left,key,value);   <span class="comment">//在x的左子树中插入节点</span></span><br><span class="line">        <span class="keyword">else</span>            x.value=value;                  <span class="comment">//树已经有key对应的节点，则直接更新其值</span></span><br><span class="line">        <span class="keyword">return</span> x;                                       <span class="comment">//更新节点x;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据键来获取值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Value <span class="title">get</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> get(root,key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Value <span class="title">get</span><span class="params">(Node x,String key)</span></span>&#123;</span><br><span class="line">        <span class="comment">//在以x节点为根节点的树中查找key</span></span><br><span class="line">        <span class="comment">//如果能找到，则返回键对应的值，如果找不到则返回null</span></span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;                <span class="comment">//如果当前节点为null，则直接返回null</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> cmp=key.compareTo(x.key);           <span class="comment">//比较当前节点和待找节点的key</span></span><br><span class="line">        <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>) <span class="keyword">return</span> get(x.right,key);      <span class="comment">//在当前节点的右子树中继续查找</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>) <span class="keyword">return</span> get(x.left,key);  <span class="comment">//在当前节点的右子树中继续查找</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> x.value;                    <span class="comment">//两者的key相等，则查找命中</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取键最小的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">min</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> min(root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">min</span><span class="params">(Node x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">return</span> min(x.left);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除键最小的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteMin</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        root=deleteMin(root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">deleteMin</span><span class="params">(Node x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) x=x.right;</span><br><span class="line">        <span class="keyword">else</span> x.left=deleteMin(x.left);</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取键最大的那个节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">max</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除节点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">        root=delete(root,key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">delete</span><span class="params">(Node x,String key)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;                    <span class="comment">//未找到键值为key的节点</span></span><br><span class="line">        <span class="keyword">int</span> cmp=key.compareTo(x.key);</span><br><span class="line">        <span class="keyword">if</span>(cmp&gt;<span class="number">0</span>) x.right=delete(x.right,key);      <span class="comment">//从x的左节点删除节点</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(cmp&lt;<span class="number">0</span>) x.left=delete(x.left,key);   <span class="comment">//从x的右节点删除节点</span></span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(x.right==<span class="keyword">null</span>) <span class="keyword">return</span> x.left;</span><br><span class="line">            <span class="keyword">if</span>(x.left==<span class="keyword">null</span>) <span class="keyword">return</span> x.right;</span><br><span class="line">            Node t=x;</span><br><span class="line">            x=min(t.right);</span><br><span class="line">            x.right=deleteMin(t.right);</span><br><span class="line">            x.left=t.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//对二叉树进行中序遍历</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Node&gt; <span class="title">inorderTraverse</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        List&lt;Node&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        inorderTraverse(root,list);</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inorderTraverse</span><span class="params">(Node x,List&lt;Node&gt; list)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        inorderTraverse(x.left,list);</span><br><span class="line">        list.add(x);</span><br><span class="line">        inorderTraverse(x.right,list);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"***************************************"</span>);</span><br><span class="line">        print(root,<span class="number">0</span>);</span><br><span class="line">        System.out.println(<span class="string">"***************************************"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Node x,<span class="keyword">int</span> floor)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="keyword">null</span>) <span class="keyword">return</span> ;</span><br><span class="line">        print(x.left,floor+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; floor; i++) &#123;</span><br><span class="line">            System.out.print(<span class="string">"----"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(x.key+<span class="string">" "</span>+x.value);</span><br><span class="line"></span><br><span class="line">        print(x.right,floor+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        BST&lt;Integer&gt; sibst = <span class="keyword">new</span> BST&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        String str;</span><br><span class="line">        <span class="keyword">boolean</span> flag=<span class="keyword">true</span>;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String[] words;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">            str=in.nextLine();</span><br><span class="line">            <span class="keyword">if</span>(str.equals(<span class="string">""</span>)) <span class="keyword">continue</span>;</span><br><span class="line">            words = str.split(<span class="string">" "</span>);</span><br><span class="line">            <span class="keyword">switch</span> (words[<span class="number">0</span>])&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">"$exit"</span>: &#123;</span><br><span class="line">                    flag=<span class="keyword">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">"$add"</span>:&#123;</span><br><span class="line">                    sibst.add(words[<span class="number">1</span>],i++);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">"$del"</span>:&#123;</span><br><span class="line">                    sibst.delete(words[<span class="number">1</span>]);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">"$show"</span>:&#123;</span><br><span class="line">                    sibst.print();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">default</span>:&#123;</span><br><span class="line">                    System.out.println(<span class="string">"错误命令"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="李鹏辉">
-      <meta itemprop="description" content="@lipenghui">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xinkong2053.gihub.io">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/" class="post-title-link" itemprop="url">Intelij idea创建Java Web工程并测试Servlet</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-07 20:26:00" itemprop="dateCreated datePublished" datetime="2019-10-07T20:26:00+08:00">2019-10-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/servlet/" itemprop="url" rel="index"><span itemprop="name">servlet</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Intelij-idea创建Java-Web工程并测试Servlet"><a href="#Intelij-idea创建Java-Web工程并测试Servlet" class="headerlink" title="Intelij idea创建Java Web工程并测试Servlet"></a>Intelij idea创建Java Web工程并测试Servlet</h1><h2 id="创建并设置Java-web工程"><a href="#创建并设置Java-web工程" class="headerlink" title="创建并设置Java web工程"></a>创建并设置Java web工程</h2><h3 id="一些信息"><a href="#一些信息" class="headerlink" title="一些信息"></a>一些信息</h3><ul>
-<li>idea版本：2019.2.1</li>
-<li>jdk版本：1.8.0</li>
-<li>tomcat版本：9.0.24</li>
-</ul>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li><p>创建web工程</p>
-<p>1.1  File–&gt;New–&gt;Project</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001711.png" alt=""></p>
-<p>1.2  勾选Web Application</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001820.png" alt=""></p>
-<p>1.3  填写名称</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001841.png" alt=""></p>
-</li>
-<li><p>Web工程设置</p>
-<p>2.1 在WEB-INF目录添加<code>classes</code> <code>lib</code> 两个文件夹</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001853.png" alt=""></p>
-<p>2.2 File–&gt;Project Structure，进入Project Structure窗口</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001901.png" alt=""></p>
-<p>2.3  选择modules–&gt;paths选项卡，勾选<code>Use module compile output path</code>，并将<code>Output path</code>和<code>Test output path</code>改为之前创建的classes目录</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001910.png" alt=""></p>
-<p>2.4  选择modules–&gt;Dependencies，点击右侧<code>+</code>号，选择<code>JARs or derectories</code>，选择创建的lib目录</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001918.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001925.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001933.png" alt=""></p>
-<p>2.5 配置打包方式：点击Artifacts选项卡，勾选<code>Include in project build</code>和<code>Show content of elements</code>其他保持默认</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001941.png" alt=""></p>
-</li>
-<li><p>tomcat配置</p>
-<p>3.1 在窗口的右上角点击<code>Add Configration...</code>，点击<code>+</code>号，选择tomcat–&gt;local，添加tomcat容器</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001948.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002005.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002017.png" alt=""></p>
-<p>3.2 选择<code>Deployment</code> 选项卡，选择<code>+</code>号，选择<code>Artifact...</code>，并修改<code>Application context</code></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002025.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002154.png" alt=""></p>
-</li>
-</ol>
-<h2 id="编写Servlet类进行测试"><a href="#编写Servlet类进行测试" class="headerlink" title="编写Servlet类进行测试"></a>编写Servlet类进行测试</h2><ol>
-<li>在<code>src</code>文件夹下创建类<code>demo01</code></li>
-</ol>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002213.png" alt=""></p>
-<ol start="2">
-<li><p>将该类继承<code>HttpServlet</code>类并复写其中的<code>service</code>方法，代码如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.testservlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        resp.getWriter().write(<span class="string">"hello world"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在WEB-INF下的<code>web.xml</code>文件中添加如下内容</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.penghui.testservlet.demo01<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>点击窗口右上角的启动按钮启动tomcat服务器，可以看到<code>WEB-INF/classes</code>文件夹下有编译后的文件产生</p>
-<pre><code>![](https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002227.png)</code></pre></li>
-<li><p>打开浏览器并输入<code>http://localhost:8080/webapp/hello</code></p>
-</li>
-</ol>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002234.png" alt=""></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/10/03/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -779,6 +358,295 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Nodejs学习笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-02 21:39:00" itemprop="dateCreated datePublished" datetime="2019-09-02T21:39:00+08:00">2019-09-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index"><span itemprop="name">nodejs</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Nodejs学习笔记"><a href="#Nodejs学习笔记" class="headerlink" title="Nodejs学习笔记"></a>Nodejs学习笔记</h1><h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><ul>
+<li>进程负责为程序的运行提供必备的环境</li>
+<li>进程相当于工厂中的车间</li>
+</ul>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul>
+<li>线程是计算机中最小的计算单位，线程负责执行进程中的程序</li>
+<li>线程就相当于工厂中的工人</li>
+</ul>
+<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><ul>
+<li>JS是单线程的</li>
+<li>Node的服务器是<strong>单线程</strong>的<ul>
+<li>Node处理请求时是单线程，但是在后台拥有一个I/O线程池</li>
+</ul>
+</li>
+</ul>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><ul>
+<li>传统的服务器都是多线程的<ul>
+<li>每进来一个请求，就创建一个线程去处理请求</li>
+</ul>
+</li>
+</ul>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><h3 id="ECMAScript标准的缺陷"><a href="#ECMAScript标准的缺陷" class="headerlink" title="ECMAScript标准的缺陷"></a>ECMAScript标准的缺陷</h3><ul>
+<li>没有模块系统</li>
+<li>标准库较少</li>
+<li>没有标准接口</li>
+<li>缺乏管理系统</li>
+</ul>
+<h3 id="CommonJS规范"><a href="#CommonJS规范" class="headerlink" title="CommonJS规范"></a>CommonJS规范</h3><ul>
+<li>规范的提出，只要是为了弥补当前的Javascript没有标准的缺陷</li>
+<li>规范为JS指定了一个美好的愿景，希望JS能够在任何地方运行</li>
+<li>CommonJS对模块的定义十分简单<ul>
+<li>模块引用</li>
+<li>模块定义</li>
+<li>模块标识</li>
+</ul>
+</li>
+</ul>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><ul>
+<li><p>在Node中一个JS文件就是一个模块</p>
+</li>
+<li><p>通过<code>require()</code>函数来引入外部的模块</p>
+<ul>
+<li><p><code>require()</code>可以传递一个文件的路径作为参数，node将会自动的根据该路径来引入外部模块</p>
+</li>
+<li><p>这里的路径，如果使用相对路径，必须以<code>.</code>或<code>..</code>开头</p>
+</li>
+<li><p>使用<code>require()</code> 引入模块以后，该函数会返回一个<strong>对象</strong>，这个对象代表的是引入的模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hello=<span class="built_in">require</span>(<span class="string">'./helloNode.js'</span>);</span><br><span class="line"><span class="keyword">var</span> hello2=<span class="built_in">require</span>(<span class="string">'./helloNode'</span>);		<span class="comment">//与第一行等价</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>在Node中，每一个JS文件中的JS代码都是独立运行在一个函数中而不是全局作用域，所以一个模块中的变量和函数在其他模块中无法访问</li>
+</ul>
+<ul>
+<li><p>我们可以使用<code>exports</code>来向外部暴露变量和方法</p>
+<ul>
+<li>只需要将需要暴露给外部的变量或方法设置为<code>exports</code> 的属性即可</li>
+</ul>
+</li>
+<li><p>我们使用<code>require()</code>引入外部模块时，使用的是<strong>模块标识</strong>，我们可以通过模块表示来找到指定的模块</p>
+<ul>
+<li><p>模块分成两大类</p>
+<ul>
+<li><p>核心模块</p>
+<ul>
+<li><p>由Node引擎提供的模块文件</p>
+</li>
+<li><p>核心模块的标识就是<strong>模块的名字</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);		<span class="comment">//引用核心模块</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>文件模块</p>
+<ul>
+<li>由用户自己创建的模块</li>
+</ul>
+</li>
+<li><p>文件模块标识就是<strong>文件的路径</strong>（绝对路径，相对路径）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在node中有一个全局对象<code>global</code>，它的作用和网页中的<code>window</code>类似</p>
+<ul>
+<li>在全局中创建的变量都会作为<code>global</code>的属性保存</li>
+<li>在全局中创建的函数都会作为<code>global</code>的方法保存</li>
+</ul>
+</li>
+<li><p>在node在执行模块中的代码时，它会首先在代码的<strong>外层</strong>添加如下代码。所以可以说明node中的<strong>模块</strong>(JS文件)就是一个<strong>函数</strong>，在模块中定义的变量都是<strong>局部变量</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">exports, require, module, __filename, __dirname</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="CommonJS包规范"><a href="#CommonJS包规范" class="headerlink" title="CommonJS包规范"></a>CommonJS包规范</h3><ul>
+<li><p>包实际上就是一个<strong>压缩文件</strong>，解压后还原为目录。符合规范的目录，应该包含如下文件    </p>
+<table>
+<thead>
+<tr>
+<th>package.json</th>
+<th>描述文件（必须）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>bin</strong></td>
+<td><strong>可执行的二进制文件</strong></td>
+</tr>
+<tr>
+<td><strong>lib</strong></td>
+<td><strong>JS代码</strong></td>
+</tr>
+<tr>
+<td><strong>doc</strong></td>
+<td><strong>文档</strong></td>
+</tr>
+<tr>
+<td><strong>test</strong></td>
+<td><strong>单元测试</strong></td>
+</tr>
+</tbody></table>
+<ul>
+<li>包描述文件用于表达非代码相关的信息，它是一个JSON格式的文件<code>package.json</code>，位于包的根目录下，是包的重要组成部分</li>
+</ul>
+</li>
+</ul>
+<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><h3 id="NPM介绍"><a href="#NPM介绍" class="headerlink" title="NPM介绍"></a>NPM介绍</h3><ul>
+<li><p>NPM命令</p>
+<table>
+<thead>
+<tr>
+<th>npm-v</th>
+<th>查看版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>npm</td>
+<td>帮助说明</td>
+</tr>
+<tr>
+<td>npm search packageName</td>
+<td>搜索模块包</td>
+</tr>
+<tr>
+<td>npm install packageName</td>
+<td>在当前目录下安装包</td>
+</tr>
+<tr>
+<td>npm inatall packageName -g</td>
+<td>全局模式安装包</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="Node-js文件系统"><a href="#Node-js文件系统" class="headerlink" title="Node.js文件系统"></a>Node.js文件系统</h2><h3 id="Buffer-缓冲区"><a href="#Buffer-缓冲区" class="headerlink" title="Buffer 缓冲区"></a>Buffer 缓冲区</h3><ul>
+<li>Buffer的结构和数组很像，操作的方法也和数组类似</li>
+<li>数组中不能存储二进制文件，而Buffer就是专门用来存储二进制数据</li>
+<li>使用Buffer不需要引入模块，直接使用即可</li>
+<li>在Buffer中存储的都是<strong>二进制数据</strong>，已十六进制显示</li>
+<li>Buffer的大小一旦确定，这不能修改，Buffer实际上是底层内存的直接操作</li>
+<li>调用<code>buf.toString()</code>可以将buffer中的二进制数据转换成字符串</li>
+</ul>
+<h3 id="File-System-文件系统"><a href="#File-System-文件系统" class="headerlink" title="File  System 文件系统"></a>File  System 文件系统</h3><ul>
+<li><p>简单来说就是通过Node来操作系统中的文件</p>
+</li>
+<li><p>使用文件系统，需要先引入fs模块</p>
+</li>
+<li><p>fs模块中所有的操作都有两种可供选择<strong>同步</strong>和<strong>异步</strong></p>
+<ul>
+<li><strong>同步</strong>文件系统会阻塞程序的执行，也就是除非操作完毕，否则不会像下执行代码</li>
+<li><strong>异步</strong>文件系统不会阻塞程序的执行，而是在操作完成时，通过回调函数将结果返回</li>
+</ul>
+</li>
+<li><p><strong>同步文件写入的步骤</strong></p>
+<ul>
+<li><p>打开文件<code>fs.openSync(path[, flags, mode])</code></p>
+<ul>
+<li><p><code>path</code> 要打开文件的路径</p>
+</li>
+<li><p><code>flags</code> 打开文件要做的操作类型<code>r/w</code></p>
+</li>
+<li><p><code>mode</code> 设置文件的操作权限，一般不传</p>
+</li>
+<li><blockquote>
+<p>返回值：该方法会返回一个文件的描述符作为结果，我们可以通过该描述符来对文件进行各种操作</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>向文件中写内容<code>fs.writeSync(fd, string[, position[, encoding]])</code></p>
+<ul>
+<li><code>fd</code> 文件的描述符，需要传递的要写入的文件的描述符</li>
+<li><code>string</code> 要写入的内容</li>
+<li><code>position</code> 写入的起始位置</li>
+<li><code>encoding</code> 写入的编码，默认<code>UTF-8</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>异步文件的写入</strong></p>
+<ul>
+<li>异步写入性能比同步写入好</li>
+<li>异步的方法无返回值，结果都是通过回调函数返回的参数</li>
+<li>回调函数有两个参数：<code>err</code> 错误对象，如果没有错误这位null ，<code>fd</code> 文件的描述符</li>
+</ul>
+</li>
+<li><p>文件的打开状态<br> <img src="assets/1561211220766.png" alt="1561211220766"></p>
+</li>
+<li><p><strong>流式文件的写入</strong></p>
+<ul>
+<li>同步、异步、简单文件的写入都不适合大文件的写入，性能较差，容易导致内存溢出</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
@@ -832,7 +700,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intelij-idea/" rel="tag">intelij idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/" rel="tag">servlet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vmware/" rel="tag">vmware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intelij-idea/" rel="tag">intelij idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/" rel="tag">servlet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vmware/" rel="tag">vmware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -867,20 +735,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

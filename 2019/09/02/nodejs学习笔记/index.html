@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#aaaa">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/site-icon/svg/MrYao02.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#aaaa">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xingkong2053.gihub.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+  <meta name="description" content="Nodejs学习笔记进程和线程进程 进程负责为程序的运行提供必备的环境 进程相当于工厂中的车间  线程 线程是计算机中最小的计算单位，线程负责执行进程中的程序 线程就相当于工厂中的工人  单线程 JS是单线程的 Node的服务器是单线程的 Node处理请求时是单线程，但是在后台拥有一个I&#x2F;O线程池    多线程 传统的服务器都是多线程的 每进来一个请求，就创建一个线程去处理请求    Node.j">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs学习笔记">
+<meta property="og:url" content="https://xingkong2053.gihub.io/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="xinkong2053.gihub.io">
+<meta property="og:description" content="Nodejs学习笔记进程和线程进程 进程负责为程序的运行提供必备的环境 进程相当于工厂中的车间  线程 线程是计算机中最小的计算单位，线程负责执行进程中的程序 线程就相当于工厂中的工人  单线程 JS是单线程的 Node的服务器是单线程的 Node处理请求时是单线程，但是在后台拥有一个I&#x2F;O线程池    多线程 传统的服务器都是多线程的 每进来一个请求，就创建一个线程去处理请求    Node.j">
+<meta property="og:image" content="https://xingkong2053.gihub.io/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/assets/1561211220766.png">
+<meta property="article:published_time" content="2019-09-02T13:39:00.000Z">
+<meta property="article:modified_time" content="2020-07-10T02:07:02.135Z">
+<meta property="article:author" content="李鹏辉">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xingkong2053.gihub.io/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/assets/1561211220766.png">
+
+<link rel="canonical" href="https://xingkong2053.gihub.io/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>Nodejs学习笔记 | xinkong2053.gihub.io</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xinkong2053.gihub.io</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Nodejs学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-02 21:39:00" itemprop="dateCreated datePublished" datetime="2019-09-02T21:39:00+08:00">2019-09-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index"><span itemprop="name">nodejs</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Nodejs学习笔记"><a href="#Nodejs学习笔记" class="headerlink" title="Nodejs学习笔记"></a>Nodejs学习笔记</h1><h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><ul>
+<li>进程负责为程序的运行提供必备的环境</li>
+<li>进程相当于工厂中的车间</li>
+</ul>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul>
+<li>线程是计算机中最小的计算单位，线程负责执行进程中的程序</li>
+<li>线程就相当于工厂中的工人</li>
+</ul>
+<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><ul>
+<li>JS是单线程的</li>
+<li>Node的服务器是<strong>单线程</strong>的<ul>
+<li>Node处理请求时是单线程，但是在后台拥有一个I/O线程池</li>
+</ul>
+</li>
+</ul>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><ul>
+<li>传统的服务器都是多线程的<ul>
+<li>每进来一个请求，就创建一个线程去处理请求</li>
+</ul>
+</li>
+</ul>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><h3 id="ECMAScript标准的缺陷"><a href="#ECMAScript标准的缺陷" class="headerlink" title="ECMAScript标准的缺陷"></a>ECMAScript标准的缺陷</h3><ul>
+<li>没有模块系统</li>
+<li>标准库较少</li>
+<li>没有标准接口</li>
+<li>缺乏管理系统</li>
+</ul>
+<h3 id="CommonJS规范"><a href="#CommonJS规范" class="headerlink" title="CommonJS规范"></a>CommonJS规范</h3><ul>
+<li>规范的提出，只要是为了弥补当前的Javascript没有标准的缺陷</li>
+<li>规范为JS指定了一个美好的愿景，希望JS能够在任何地方运行</li>
+<li>CommonJS对模块的定义十分简单<ul>
+<li>模块引用</li>
+<li>模块定义</li>
+<li>模块标识</li>
+</ul>
+</li>
+</ul>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><ul>
+<li><p>在Node中一个JS文件就是一个模块</p>
+</li>
+<li><p>通过<code>require()</code>函数来引入外部的模块</p>
+<ul>
+<li><p><code>require()</code>可以传递一个文件的路径作为参数，node将会自动的根据该路径来引入外部模块</p>
+</li>
+<li><p>这里的路径，如果使用相对路径，必须以<code>.</code>或<code>..</code>开头</p>
+</li>
+<li><p>使用<code>require()</code> 引入模块以后，该函数会返回一个<strong>对象</strong>，这个对象代表的是引入的模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hello=<span class="built_in">require</span>(<span class="string">'./helloNode.js'</span>);</span><br><span class="line"><span class="keyword">var</span> hello2=<span class="built_in">require</span>(<span class="string">'./helloNode'</span>);		<span class="comment">//与第一行等价</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>在Node中，每一个JS文件中的JS代码都是独立运行在一个函数中而不是全局作用域，所以一个模块中的变量和函数在其他模块中无法访问</li>
+</ul>
+<ul>
+<li><p>我们可以使用<code>exports</code>来向外部暴露变量和方法</p>
+<ul>
+<li>只需要将需要暴露给外部的变量或方法设置为<code>exports</code> 的属性即可</li>
+</ul>
+</li>
+<li><p>我们使用<code>require()</code>引入外部模块时，使用的是<strong>模块标识</strong>，我们可以通过模块表示来找到指定的模块</p>
+<ul>
+<li><p>模块分成两大类</p>
+<ul>
+<li><p>核心模块</p>
+<ul>
+<li><p>由Node引擎提供的模块文件</p>
+</li>
+<li><p>核心模块的标识就是<strong>模块的名字</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);		<span class="comment">//引用核心模块</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>文件模块</p>
+<ul>
+<li>由用户自己创建的模块</li>
+</ul>
+</li>
+<li><p>文件模块标识就是<strong>文件的路径</strong>（绝对路径，相对路径）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在node中有一个全局对象<code>global</code>，它的作用和网页中的<code>window</code>类似</p>
+<ul>
+<li>在全局中创建的变量都会作为<code>global</code>的属性保存</li>
+<li>在全局中创建的函数都会作为<code>global</code>的方法保存</li>
+</ul>
+</li>
+<li><p>在node在执行模块中的代码时，它会首先在代码的<strong>外层</strong>添加如下代码。所以可以说明node中的<strong>模块</strong>(JS文件)就是一个<strong>函数</strong>，在模块中定义的变量都是<strong>局部变量</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">exports, require, module, __filename, __dirname</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="CommonJS包规范"><a href="#CommonJS包规范" class="headerlink" title="CommonJS包规范"></a>CommonJS包规范</h3><ul>
+<li><p>包实际上就是一个<strong>压缩文件</strong>，解压后还原为目录。符合规范的目录，应该包含如下文件    </p>
+<table>
+<thead>
+<tr>
+<th>package.json</th>
+<th>描述文件（必须）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>bin</strong></td>
+<td><strong>可执行的二进制文件</strong></td>
+</tr>
+<tr>
+<td><strong>lib</strong></td>
+<td><strong>JS代码</strong></td>
+</tr>
+<tr>
+<td><strong>doc</strong></td>
+<td><strong>文档</strong></td>
+</tr>
+<tr>
+<td><strong>test</strong></td>
+<td><strong>单元测试</strong></td>
+</tr>
+</tbody></table>
+<ul>
+<li>包描述文件用于表达非代码相关的信息，它是一个JSON格式的文件<code>package.json</code>，位于包的根目录下，是包的重要组成部分</li>
+</ul>
+</li>
+</ul>
+<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><h3 id="NPM介绍"><a href="#NPM介绍" class="headerlink" title="NPM介绍"></a>NPM介绍</h3><ul>
+<li><p>NPM命令</p>
+<table>
+<thead>
+<tr>
+<th>npm-v</th>
+<th>查看版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>npm</td>
+<td>帮助说明</td>
+</tr>
+<tr>
+<td>npm search packageName</td>
+<td>搜索模块包</td>
+</tr>
+<tr>
+<td>npm install packageName</td>
+<td>在当前目录下安装包</td>
+</tr>
+<tr>
+<td>npm inatall packageName -g</td>
+<td>全局模式安装包</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="Node-js文件系统"><a href="#Node-js文件系统" class="headerlink" title="Node.js文件系统"></a>Node.js文件系统</h2><h3 id="Buffer-缓冲区"><a href="#Buffer-缓冲区" class="headerlink" title="Buffer 缓冲区"></a>Buffer 缓冲区</h3><ul>
+<li>Buffer的结构和数组很像，操作的方法也和数组类似</li>
+<li>数组中不能存储二进制文件，而Buffer就是专门用来存储二进制数据</li>
+<li>使用Buffer不需要引入模块，直接使用即可</li>
+<li>在Buffer中存储的都是<strong>二进制数据</strong>，已十六进制显示</li>
+<li>Buffer的大小一旦确定，这不能修改，Buffer实际上是底层内存的直接操作</li>
+<li>调用<code>buf.toString()</code>可以将buffer中的二进制数据转换成字符串</li>
+</ul>
+<h3 id="File-System-文件系统"><a href="#File-System-文件系统" class="headerlink" title="File  System 文件系统"></a>File  System 文件系统</h3><ul>
+<li><p>简单来说就是通过Node来操作系统中的文件</p>
+</li>
+<li><p>使用文件系统，需要先引入fs模块</p>
+</li>
+<li><p>fs模块中所有的操作都有两种可供选择<strong>同步</strong>和<strong>异步</strong></p>
+<ul>
+<li><strong>同步</strong>文件系统会阻塞程序的执行，也就是除非操作完毕，否则不会像下执行代码</li>
+<li><strong>异步</strong>文件系统不会阻塞程序的执行，而是在操作完成时，通过回调函数将结果返回</li>
+</ul>
+</li>
+<li><p><strong>同步文件写入的步骤</strong></p>
+<ul>
+<li><p>打开文件<code>fs.openSync(path[, flags, mode])</code></p>
+<ul>
+<li><p><code>path</code> 要打开文件的路径</p>
+</li>
+<li><p><code>flags</code> 打开文件要做的操作类型<code>r/w</code></p>
+</li>
+<li><p><code>mode</code> 设置文件的操作权限，一般不传</p>
+</li>
+<li><blockquote>
+<p>返回值：该方法会返回一个文件的描述符作为结果，我们可以通过该描述符来对文件进行各种操作</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>向文件中写内容<code>fs.writeSync(fd, string[, position[, encoding]])</code></p>
+<ul>
+<li><code>fd</code> 文件的描述符，需要传递的要写入的文件的描述符</li>
+<li><code>string</code> 要写入的内容</li>
+<li><code>position</code> 写入的起始位置</li>
+<li><code>encoding</code> 写入的编码，默认<code>UTF-8</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>异步文件的写入</strong></p>
+<ul>
+<li>异步写入性能比同步写入好</li>
+<li>异步的方法无返回值，结果都是通过回调函数返回的参数</li>
+<li>回调函数有两个参数：<code>err</code> 错误对象，如果没有错误这位null ，<code>fd</code> 文件的描述符</li>
+</ul>
+</li>
+<li><p>文件的打开状态<br> <img src="assets/1561211220766.png" alt="1561211220766"></p>
+</li>
+<li><p><strong>流式文件的写入</strong></p>
+<ul>
+<li>同步、异步、简单文件的写入都不适合大文件的写入，性能较差，容易导致内存溢出</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+        <div style="text-align:center;color: red;font-size:14px;">
+          -------------   本文已结束  <i class="fa fa-paw"></i>  感谢您的阅读！  -------------
+        </div>
+      
+    </div>
+        <div class="reward-container">
+  <div>Donate comment here.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.png" alt="李鹏辉 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="李鹏辉 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      
+      
+      <div>
+        <div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Nodejs学习笔记</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 李鹏辉 的个人博客">李鹏辉</a></p>
+  <p><span>发布时间:</span>2019年09月02日 - 21:39</p>
+  <p><span>最后更新:</span>2020年07月10日 - 10:07</p>
+  <p><span>原始链接:</span><a href="/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Nodejs学习笔记">https://xingkong2053.gihub.io/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+    <span class="copy-path"  title="点击复制文章链接">
+      <i class="fa fa-clipboard" data-clipboard-text="https://xingkong2053.gihub.io/2019/09/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"  aria-label="复制成功！"></i>
+    </span>
+  </p>
+  <p>
+    <span>版权声明:</span>
+    本博客所有文章除特别声明外，均采用 
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">
+    <i class="fa fa-creative-commons"></i>BY-NC-SA </a>
+    许可协议。转载请注明出处!
+  </p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+      </div>
+      
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+            <div class="social-item">
+              <a target="_blank" class="social-link" href="/atom.xml">
+                <span class="icon">
+                  <i class="fa fa-rss"></i>
+                </span>
+
+                <span class="label">RSS</span>
+              </a>
+            </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+              <a href="/tags/nodejs/" rel="tag"><i class="fa fa-tag"></i> nodejs</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/10/03/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="next" title="java基础学习">
+      java基础学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    
+    <div class="my-tag-cloud">
+      
+        <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intelij-idea/" rel="tag">intelij idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/" rel="tag">servlet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vmware/" rel="tag">vmware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+    </div>
+
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nodejs学习笔记"><span class="nav-text">Nodejs学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程和线程"><span class="nav-text">进程和线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程"><span class="nav-text">进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程"><span class="nav-text">线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程"><span class="nav-text">单线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程"><span class="nav-text">多线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js"><span class="nav-text">Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript标准的缺陷"><span class="nav-text">ECMAScript标准的缺陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS规范"><span class="nav-text">CommonJS规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块化"><span class="nav-text">模块化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS包规范"><span class="nav-text">CommonJS包规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM"><span class="nav-text">NPM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NPM介绍"><span class="nav-text">NPM介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js文件系统"><span class="nav-text">Node.js文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Buffer-缓冲区"><span class="nav-text">Buffer 缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-System-文件系统"><span class="nav-text">File  System 文件系统</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李鹏辉"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">李鹏辉</p>
+  <div class="site-description" itemprop="description">@lipenghui</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xingkong2053" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xingkong2053" rel="noopener" target="_blank">GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lipenghui2053@gmail.com" title="E-Mail → mailto:lipenghui2053@gmail.com" rel="noopener" target="_blank">E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李鹏辉</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 — <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.2
+  </div>
+
+  <br>
+  
+  <div class="powered-by" style='color: gray'>
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+      本站总访客数:&nbsp;<span id="busuanzi_value_site_uv" style='color: silver'></span>&nbsp;人&nbsp;| 
+    </span>
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_container_site_pv">
+        &nbsp;本站总访问量:&nbsp;<span id="busuanzi_value_site_pv" style='color: silver'></span>&nbsp;次
+    </span>
+  </div>
+
+  <br>
+  
+  <div>
+    <span id="timeDate" class="color: lightblue;"></span>  
+    <span id="times" class="color: lightgreen;"></span>
+  </div>
+
+
+
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("02/12/2020 18:00:00"); 
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+  setInterval("createtime()",250);
+</script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  
+  
+    <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+
+</body>
+</html>
