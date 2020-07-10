@@ -500,6 +500,232 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/04/07/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/07/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">代理模式</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-07 17:51:00" itemprop="dateCreated datePublished" datetime="2020-04-07T17:51:00+08:00">2020-04-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><p><strong>jdk动态代理</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 代理模式 jdk动态代理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicProxy</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Teacher t1=<span class="keyword">new</span> TeacherImpl();</span><br><span class="line">        ProxyFactory proxyFactory = <span class="keyword">new</span> ProxyFactory(t1);</span><br><span class="line">        Teacher proxyInstance = (Teacher) proxyFactory.getProxyInstance();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用代理对象调用目标对象的方法</span></span><br><span class="line">        proxyInstance.teach();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Teacher</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">teach</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TeacherImpl</span> <span class="keyword">implements</span> <span class="title">Teacher</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">teach</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"老师授课中。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 代理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProxyFactory</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Object target;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ProxyFactory</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getProxyInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Proxy.newProxyInstance(</span><br><span class="line">                target.getClass().getClassLoader(),</span><br><span class="line">                target.getClass().getInterfaces(),</span><br><span class="line">                (proxy, method, args) -&gt; &#123;</span><br><span class="line">                    System.out.println(<span class="string">"jdk代理开始"</span>);</span><br><span class="line">                    Object invoke = method.invoke(target, args);</span><br><span class="line">                    System.out.println(<span class="string">"jdk代理结束"</span>);</span><br><span class="line">                    <span class="keyword">return</span> invoke;</span><br><span class="line">                &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/04/03/%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/03/%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">创建者模式</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-03 09:53:00" itemprop="dateCreated datePublished" datetime="2020-04-03T09:53:00+08:00">2020-04-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>创建者模式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.c_builder;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  创建者模式</span></span><br><span class="line"><span class="comment"> *  创建者模式的四种角色：</span></span><br><span class="line"><span class="comment"> *  Product产品角色：一个具体的产品对象</span></span><br><span class="line"><span class="comment"> *  Builder抽象创造者：创建一个product对象的各个不加指定的接口/抽象类</span></span><br><span class="line"><span class="comment"> *  ConcreteBuilder具体的创建者：实现接口，创建和装配各个部件</span></span><br><span class="line"><span class="comment"> *  Director指挥者：创建一个使用builder接口的对象。它主是用于创建一个复杂的对象。</span></span><br><span class="line"><span class="comment"> *  它主要有两个作用，一是隔离了客户与对像的生产过程，二是负责控制产品对象的生产过程</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Director director=<span class="keyword">new</span> Director(<span class="keyword">new</span> CommonHouse());</span><br><span class="line">        Director director2=<span class="keyword">new</span> Director(<span class="keyword">new</span> HighHouse());</span><br><span class="line"></span><br><span class="line">        director.constructHouse();</span><br><span class="line">        director2.constructHouse();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 产品product</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">House</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String base;</span><br><span class="line">    <span class="keyword">private</span> String wall;</span><br><span class="line">    <span class="keyword">private</span> String roofed;</span><br><span class="line">	<span class="comment">/*getter&amp;setter*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 抽象的创建者</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">HouseBuilder</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> House house=<span class="keyword">new</span> House();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建的流程</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">buildBase</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">buildWalls</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">roofed</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> House <span class="title">buildHouse</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> house;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 具体的创建者一：普通房子</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommonHouse</span> <span class="keyword">extends</span> <span class="title">HouseBuilder</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildBase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"CommonHouse.buildBase"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildWalls</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"CommonHouse.buildWalls"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">roofed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"CommonHouse.roofed"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 具体的创建者二：高楼</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HighHouse</span> <span class="keyword">extends</span> <span class="title">HouseBuilder</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildBase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"HighHouse.buildBase"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildWalls</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"HighHouse.buildWalls"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">roofed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"HighHouse.roofed"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 指挥者</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Director</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> HouseBuilder houseBuilder;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Director</span><span class="params">(HouseBuilder hb)</span> </span>&#123;</span><br><span class="line">        houseBuilder=hb;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHouseBuilder</span><span class="params">(HouseBuilder houseBuilder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.houseBuilder = houseBuilder;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> House <span class="title">constructHouse</span><span class="params">()</span></span>&#123;</span><br><span class="line">        houseBuilder.buildBase();</span><br><span class="line">        houseBuilder.buildWalls();</span><br><span class="line">        houseBuilder.roofed();</span><br><span class="line">        <span class="keyword">return</span> houseBuilder.buildHouse();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200403095243.png" alt=""></p>
+<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200403095310.png" alt=""></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="李鹏辉">
+      <meta itemprop="description" content="@lipenghui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinkong2053.gihub.io">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">单例模式</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-02 15:28:00" itemprop="dateCreated datePublished" datetime="2020-04-02T15:28:00+08:00">2020-04-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>单例模式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式使用场景：需要频繁的进行创建和销毁的对象、创建对象时耗时过多或耗费资源过多（即：重量级对象）</span></span><br><span class="line"><span class="comment"> * 经常用到的对象、工具类对象、频繁访问数据库或文件的对象</span></span><br><span class="line"><span class="comment"> * 数据源、session工厂等</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingtonTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Singleton s1=SingletonImpl05.getInstance();</span><br><span class="line">        Singleton s2=SingletonImpl05.getInstance();</span><br><span class="line"></span><br><span class="line">        System.out.println(s1==s2);</span><br><span class="line"></span><br><span class="line">        System.out.println(s1.hashCode());</span><br><span class="line">        System.out.println(s2.hashCode());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Singleton</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：饿汉式（静态常量）</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl01</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造器初始化防止外部new</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl01</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton instance=<span class="keyword">new</span> SingletonImpl01();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> instance;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：饿汉式（静态代码块）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl02</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl02</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        instance=<span class="keyword">new</span> SingletonImpl02();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> instance;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：懒汉式（线程安全，同步方法）</span></span><br><span class="line"><span class="comment"> * 缺点：效率低</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl03</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl03</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance==<span class="keyword">null</span>)&#123;</span><br><span class="line">            instance=<span class="keyword">new</span> SingletonImpl03();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：懒汉式（线程安全，双重检查）</span></span><br><span class="line"><span class="comment"> * 线程安全、延迟加载、效率较高</span></span><br><span class="line"><span class="comment"> * 推荐使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl04</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl04</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(instance==<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton<span class="class">.<span class="keyword">class</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(instance==<span class="keyword">null</span>)&#123;</span><br><span class="line">                    instance=<span class="keyword">new</span> SingletonImpl04();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：静态内部类</span></span><br><span class="line"><span class="comment"> * 这种方式采用了类装载机制来保证初始化实例时只有一个线程</span></span><br><span class="line"><span class="comment"> * 推荐使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl05</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl05</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonInstance</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE=<span class="keyword">new</span> SingletonImpl05();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonInstance.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/12/20/redis%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1069,389 +1295,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/11/06/leetcode%E9%A2%98%E7%9B%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="李鹏辉">
-      <meta itemprop="description" content="@lipenghui">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xinkong2053.gihub.io">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/leetcode%E9%A2%98%E7%9B%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">leetcode题目类型总结</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 09:46:00" itemprop="dateCreated datePublished" datetime="2019-11-06T09:46:00+08:00">2019-11-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="leetcode题目类型总结"><a href="#leetcode题目类型总结" class="headerlink" title="leetcode题目类型总结"></a>leetcode题目类型总结</h1><h3 id="1-Pattern-Sliding-window，滑动窗口类型"><a href="#1-Pattern-Sliding-window，滑动窗口类型" class="headerlink" title="1. Pattern: Sliding window，滑动窗口类型"></a>1. Pattern: Sliding window，<strong>滑动窗口类型</strong></h3><p>经典题目：</p>
-<p>Maximum Sum Subarray of Size K (easy)</p>
-<p>Smallest Subarray with a given sum (easy)</p>
-<p>Longest Substring with K Distinct Characters (medium)</p>
-<p>Fruits into Baskets (medium)</p>
-<p>No-repeat Substring (hard)</p>
-<p>Longest Substring with Same Letters after Replacement (hard)</p>
-<p>Longest Subarray with Ones after Replacement (hard)</p>
-<h3 id="2-Pattern-two-points-双指针类型"><a href="#2-Pattern-two-points-双指针类型" class="headerlink" title="2. Pattern: two points, 双指针类型"></a>2. Pattern: two points, <strong>双指针类型</strong></h3><p>经典题目：</p>
-<p>Pair with Target Sum (easy)</p>
-<p>Remove Duplicates (easy)</p>
-<p>Squaring a Sorted Array (easy)</p>
-<p>Triplet Sum to Zero (medium)</p>
-<p>Triplet Sum Close to Target (medium)</p>
-<p>Triplets with Smaller Sum (medium)</p>
-<p>Subarrays with Product Less than a Target (medium)</p>
-<p>Dutch National Flag Problem (medium)</p>
-<h3 id="3-Pattern-Fast-amp-Slow-pointers-快慢指针类型"><a href="#3-Pattern-Fast-amp-Slow-pointers-快慢指针类型" class="headerlink" title="3. Pattern: Fast &amp; Slow pointers, 快慢指针类型"></a>3. Pattern: Fast &amp; Slow pointers, <strong>快慢指针类型</strong></h3><p>经典题目：</p>
-<p>LinkedList Cycle (easy)</p>
-<p>Start of LinkedList Cycle (medium)</p>
-<p>Happy Number (medium)</p>
-<p>Middle of the LinkedList (easy)</p>
-<h3 id="4-Pattern-Merge-Intervals，区间合并类型"><a href="#4-Pattern-Merge-Intervals，区间合并类型" class="headerlink" title="4. Pattern: Merge Intervals，区间合并类型"></a>4. Pattern: Merge Intervals，<strong>区间合并类型</strong></h3><p>经典题目：</p>
-<p>Merge Intervals (medium)</p>
-<p>Insert Interval (medium)</p>
-<p>Intervals Intersection (medium)</p>
-<p>Conflicting Appointments (medium)</p>
-<h3 id="5-Pattern-Cyclic-Sort，循环排序"><a href="#5-Pattern-Cyclic-Sort，循环排序" class="headerlink" title="5. Pattern: Cyclic Sort，循环排序"></a>5. Pattern: Cyclic Sort，<strong>循环排序</strong></h3><p>经典题目：</p>
-<p>Cyclic Sort (easy)</p>
-<p>Find the Missing Number (easy)</p>
-<p>Find all Missing Numbers (easy)</p>
-<p>Find the Duplicate Number (easy)</p>
-<p>Find all Duplicate Numbers (easy)</p>
-<h3 id="6-Pattern-In-place-Reversal-of-a-LinkedList，链表翻转"><a href="#6-Pattern-In-place-Reversal-of-a-LinkedList，链表翻转" class="headerlink" title="6. Pattern: In-place Reversal of a LinkedList，链表翻转"></a>6. Pattern: In-place Reversal of a LinkedList，<strong>链表翻转</strong></h3><p>经典题目：</p>
-<p>Reverse a LinkedList (easy)</p>
-<p>Reverse a Sub-list (medium)</p>
-<p>Reverse every K-element Sub-list (medium)</p>
-<h3 id="7-Pattern-Tree-Breadth-First-Search，树上的BFS"><a href="#7-Pattern-Tree-Breadth-First-Search，树上的BFS" class="headerlink" title="7. Pattern: Tree Breadth First Search，树上的BFS"></a>7. Pattern: Tree Breadth First Search，<strong>树上的BFS</strong></h3><p>经典题目：</p>
-<p>Binary Tree Level Order Traversal (easy)</p>
-<p>Reverse Level Order Traversal (easy)</p>
-<p>Zigzag Traversal (medium)</p>
-<p>Level Averages in a Binary Tree (easy)</p>
-<p>Minimum Depth of a Binary Tree (easy)</p>
-<p>Level Order Successor (easy)</p>
-<p>Connect Level Order Siblings (medium)</p>
-<h3 id="8-Pattern-Tree-Depth-First-Search，树上的DFS"><a href="#8-Pattern-Tree-Depth-First-Search，树上的DFS" class="headerlink" title="8. Pattern: Tree Depth First Search，树上的DFS"></a>8. Pattern: Tree Depth First Search，<strong>树上的DFS</strong></h3><p>经典题目：</p>
-<p>Binary Tree Path Sum (easy)</p>
-<p>All Paths for a Sum (medium)</p>
-<p>Sum of Path Numbers (medium)</p>
-<p>Path With Given Sequence (medium)</p>
-<p>Count Paths for a Sum (medium)</p>
-<h3 id="9-Pattern-Two-Heaps，双堆类型"><a href="#9-Pattern-Two-Heaps，双堆类型" class="headerlink" title="9. Pattern: Two Heaps，双堆类型"></a>9. Pattern: Two Heaps，<strong>双堆类型</strong></h3><p>经典题目：</p>
-<p>Find the Median of a Number Stream (medium)</p>
-<p>Sliding Window Median (hard)</p>
-<p>Maximize Capital (hard)</p>
-<h3 id="10-Pattern-Subsets，子集类型，一般都是使用多重DFS"><a href="#10-Pattern-Subsets，子集类型，一般都是使用多重DFS" class="headerlink" title="10. Pattern: Subsets，子集类型，一般都是使用多重DFS"></a>10. Pattern: Subsets，<strong>子集类型，一般都是使用多重DFS</strong></h3><p>经典题目：</p>
-<p>Subsets (easy)</p>
-<p>Subsets With Duplicates (easy)</p>
-<p>Permutations (medium)</p>
-<p>String Permutations by changing case (medium)</p>
-<p>Balanced Parentheses (hard)</p>
-<p>Unique Generalized Abbreviations (hard)</p>
-<h3 id="11-Pattern-Modified-Binary-Search，改造过的二分"><a href="#11-Pattern-Modified-Binary-Search，改造过的二分" class="headerlink" title="11. Pattern: Modified Binary Search，改造过的二分"></a>11. Pattern: Modified Binary Search，<strong>改造过的二分</strong></h3><p>经典题目：</p>
-<p>Order-agnostic Binary Search (easy)</p>
-<p>Ceiling of a Number (medium)</p>
-<p>Next Letter (medium)</p>
-<p>Number Range (medium)</p>
-<p>Search in a Sorted Infinite Array (medium)</p>
-<p>Minimum Difference Element (medium)</p>
-<p>Bitonic Array Maximum (easy)</p>
-<h3 id="12-Pattern-Top-‘K’-Elements，前K个系列"><a href="#12-Pattern-Top-‘K’-Elements，前K个系列" class="headerlink" title="12. Pattern: Top ‘K’ Elements，前K个系列"></a>12. Pattern: Top ‘K’ Elements，<strong>前K个系列</strong></h3><p>经典题目：</p>
-<p>Top ‘K’ Numbers (easy)</p>
-<p>Kth Smallest Number (easy)</p>
-<p>‘K’ Closest Points to the Origin (easy)</p>
-<p>Connect Ropes (easy)</p>
-<p>Top ‘K’ Frequent Numbers (medium)</p>
-<p>Frequency Sort (medium)</p>
-<p>Kth Largest Number in a Stream (medium)</p>
-<p>‘K’ Closest Numbers (medium)</p>
-<p>Maximum Distinct Elements (medium)</p>
-<p>Sum of Elements (medium)</p>
-<p>Rearrange String (hard)</p>
-<h3 id="13-Pattern-K-way-merge，多路归并"><a href="#13-Pattern-K-way-merge，多路归并" class="headerlink" title="13. Pattern: K-way merge，多路归并"></a>13. Pattern: K-way merge，<strong>多路归并</strong></h3><p>经典题目：</p>
-<p>Merge K Sorted Lists (medium)</p>
-<p>Kth Smallest Number in M Sorted Lists (Medium)</p>
-<p>Kth Smallest Number in a Sorted Matrix (Hard)</p>
-<p>Smallest Number Range (Hard)</p>
-<h3 id="14-Pattern-0-1-Knapsack-Dynamic-Programming-，0-1背包类型"><a href="#14-Pattern-0-1-Knapsack-Dynamic-Programming-，0-1背包类型" class="headerlink" title="14. Pattern: 0/1 Knapsack (Dynamic Programming)，0/1背包类型"></a>14. Pattern: 0/1 Knapsack (Dynamic Programming)，<strong>0/1背包类型</strong></h3><p>经典题目：</p>
-<p>0/1 Knapsack (medium)</p>
-<p>Equal Subset Sum Partition (medium)</p>
-<p>Subset Sum (medium)</p>
-<p>Minimum Subset Sum Difference (hard)</p>
-<h3 id="15-Pattern-Topological-Sort-Graph-，拓扑排序类型"><a href="#15-Pattern-Topological-Sort-Graph-，拓扑排序类型" class="headerlink" title="15. Pattern: Topological Sort (Graph)，拓扑排序类型"></a>15. Pattern: Topological Sort (Graph)，<strong>拓扑排序类型</strong></h3><p>经典题目：</p>
-<p>Topological Sort (medium)</p>
-<p>Tasks Scheduling (medium)</p>
-<p>Tasks Scheduling Order (medium)</p>
-<p>All Tasks Scheduling Orders (hard)</p>
-<p>Alien Dictionary (hard)</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="李鹏辉">
-      <meta itemprop="description" content="@lipenghui">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xinkong2053.gihub.io">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/" class="post-title-link" itemprop="url">Intelij idea创建Java Web工程并测试Servlet</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-07 20:26:00" itemprop="dateCreated datePublished" datetime="2019-10-07T20:26:00+08:00">2019-10-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/servlet/" itemprop="url" rel="index"><span itemprop="name">servlet</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Intelij-idea创建Java-Web工程并测试Servlet"><a href="#Intelij-idea创建Java-Web工程并测试Servlet" class="headerlink" title="Intelij idea创建Java Web工程并测试Servlet"></a>Intelij idea创建Java Web工程并测试Servlet</h1><h2 id="创建并设置Java-web工程"><a href="#创建并设置Java-web工程" class="headerlink" title="创建并设置Java web工程"></a>创建并设置Java web工程</h2><h3 id="一些信息"><a href="#一些信息" class="headerlink" title="一些信息"></a>一些信息</h3><ul>
-<li>idea版本：2019.2.1</li>
-<li>jdk版本：1.8.0</li>
-<li>tomcat版本：9.0.24</li>
-</ul>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li><p>创建web工程</p>
-<p>1.1  File–&gt;New–&gt;Project</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001711.png" alt=""></p>
-<p>1.2  勾选Web Application</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001820.png" alt=""></p>
-<p>1.3  填写名称</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001841.png" alt=""></p>
-</li>
-<li><p>Web工程设置</p>
-<p>2.1 在WEB-INF目录添加<code>classes</code> <code>lib</code> 两个文件夹</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001853.png" alt=""></p>
-<p>2.2 File–&gt;Project Structure，进入Project Structure窗口</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001901.png" alt=""></p>
-<p>2.3  选择modules–&gt;paths选项卡，勾选<code>Use module compile output path</code>，并将<code>Output path</code>和<code>Test output path</code>改为之前创建的classes目录</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001910.png" alt=""></p>
-<p>2.4  选择modules–&gt;Dependencies，点击右侧<code>+</code>号，选择<code>JARs or derectories</code>，选择创建的lib目录</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001918.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001925.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001933.png" alt=""></p>
-<p>2.5 配置打包方式：点击Artifacts选项卡，勾选<code>Include in project build</code>和<code>Show content of elements</code>其他保持默认</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001941.png" alt=""></p>
-</li>
-<li><p>tomcat配置</p>
-<p>3.1 在窗口的右上角点击<code>Add Configration...</code>，点击<code>+</code>号，选择tomcat–&gt;local，添加tomcat容器</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001948.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002005.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002017.png" alt=""></p>
-<p>3.2 选择<code>Deployment</code> 选项卡，选择<code>+</code>号，选择<code>Artifact...</code>，并修改<code>Application context</code></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002025.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002154.png" alt=""></p>
-</li>
-</ol>
-<h2 id="编写Servlet类进行测试"><a href="#编写Servlet类进行测试" class="headerlink" title="编写Servlet类进行测试"></a>编写Servlet类进行测试</h2><ol>
-<li>在<code>src</code>文件夹下创建类<code>demo01</code></li>
-</ol>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002213.png" alt=""></p>
-<ol start="2">
-<li><p>将该类继承<code>HttpServlet</code>类并复写其中的<code>service</code>方法，代码如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.testservlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        resp.getWriter().write(<span class="string">"hello world"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在WEB-INF下的<code>web.xml</code>文件中添加如下内容</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.penghui.testservlet.demo01<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>点击窗口右上角的启动按钮启动tomcat服务器，可以看到<code>WEB-INF/classes</code>文件夹下有编译后的文件产生</p>
-<pre><code>![](https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002227.png)</code></pre></li>
-<li><p>打开浏览器并输入<code>http://localhost:8080/webapp/hello</code></p>
-</li>
-</ol>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002234.png" alt=""></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/10/04/javaNet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="李鹏辉">
-      <meta itemprop="description" content="@lipenghui">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xinkong2053.gihub.io">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/04/javaNet/" class="post-title-link" itemprop="url">java网络</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-04 20:25:00" itemprop="dateCreated datePublished" datetime="2019-10-04T20:25:00+08:00">2019-10-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="java网络"><a href="#java网络" class="headerlink" title="java网络"></a>java网络</h1><h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><ul>
-<li>查看本机端口：<code>netstat -ano</code></li>
-<li>查看指定端口：<code>netstat -ano|findstr &quot;808&quot;</code></li>
-<li>查看指定进程：<code>tasklist|findstr &quot;808&quot;</code></li>
-</ul>
-<h2 id="传输协议"><a href="#传输协议" class="headerlink" title="传输协议"></a>传输协议</h2><p>TCP    </p>
-<p>UPD</p>
-<p>套接字socket</p>
-<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p><img src="assets/1570157437597.png" alt="1570157437597"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1505,7 +1348,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intelij-idea/" rel="tag">intelij idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/" rel="tag">servlet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vmware/" rel="tag">vmware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intelij-idea/" rel="tag">intelij idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/" rel="tag">servlet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vmware/" rel="tag">vmware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">3</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -1540,20 +1383,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

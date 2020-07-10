@@ -25,40 +25,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"xingkong2053.gihub.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-  <meta name="description" content="Intelij idea创建Java Web工程并测试Servlet创建并设置Java web工程一些信息 idea版本：2019.2.1 jdk版本：1.8.0 tomcat版本：9.0.24  步骤 创建web工程 1.1  File–&gt;New–&gt;Project  1.2  勾选Web Application  1.3  填写名称   Web工程设置 2.1 在WEB-INF目录添">
+  <meta name="description" content="单例模式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Intelij idea创建Java Web工程并测试Servlet">
-<meta property="og:url" content="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/index.html">
+<meta property="og:title" content="单例模式">
+<meta property="og:url" content="https://xingkong2053.gihub.io/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="xinkong2053.gihub.io">
-<meta property="og:description" content="Intelij idea创建Java Web工程并测试Servlet创建并设置Java web工程一些信息 idea版本：2019.2.1 jdk版本：1.8.0 tomcat版本：9.0.24  步骤 创建web工程 1.1  File–&gt;New–&gt;Project  1.2  勾选Web Application  1.3  填写名称   Web工程设置 2.1 在WEB-INF目录添">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001711.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001820.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001841.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001853.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001901.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001910.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001918.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001925.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001933.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001941.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001948.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002005.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002017.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002025.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002154.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002213.png">
-<meta property="og:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002234.png">
-<meta property="article:published_time" content="2019-10-07T12:26:00.000Z">
-<meta property="article:modified_time" content="2020-07-09T16:22:45.603Z">
+<meta property="og:description" content="单例模式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101">
+<meta property="article:published_time" content="2020-04-02T07:28:00.000Z">
+<meta property="article:modified_time" content="2020-07-10T02:21:02.416Z">
 <meta property="article:author" content="李鹏辉">
-<meta property="article:tag" content="intelij idea">
-<meta property="article:tag" content="java">
-<meta property="article:tag" content="教程">
-<meta property="article:tag" content="servlet">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001711.png">
 
-<link rel="canonical" href="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/">
+<link rel="canonical" href="https://xingkong2053.gihub.io/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -70,7 +50,7 @@
   };
 </script>
 
-  <title>Intelij idea创建Java Web工程并测试Servlet | xinkong2053.gihub.io</title>
+  <title>单例模式 | xinkong2053.gihub.io</title>
   
 
 
@@ -212,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -225,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Intelij idea创建Java Web工程并测试Servlet
+          单例模式
         </h1>
 
         <div class="post-meta">
@@ -235,7 +215,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-10-07 20:26:00" itemprop="dateCreated datePublished" datetime="2019-10-07T20:26:00+08:00">2019-10-07</time>
+              <time title="创建时间：2020-04-02 15:28:00" itemprop="dateCreated datePublished" datetime="2020-04-02T15:28:00+08:00">2020-04-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,11 +223,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/servlet/" itemprop="url" rel="index"><span itemprop="name">servlet</span></a>
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
                 </span>
             </span>
 
@@ -269,61 +245,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Intelij-idea创建Java-Web工程并测试Servlet"><a href="#Intelij-idea创建Java-Web工程并测试Servlet" class="headerlink" title="Intelij idea创建Java Web工程并测试Servlet"></a>Intelij idea创建Java Web工程并测试Servlet</h1><h2 id="创建并设置Java-web工程"><a href="#创建并设置Java-web工程" class="headerlink" title="创建并设置Java web工程"></a>创建并设置Java web工程</h2><h3 id="一些信息"><a href="#一些信息" class="headerlink" title="一些信息"></a>一些信息</h3><ul>
-<li>idea版本：2019.2.1</li>
-<li>jdk版本：1.8.0</li>
-<li>tomcat版本：9.0.24</li>
-</ul>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li><p>创建web工程</p>
-<p>1.1  File–&gt;New–&gt;Project</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001711.png" alt=""></p>
-<p>1.2  勾选Web Application</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001820.png" alt=""></p>
-<p>1.3  填写名称</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001841.png" alt=""></p>
-</li>
-<li><p>Web工程设置</p>
-<p>2.1 在WEB-INF目录添加<code>classes</code> <code>lib</code> 两个文件夹</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001853.png" alt=""></p>
-<p>2.2 File–&gt;Project Structure，进入Project Structure窗口</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001901.png" alt=""></p>
-<p>2.3  选择modules–&gt;paths选项卡，勾选<code>Use module compile output path</code>，并将<code>Output path</code>和<code>Test output path</code>改为之前创建的classes目录</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001910.png" alt=""></p>
-<p>2.4  选择modules–&gt;Dependencies，点击右侧<code>+</code>号，选择<code>JARs or derectories</code>，选择创建的lib目录</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001918.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001925.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001933.png" alt=""></p>
-<p>2.5 配置打包方式：点击Artifacts选项卡，勾选<code>Include in project build</code>和<code>Show content of elements</code>其他保持默认</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001941.png" alt=""></p>
-</li>
-<li><p>tomcat配置</p>
-<p>3.1 在窗口的右上角点击<code>Add Configration...</code>，点击<code>+</code>号，选择tomcat–&gt;local，添加tomcat容器</p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710001948.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002005.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002017.png" alt=""></p>
-<p>3.2 选择<code>Deployment</code> 选项卡，选择<code>+</code>号，选择<code>Artifact...</code>，并修改<code>Application context</code></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002025.png" alt=""></p>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002154.png" alt=""></p>
-</li>
-</ol>
-<h2 id="编写Servlet类进行测试"><a href="#编写Servlet类进行测试" class="headerlink" title="编写Servlet类进行测试"></a>编写Servlet类进行测试</h2><ol>
-<li>在<code>src</code>文件夹下创建类<code>demo01</code></li>
-</ol>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002213.png" alt=""></p>
-<ol start="2">
-<li><p>将该类继承<code>HttpServlet</code>类并复写其中的<code>service</code>方法，代码如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.testservlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        resp.getWriter().write(<span class="string">"hello world"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在WEB-INF下的<code>web.xml</code>文件中添加如下内容</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.penghui.testservlet.demo01<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>点击窗口右上角的启动按钮启动tomcat服务器，可以看到<code>WEB-INF/classes</code>文件夹下有编译后的文件产生</p>
-<pre><code>![](https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002227.png)</code></pre></li>
-<li><p>打开浏览器并输入<code>http://localhost:8080/webapp/hello</code></p>
-</li>
-</ol>
-<p><img src="https://images-1259331707.cos.ap-nanjing.myqcloud.com/20200710002234.png" alt=""></p>
+        <p><strong>单例模式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式使用场景：需要频繁的进行创建和销毁的对象、创建对象时耗时过多或耗费资源过多（即：重量级对象）</span></span><br><span class="line"><span class="comment"> * 经常用到的对象、工具类对象、频繁访问数据库或文件的对象</span></span><br><span class="line"><span class="comment"> * 数据源、session工厂等</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingtonTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Singleton s1=SingletonImpl05.getInstance();</span><br><span class="line">        Singleton s2=SingletonImpl05.getInstance();</span><br><span class="line"></span><br><span class="line">        System.out.println(s1==s2);</span><br><span class="line"></span><br><span class="line">        System.out.println(s1.hashCode());</span><br><span class="line">        System.out.println(s2.hashCode());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Singleton</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：饿汉式（静态常量）</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl01</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造器初始化防止外部new</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl01</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton instance=<span class="keyword">new</span> SingletonImpl01();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> instance;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：饿汉式（静态代码块）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl02</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl02</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        instance=<span class="keyword">new</span> SingletonImpl02();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> instance;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：懒汉式（线程安全，同步方法）</span></span><br><span class="line"><span class="comment"> * 缺点：效率低</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl03</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl03</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance==<span class="keyword">null</span>)&#123;</span><br><span class="line">            instance=<span class="keyword">new</span> SingletonImpl03();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：懒汉式（线程安全，双重检查）</span></span><br><span class="line"><span class="comment"> * 线程安全、延迟加载、效率较高</span></span><br><span class="line"><span class="comment"> * 推荐使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl04</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl04</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(instance==<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton<span class="class">.<span class="keyword">class</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(instance==<span class="keyword">null</span>)&#123;</span><br><span class="line">                    instance=<span class="keyword">new</span> SingletonImpl04();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式：静态内部类</span></span><br><span class="line"><span class="comment"> * 这种方式采用了类装载机制来保证初始化实例时只有一个线程</span></span><br><span class="line"><span class="comment"> * 推荐使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingletonImpl05</span> <span class="keyword">implements</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonImpl05</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonInstance</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE=<span class="keyword">new</span> SingletonImpl05();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonInstance.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -369,13 +293,13 @@
   
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/">Intelij idea创建Java Web工程并测试Servlet</a></p>
+  <p><span>本文标题:</span><a href="/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">单例模式</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李鹏辉 的个人博客">李鹏辉</a></p>
-  <p><span>发布时间:</span>2019年10月07日 - 20:26</p>
-  <p><span>最后更新:</span>2020年07月10日 - 00:22</p>
-  <p><span>原始链接:</span><a href="/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/" title="Intelij idea创建Java Web工程并测试Servlet">https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/</a>
+  <p><span>发布时间:</span>2020年04月02日 - 15:28</p>
+  <p><span>最后更新:</span>2020年07月10日 - 10:21</p>
+  <p><span>原始链接:</span><a href="/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" title="单例模式">https://xingkong2053.gihub.io/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</a>
     <span class="copy-path"  title="点击复制文章链接">
-      <i class="fa fa-clipboard" data-clipboard-text="https://xingkong2053.gihub.io/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/"  aria-label="复制成功！"></i>
+      <i class="fa fa-clipboard" data-clipboard-text="https://xingkong2053.gihub.io/2020/04/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"  aria-label="复制成功！"></i>
     </span>
   </p>
   <p>
@@ -424,10 +348,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/intelij-idea/" rel="tag"><i class="fa fa-tag"></i> intelij idea</a>
-              <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
-              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
-              <a href="/tags/servlet/" rel="tag"><i class="fa fa-tag"></i> servlet</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+              <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
           </div>
 
         
@@ -436,12 +358,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/10/04/javaNet/" rel="prev" title="java网络">
-      <i class="fa fa-chevron-left"></i> java网络
+    <a href="/2019/12/20/redis%E5%91%BD%E4%BB%A4/" rel="prev" title="redis命令">
+      <i class="fa fa-chevron-left"></i> redis命令
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/11/06/leetcode%E9%A2%98%E7%9B%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" rel="next" title="leetcode题目类型总结">
-      leetcode题目类型总结 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/04/03/%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="next" title="创建者模式">
+      创建者模式 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -518,7 +440,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Intelij-idea创建Java-Web工程并测试Servlet"><span class="nav-text">Intelij idea创建Java Web工程并测试Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建并设置Java-web工程"><span class="nav-text">创建并设置Java web工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些信息"><span class="nav-text">一些信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写Servlet类进行测试"><span class="nav-text">编写Servlet类进行测试</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
