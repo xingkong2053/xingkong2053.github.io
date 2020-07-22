@@ -25,23 +25,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"xingkong2053.gihub.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-  <meta name="description" content="java网络端口 查看本机端口：netstat -ano 查看指定端口：netstat -ano|findstr &quot;808&quot; 查看指定进程：tasklist|findstr &quot;808&quot;  传输协议TCP     UPD 套接字socket TCP">
+  <meta name="description" content="整合Thymeleaf步骤 添加依赖 1234&lt;dependency&gt;    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;&#x2F;artifactId&gt;&lt;&#x2F;dependency&gt;  创建books实体">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java网络">
-<meta property="og:url" content="https://xingkong2053.gihub.io/2019/10/04/javaNet/index.html">
+<meta property="og:title" content="SpringBoot整合thymeleaf">
+<meta property="og:url" content="https://xingkong2053.gihub.io/2019/11/28/SpringBoot%E6%95%B4%E5%90%88thymeleaf/index.html">
 <meta property="og:site_name" content="xinkong2053.gihub.io">
-<meta property="og:description" content="java网络端口 查看本机端口：netstat -ano 查看指定端口：netstat -ano|findstr &quot;808&quot; 查看指定进程：tasklist|findstr &quot;808&quot;  传输协议TCP     UPD 套接字socket TCP">
-<meta property="og:image" content="https://xingkong2053.gihub.io/2019/10/04/javaNet/assets/1570157437597.png">
-<meta property="article:published_time" content="2019-10-04T12:25:00.000Z">
-<meta property="article:modified_time" content="2020-07-10T02:13:09.168Z">
+<meta property="og:description" content="整合Thymeleaf步骤 添加依赖 1234&lt;dependency&gt;    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;&#x2F;artifactId&gt;&lt;&#x2F;dependency&gt;  创建books实体">
+<meta property="article:published_time" content="2019-11-28T11:30:00.000Z">
+<meta property="article:modified_time" content="2020-07-22T10:21:09.476Z">
 <meta property="article:author" content="李鹏辉">
 <meta property="article:tag" content="java">
-<meta property="article:tag" content="网络">
-<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="springboot">
+<meta property="article:tag" content="thymeleaf">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xingkong2053.gihub.io/2019/10/04/javaNet/assets/1570157437597.png">
 
-<link rel="canonical" href="https://xingkong2053.gihub.io/2019/10/04/javaNet/">
+<link rel="canonical" href="https://xingkong2053.gihub.io/2019/11/28/SpringBoot%E6%95%B4%E5%90%88thymeleaf/">
 
 
 <script id="page-configurations">
@@ -53,7 +51,7 @@
   };
 </script>
 
-  <title>java网络 | xinkong2053.gihub.io</title>
+  <title>SpringBoot整合thymeleaf | xinkong2053.gihub.io</title>
   
 
 
@@ -195,7 +193,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/10/04/javaNet/">
+    <link itemprop="mainEntityOfPage" href="https://xingkong2053.gihub.io/2019/11/28/SpringBoot%E6%95%B4%E5%90%88thymeleaf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -208,7 +206,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          java网络
+          SpringBoot整合thymeleaf
         </h1>
 
         <div class="post-meta">
@@ -218,7 +216,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-10-04 20:25:00" itemprop="dateCreated datePublished" datetime="2019-10-04T20:25:00+08:00">2019-10-04</time>
+              <time title="创建时间：2019-11-28 19:30:00" itemprop="dateCreated datePublished" datetime="2019-11-28T19:30:00+08:00">2019-11-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,7 +228,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                  <a href="/categories/java/springboot/" itemprop="url" rel="index"><span itemprop="name">springboot</span></a>
                 </span>
             </span>
 
@@ -252,15 +250,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="java网络"><a href="#java网络" class="headerlink" title="java网络"></a>java网络</h1><h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><ul>
-<li>查看本机端口：<code>netstat -ano</code></li>
-<li>查看指定端口：<code>netstat -ano|findstr &quot;808&quot;</code></li>
-<li>查看指定进程：<code>tasklist|findstr &quot;808&quot;</code></li>
-</ul>
-<h2 id="传输协议"><a href="#传输协议" class="headerlink" title="传输协议"></a>传输协议</h2><p>TCP    </p>
-<p>UPD</p>
-<p>套接字socket</p>
-<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p><img src="assets/1570157437597.png" alt="1570157437597"></p>
+        <h2 id="整合Thymeleaf"><a href="#整合Thymeleaf" class="headerlink" title="整合Thymeleaf"></a>整合Thymeleaf</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>添加依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建books实体类，在工程包下创建类<code>bean.Book</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.webproject.bean;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建book实体类，用于测试整合视图层</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Book</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*省略Getter和Setter*/</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">(Integer id, String name, String author)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.author = author;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建控制器类，在controller包下创建类<code>BookController</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.penghui.webproject.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.penghui.webproject.bean.Book;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*也可换为@RequestMapping（“/books”）*/</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/books"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">books</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;Book&gt; books=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Book b1=<span class="keyword">new</span> Book(<span class="number">1</span>,<span class="string">"三国演义"</span>,<span class="string">"罗贯中"</span>);</span><br><span class="line">        Book b2=<span class="keyword">new</span> Book(<span class="number">2</span>,<span class="string">"红楼梦"</span>,<span class="string">"曹雪芹"</span>);</span><br><span class="line"></span><br><span class="line">        books.add(b1);</span><br><span class="line">        books.add(b2);</span><br><span class="line"></span><br><span class="line">        ModelAndView mv=<span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mv.addObject(<span class="string">"books"</span>,books);</span><br><span class="line">        mv.setViewName(<span class="string">"books"</span>);</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建视图，在<code>resources/templates</code>文件夹下创建<code>books.html</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--加入thymeleaf命名空间--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>图书<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>图书编号<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>图书名称<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>图书作者<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    	<span class="comment">&lt;!--th:each 遍历books--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span>=<span class="string">"book:$&#123;books&#125;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.id&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.name&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.author&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
 
     </div>
 
@@ -306,13 +312,13 @@
   
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/10/04/javaNet/">java网络</a></p>
+  <p><span>本文标题:</span><a href="/2019/11/28/SpringBoot%E6%95%B4%E5%90%88thymeleaf/">SpringBoot整合thymeleaf</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李鹏辉 的个人博客">李鹏辉</a></p>
-  <p><span>发布时间:</span>2019年10月04日 - 20:25</p>
-  <p><span>最后更新:</span>2020年07月10日 - 10:13</p>
-  <p><span>原始链接:</span><a href="/2019/10/04/javaNet/" title="java网络">https://xingkong2053.gihub.io/2019/10/04/javaNet/</a>
+  <p><span>发布时间:</span>2019年11月28日 - 19:30</p>
+  <p><span>最后更新:</span>2020年07月22日 - 18:21</p>
+  <p><span>原始链接:</span><a href="/2019/11/28/SpringBoot%E6%95%B4%E5%90%88thymeleaf/" title="SpringBoot整合thymeleaf">https://xingkong2053.gihub.io/2019/11/28/SpringBoot%E6%95%B4%E5%90%88thymeleaf/</a>
     <span class="copy-path"  title="点击复制文章链接">
-      <i class="fa fa-clipboard" data-clipboard-text="https://xingkong2053.gihub.io/2019/10/04/javaNet/"  aria-label="复制成功！"></i>
+      <i class="fa fa-clipboard" data-clipboard-text="https://xingkong2053.gihub.io/2019/11/28/SpringBoot%E6%95%B4%E5%90%88thymeleaf/"  aria-label="复制成功！"></i>
     </span>
   </p>
   <p>
@@ -362,8 +368,8 @@
           
           <div class="post-tags">
               <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
-              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+              <a href="/tags/springboot/" rel="tag"><i class="fa fa-tag"></i> springboot</a>
+              <a href="/tags/thymeleaf/" rel="tag"><i class="fa fa-tag"></i> thymeleaf</a>
           </div>
 
         
@@ -372,12 +378,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/10/03/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="prev" title="java基础学习">
-      <i class="fa fa-chevron-left"></i> java基础学习
+    <a href="/2019/11/27/SpringBoot%E6%95%B4%E5%90%88mybatis/" rel="prev" title="SpringBoot整合Mybatis">
+      <i class="fa fa-chevron-left"></i> SpringBoot整合Mybatis
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/10/07/Intelij%20idea%E5%88%9B%E5%BB%BAjavaweb%E5%B7%A5%E7%A8%8B/" rel="next" title="Intelij idea创建Java Web工程并测试Servlet">
-      Intelij idea创建Java Web工程并测试Servlet <i class="fa fa-chevron-right"></i>
+    <a href="/2019/12/13/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" rel="next" title="二叉查找树的实现">
+      二叉查找树的实现 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -454,7 +460,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java网络"><span class="nav-text">java网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#端口"><span class="nav-text">端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输协议"><span class="nav-text">传输协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-text">TCP</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整合Thymeleaf"><span class="nav-text">整合Thymeleaf</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-text">步骤</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
